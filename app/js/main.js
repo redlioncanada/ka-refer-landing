@@ -2,4 +2,4 @@
 var k = 0;
 var willThisBeShortened = false;
 
-var test = require('./test.js');
+require('./test.js');

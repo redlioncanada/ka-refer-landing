@@ -94,6 +94,7 @@ gulp.task('build-dev', ['images', 'browserify', 'html', 'scss'], function() {
 	gulp.watch('./app/html/**/*.handlebars', ['html'])
 	gulp.watch('./app/config.json', ['html'])
 	gulp.watch('./app/js/**/*.js', ['browserify'])
+	gulp.watch('./app/images/**/*', ['images'])
 });
 
 gulp.task('default', ['clean', 'build-dev'], function(){});
