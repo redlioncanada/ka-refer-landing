@@ -17,7 +17,7 @@ var handlebarsHTML = require('gulp-handlebars-html')(handlebars);
 var mergeStream = require('merge-stream');
 var del = require('del');
 
-var jsEntryPoint = './app/js/main.js';
+var jsEntryPoint = './app/js/index.js';
 var bundleName = 'redlion-' + packageJSON.name;
 
 gulp.task('browserify', function() {
@@ -57,7 +57,7 @@ gulp.task('html', function() {
 gulp.task('scss', function() {
 	gulp.src('./app/css/**/*')
 		.pipe(scss())
-		.pipe(concatCss('main.css'))
+		.pipe(concatCss('index.css'))
 		.pipe(rename({basename:bundleName}))
 		.pipe(gulp.dest('./build/css'))
 		.pipe(uglifyCss())
