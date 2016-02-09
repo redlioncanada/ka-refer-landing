@@ -11,6 +11,7 @@ var concatCss = require('gulp-concat-css');
 var uglifyCss = require('gulp-cssnano');
 var packageJSON = require('./package.json');
 var replace = require('gulp-replace');
+var insert = require('gulp-insert');
 var imagemin = require('gulp-imagemin');
 var handlebars = require('handlebars');
 var handlebarsHTML = require('gulp-handlebars-html')(handlebars);
@@ -19,6 +20,7 @@ var del = require('del');
 
 var jsEntryPoint = './app/js/index.js';
 var bundleName = 'redlion-' + packageJSON.name;
+var compiledMessage = "This file has been compiled using gulp. Do not make modifications to this file directly.\r\n" + packageJSON.repository.url;
 
 gulp.task('browserify', function() {
   var b = browserify({
@@ -46,6 +48,7 @@ gulp.task('html', function() {
 			.pipe(handlebarsHTML(config.templateData[language], {
 				partialsDirectory: ['./app/html/partials']
 			}))
+			.pipe(insert.prepend(constructComment(compiledMessage, 'html')))
 			.pipe(rename('index.html'))
 			.pipe(gulp.dest('./build/'+language));
 		tasks.push(task);
@@ -59,8 +62,10 @@ gulp.task('scss', function() {
 		.pipe(scss())
 		.pipe(concatCss('index.css'))
 		.pipe(rename({basename:bundleName}))
+		.pipe(insert.prepend(constructComment(compiledMessage, 'css')))
 		.pipe(gulp.dest('./build/css'))
 		.pipe(uglifyCss())
+		.pipe(insert.prepend(constructComment(compiledMessage, 'css')))
 		.pipe(rename({suffix:'.min'}))
 		.pipe(gulp.dest('./build/css'));
 });
@@ -77,15 +82,32 @@ gulp.task('clean', function() {
 	del('./build');
 })
 
+function constructComment(msg,type) {
+	var pre, post;
+	switch (type) {
+		case 'js':
+		case 'css':
+			pre = '/* ', post = ' */';
+			break;
+		case 'html':
+			pre = '<!-- ', post = ' -->';
+			break;
+	}
+	if (pre) return pre + msg + post + '\r\n';
+	return '';
+}
+
 function bundleShare(b) {
   b.bundle()
     .pipe(source(jsEntryPoint))
     .pipe(flatten())
     .pipe(buffer())
-    .pipe(rename({basename:bundleName}))
+    .pipe(insert.prepend(constructComment(compiledMessage, 'js')))
+    .pipe(rename(bundleName+'.js'))
     .pipe(gulp.dest('./build/javascript'))
     .pipe(uglify())
-    .pipe(rename({suffix:'.min'}))
+    .pipe(insert.prepend(constructComment(compiledMessage, 'js')))
+    .pipe(rename(bundleName+'.min.js'))
     .pipe(gulp.dest('./build/javascript'));
 }
 
