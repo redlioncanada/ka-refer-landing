@@ -20,7 +20,7 @@ var del = require('del');
 
 var jsEntryPoint = './app/js/index.js';
 var bundleName = 'redlion-' + packageJSON.name;
-var compiledMessage = "This file has been compiled using gulp. Do not make modifications to this file directly.\r\n" + packageJSON.repository.url;
+var compiledMessage = "This file must be compiled using gulp and checked in to the below url. Do not make modifications to this file directly.\r\n" + packageJSON.repository.url;
 
 gulp.task('browserify', function() {
   var b = browserify({
@@ -50,7 +50,10 @@ gulp.task('html', function() {
 			}))
 			.pipe(insert.prepend(constructComment(compiledMessage, 'html')))
 			.pipe(rename('index.html'))
-			.pipe(gulp.dest('./build/'+language));
+			.pipe(gulp.dest('./build/'+language))
+			.pipe(replace('"/', '"../'))
+			.pipe(rename('index.dev.html'))
+			.pipe(gulp.dest('./build/'+language))
 		tasks.push(task);
 	}
 	delete require.cache[require.resolve('./app/config.json')];	//delete config from require cache so we can get updates to it when it changes
