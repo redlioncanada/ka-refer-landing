@@ -1,4 +1,17 @@
-.test {
-	//test
-	display:block;
+@import '../../node_modules/normalize-css/normalize.css';
+@import './mixins.scss';
+
+.{appname} {
+	width: 944px;
+
+	* {
+		max-width: 944px;
+	}
 }
+
+@import './partials/masthead.scss';
+@import './partials/tiled-cta.scss';
+@import './partials/product-carousel.scss';
+@import './partials/video-selector.scss';
+@import './partials/feature-selector.scss';
+@import './partials/banner.scss';

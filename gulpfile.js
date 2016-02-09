@@ -1,25 +1,27 @@
-var gulp        = require('gulp');
-var uglify      = require('gulp-uglify');
-var buffer = require('vinyl-buffer');
-var rename		= require('gulp-rename');
-var browserify = require('browserify');
-var source = require("vinyl-source-stream");
-var watchify = require('watchify');
-var flatten = require('gulp-flatten');
-var scss = require('gulp-sass');
-var concatCss = require('gulp-concat-css');
-var uglifyCss = require('gulp-cssnano');
-var packageJSON = require('./package.json');
-var replace = require('gulp-replace');
-var insert = require('gulp-insert');
-var imagemin = require('gulp-imagemin');
-var handlebars = require('handlebars');
-var handlebarsHTML = require('gulp-handlebars-html')(handlebars);
-var mergeStream = require('merge-stream');
-var del = require('del');
+var gulp        	= require('gulp');
+var uglify      	= require('gulp-uglify');
+var buffer 			= require('vinyl-buffer');
+var rename			= require('gulp-rename');
+var browserify 		= require('browserify');
+var source 			= require("vinyl-source-stream");
+var watchify 		= require('watchify');
+var flatten 		= require('gulp-flatten');
+var scss 			= require('gulp-sass');
+var concatCss 		= require('gulp-concat-css');
+var uglifyCss 		= require('gulp-cssnano');
+var replace 		= require('gulp-replace');
+var plumber 		= require('gulp-plumber');
+var insert 			= require('gulp-insert');
+var imagemin 		= require('gulp-imagemin');
+var strip			= require('gulp-strip-comments');
+var handlebars 		= require('handlebars');
+var handlebarsHTML  = require('gulp-handlebars-html')(handlebars);
+var mergeStream 	= require('merge-stream');
+var del 			= require('del');
 
-var jsEntryPoint = './app/js/index.js';
-var bundleName = 'redlion-' + packageJSON.name;
+var packageJSON 	= require('./package.json');
+var jsEntryPoint 	= './app/js/index.js';
+var bundleName 		= 'redlion-' + packageJSON.name;
 var compiledMessage = "This file must be compiled using gulp and checked in to the below url. Do not make modifications to this file directly.\r\n" + packageJSON.repository.url;
 
 gulp.task('browserify', function() {
@@ -44,10 +46,13 @@ gulp.task('html', function() {
 		var templateData = config.templateData[language];
 
 		var task = gulp.src('./app/html/index.handlebars')
+			.pipe(plumber())
 			.pipe(replace('{appname}', bundleName))
 			.pipe(handlebarsHTML(config.templateData[language], {
 				partialsDirectory: ['./app/html/partials']
 			}))
+			.pipe(replace('{appname}', bundleName))
+			.pipe(strip())
 			.pipe(insert.prepend(constructComment(compiledMessage, 'html')))
 			.pipe(rename('index.html'))
 			.pipe(gulp.dest('./build/'+language))
@@ -62,6 +67,8 @@ gulp.task('html', function() {
 
 gulp.task('scss', function() {
 	gulp.src('./app/css/**/*')
+		.pipe(plumber())
+		.pipe(replace('{appname}', bundleName))
 		.pipe(scss())
 		.pipe(concatCss('index.css'))
 		.pipe(rename({basename:bundleName}))
@@ -75,6 +82,7 @@ gulp.task('scss', function() {
 
 gulp.task('images', function() {
 	gulp.src('./app/images/**/*')
+		.pipe(plumber())
 		.pipe(imagemin({
 			progressive: true
 		}))
@@ -102,14 +110,14 @@ function constructComment(msg,type) {
 
 function bundleShare(b) {
   b.bundle()
+  	.pipe(plumber())
     .pipe(source(jsEntryPoint))
     .pipe(flatten())
     .pipe(buffer())
     .pipe(insert.prepend(constructComment(compiledMessage, 'js')))
     .pipe(rename(bundleName+'.js'))
     .pipe(gulp.dest('./build/javascript'))
-    .pipe(uglify())
-    .pipe(insert.prepend(constructComment(compiledMessage, 'js')))
+    .pipe(uglify({preserveComments:'license'}))
     .pipe(rename(bundleName+'.min.js'))
     .pipe(gulp.dest('./build/javascript'));
 }

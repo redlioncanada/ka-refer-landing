@@ -1,5 +1,16 @@
+<!-- css is bundled together using gulp-scss & gulp-concat-css -->
 <link rel="stylesheet" href="/css/{appname}.min.css">
-{{> test}}
+
+<!-- main template start -->
 <div class="{appname} {{language}}">
+{{> masthead}}
+{{> tiled-cta}}
+{{> product-carousel}}
+{{> video-selector}}
+{{> feature-selector}}
+{{> banner}}
 </div>
+<!-- main template end -->
+
+<!-- js is bundled together using browserify -->
 <script src="/javascript/{appname}.min.js"></script>

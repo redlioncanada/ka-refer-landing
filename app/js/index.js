@@ -1,5 +1,1 @@
-//test
-var k = 0;
-var willThisBeShortened = false;
-
-require('./test.js');
+require('../../node_modules/jquery/dist/jquery.min.js');
