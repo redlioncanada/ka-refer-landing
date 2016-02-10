@@ -11,6 +11,7 @@ var concatCss 		= require('gulp-concat-css');
 var uglifyCss 		= require('gulp-cssnano');
 var replace 		= require('gulp-replace');
 var plumber 		= require('gulp-plumber');
+var livereload		= require('gulp-livereload')
 var insert 			= require('gulp-insert');
 var imagemin 		= require('gulp-imagemin');
 var strip			= require('gulp-strip-comments');
@@ -56,7 +57,8 @@ gulp.task('html', function() {
 			.pipe(insert.prepend(constructComment(compiledMessage, 'html')))
 			.pipe(rename('index.html'))
 			.pipe(gulp.dest('./build/'+language))
-			.pipe(replace('"/', '"../'))
+			.pipe(replace(/("|')\/([a-z0-9A-Z])/g, '$1../$2'))
+			.pipe(replace('.min.', '.'))
 			.pipe(rename('index.dev.html'))
 			.pipe(gulp.dest('./build/'+language))
 		tasks.push(task);
