@@ -24,6 +24,11 @@ export class Video {
 			part: 'snippet',
 			key: 'AIzaSyB9daYpfuJEn6L6pNi69tPYeX75DxhonYE'
 		}
+		//this is a dev key set up at
+		//https://console.developers.google.com/apis/credentials/wizard
+		//we should create a new one for prod on a company wide account
+		//also, we should obfuscate this in some way. Perhaps a credentials.json file in the root dir
+		//that's not added to version control
 
 		this.http.get(this.constructURL('https://googleapis.com/youtube/v3/videos', params))
 			.map((res: Response) => res.json())
@@ -31,6 +36,9 @@ export class Video {
 				data => { this.initialize(data) },
 				err => this.logger.error(err)
 			)
+
+		//want to separate the youtube api into it's own service, but using services within services
+		//proved too difficult. Going to revisit this.
 	}
 
 	initialize(data) {
