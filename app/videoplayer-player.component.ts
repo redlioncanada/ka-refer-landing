@@ -11,6 +11,9 @@ import {VideoPlayerVideo} from './videoplayer-video.component'
     				<videoplayer-video [id]="video.id" [width]="video.width" [height]="video.height"></videoplayer-video>
     			</li>
     		</ul>
+    		<div class="title">
+    			{{data[currentId].title}}
+    		</div>
     		<div class="description">
     			{{data[currentId].desc}}
     		</div>

@@ -37,7 +37,7 @@ System.register(['angular2/core', './services/logger.service', './videoplayer-vi
                 VideoPlayerPlayer = __decorate([
                     core_1.Component({
                         selector: 'videoplayer-player',
-                        template: "\n    \t<div>\n    \t\t<ul>\n    \t\t\t<li *ngFor=\"#video of data; #i=index\" class=\"{{currentId !== i ? 'hide' : 'show'}}\">\n    \t\t\t\t<videoplayer-video [id]=\"video.id\" [width]=\"video.width\" [height]=\"video.height\"></videoplayer-video>\n    \t\t\t</li>\n    \t\t</ul>\n    \t\t<div class=\"description\">\n    \t\t\t{{data[currentId].desc}}\n    \t\t</div>\n    \t</div>\n\t",
+                        template: "\n    \t<div>\n    \t\t<ul>\n    \t\t\t<li *ngFor=\"#video of data; #i=index\" class=\"{{currentId !== i ? 'hide' : 'show'}}\">\n    \t\t\t\t<videoplayer-video [id]=\"video.id\" [width]=\"video.width\" [height]=\"video.height\"></videoplayer-video>\n    \t\t\t</li>\n    \t\t</ul>\n    \t\t<div class=\"title\">\n    \t\t\t{{data[currentId].title}}\n    \t\t</div>\n    \t\t<div class=\"description\">\n    \t\t\t{{data[currentId].desc}}\n    \t\t</div>\n    \t</div>\n\t",
                         directives: [videoplayer_video_component_1.VideoPlayerVideo]
                     }), 
                     __metadata('design:paramtypes', [logger_service_1.Logger])

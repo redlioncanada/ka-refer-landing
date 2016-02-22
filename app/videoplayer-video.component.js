@@ -65,7 +65,7 @@ System.register(['angular2/core', './services/logger.service'], function(exports
                 VideoPlayerVideo = __decorate([
                     core_1.Component({
                         selector: 'videoplayer-video',
-                        template: "\n    \t<iframe id=\"{{id}}\" src=\"http://www.youtube.com/embed/{{id}}?enablejsapi=1\" allowfullscreen frameborder=\"0\"></iframe>\n\t"
+                        template: "\n    \t<iframe id=\"{{id}}\" src=\"http://www.youtube.com/embed/{{id}}?enablejsapi=1\" width=\"944\" height=\"531\" allowfullscreen frameborder=\"0\"></iframe>\n\t"
                     }), 
                     __metadata('design:paramtypes', [logger_service_1.Logger])
                 ], VideoPlayerVideo);
