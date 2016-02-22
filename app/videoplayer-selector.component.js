@@ -64,7 +64,7 @@ System.register(['angular2/core', './services/logger.service', './services/googl
                 VideoPlayerSelector = __decorate([
                     core_1.Component({
                         selector: 'videoplayer-selector',
-                        template: 'app/views/videoplayer-selector.view.html'
+                        templateUrl: 'app/views/videoplayer-selector.view.html'
                     }), 
                     __metadata('design:paramtypes', [logger_service_1.Logger, googleapi_service_1.GoogleApi])
                 ], VideoPlayerSelector);

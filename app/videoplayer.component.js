@@ -60,7 +60,7 @@ System.register(['angular2/core', './videoplayer-selector.component', './videopl
                 VideoPlayer = __decorate([
                     core_1.Component({
                         selector: 'videoplayer',
-                        template: 'app/views/videoplayer.view.html',
+                        templateUrl: 'app/views/videoplayer.view.html',
                         directives: [videoplayer_player_component_1.VideoPlayerPlayer, videoplayer_selector_component_1.VideoPlayerSelector]
                     }), 
                     __metadata('design:paramtypes', [logger_service_1.Logger])

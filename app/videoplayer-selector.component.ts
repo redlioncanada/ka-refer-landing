@@ -5,7 +5,7 @@ import {VideoPlayer} from './videoplayer.component'
 
 @Component({
 	selector: 'videoplayer-selector',
-    template: 'app/views/videoplayer-selector.view.html'
+    templateUrl: 'app/views/videoplayer-selector.view.html'
 })
 export class VideoPlayerSelector {
 	@Input() data

@@ -3,7 +3,7 @@ import {Logger} from './services/logger.service'
 
 @Component({
 	selector: 'videoplayer-video',
-    template: 'app/views/videoplayer-video.view.html'
+    templateUrl: 'app/views/videoplayer-video.view.html'
 })
 export class VideoPlayerVideo {
 	@Input() id: string

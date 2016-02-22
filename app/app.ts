@@ -9,7 +9,7 @@ import {VideoPlayer} from './videoplayer.component';
 
 @Component({
     selector: 'rl-ka-refer-landing',
-    templateUrl: 'app/views/app.html',
+    templateUrl: 'app/views/app.view.html',
     directives: [VideoPlayer]
 })
 class AppComponent { }

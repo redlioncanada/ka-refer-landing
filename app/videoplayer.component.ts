@@ -5,7 +5,7 @@ import {Logger} from './services/logger.service'
 
 @Component({
     selector: 'videoplayer',
-    template: 'app/views/videoplayer.view.html',
+    templateUrl: 'app/views/videoplayer.view.html',
 	directives: [VideoPlayerPlayer, VideoPlayerSelector]
 })
 export class VideoPlayer {

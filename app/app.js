@@ -37,7 +37,7 @@ System.register(['angular2/platform/browser', 'angular2/http', './services/logge
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'rl-ka-refer-landing',
-                        templateUrl: 'app/views/app.html',
+                        templateUrl: 'app/views/app.view.html',
                         directives: [videoplayer_component_1.VideoPlayer]
                     }), 
                     __metadata('design:paramtypes', [])
@@ -48,4 +48,4 @@ System.register(['angular2/platform/browser', 'angular2/http', './services/logge
         }
     }
 });
-//# sourceMappingURL=main.js.map
+//# sourceMappingURL=app.js.map

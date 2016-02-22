@@ -65,7 +65,7 @@ System.register(['angular2/core', './services/logger.service'], function(exports
                 VideoPlayerVideo = __decorate([
                     core_1.Component({
                         selector: 'videoplayer-video',
-                        template: 'app/views/videoplayer-video.view.html'
+                        templateUrl: 'app/views/videoplayer-video.view.html'
                     }), 
                     __metadata('design:paramtypes', [logger_service_1.Logger])
                 ], VideoPlayerVideo);
