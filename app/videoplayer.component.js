@@ -60,7 +60,7 @@ System.register(['angular2/core', './videoplayer-selector.component', './videopl
                 VideoPlayer = __decorate([
                     core_1.Component({
                         selector: 'videoplayer',
-                        template: "\n    \t<h4>{{title}}</h4>\n    \t<videoplayer-player [data]=\"videos\" [currentId]=\"currentId\"></videoplayer-player>\n\t\t<ul>\n\t\t\t<li *ngFor=\"#video of videos; #i=index\">\n\t\t\t\t<videoplayer-selector (selectedVideo)=\"select($event)\" [data]=\"video\" [id]=\"i\" [currentId]=\"currentId\"></videoplayer-selector>\n\t\t\t</li>\n\t\t</ul>\n\t",
+                        template: 'app/views/videoplayer.view.html',
                         directives: [videoplayer_player_component_1.VideoPlayerPlayer, videoplayer_selector_component_1.VideoPlayerSelector]
                     }), 
                     __metadata('design:paramtypes', [logger_service_1.Logger])

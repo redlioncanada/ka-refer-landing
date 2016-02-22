@@ -5,15 +5,7 @@ import {Logger} from './services/logger.service'
 
 @Component({
     selector: 'videoplayer',
-    template: `
-    	<h4>{{title}}</h4>
-    	<videoplayer-player [data]="videos" [currentId]="currentId"></videoplayer-player>
-		<ul>
-			<li *ngFor="#video of videos; #i=index">
-				<videoplayer-selector (selectedVideo)="select($event)" [data]="video" [id]="i" [currentId]="currentId"></videoplayer-selector>
-			</li>
-		</ul>
-	`,
+    template: 'app/views/videoplayer.view.html',
 	directives: [VideoPlayerPlayer, VideoPlayerSelector]
 })
 export class VideoPlayer {

@@ -5,15 +5,7 @@ import {VideoPlayer} from './videoplayer.component'
 
 @Component({
 	selector: 'videoplayer-selector',
-    template: `
-    	<div (click)="select()">
-    		<div>
-    			<h3>{{data.title}}</h3>
-    			<div class="button">{{data.cta}}</div>
-    		</div>
-    		<img src="{{data.thumb}}"/>
-    	</div>
-	`
+    template: 'app/views/videoplayer-selector.view.html'
 })
 export class VideoPlayerSelector {
 	@Input() data

@@ -4,21 +4,7 @@ import {VideoPlayerVideo} from './videoplayer-video.component'
 
 @Component({
 	selector: 'videoplayer-player',
-    template: `
-    	<div>
-    		<ul>
-    			<li *ngFor="#video of data; #i=index" class="{{currentId !== i ? 'hide' : 'show'}}">
-    				<videoplayer-video [id]="video.id" [width]="video.width" [height]="video.height"></videoplayer-video>
-    			</li>
-    		</ul>
-    		<div class="title">
-    			{{data[currentId].title}}
-    		</div>
-    		<div class="description">
-    			{{data[currentId].desc}}
-    		</div>
-    	</div>
-	`,
+    templateUrl: 'app/views/videoplayer-player.view.html',
 	directives: [VideoPlayerVideo]
 })
 export class VideoPlayerPlayer {

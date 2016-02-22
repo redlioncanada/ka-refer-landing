@@ -3,9 +3,7 @@ import {Logger} from './services/logger.service'
 
 @Component({
 	selector: 'videoplayer-video',
-    template: `
-    	<iframe id="{{id}}" src="http://www.youtube.com/embed/{{id}}?enablejsapi=1" width="944" height="531" allowfullscreen frameborder="0"></iframe>
-	`
+    template: 'app/views/videoplayer-video.view.html'
 })
 export class VideoPlayerVideo {
 	@Input() id: string
