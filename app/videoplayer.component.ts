@@ -14,21 +14,24 @@ export class VideoPlayer {
 		{
 			id: '70cAsWGqbgU',
 			thumb: './images/video1.jpg',
-			title: 'Design',
+			title: 'A revolutionary mark on a revolutionary new line',
+			ctaTitle: 'Design',
 			cta: 'Play Video',
 			desc: false
 		},
 		{
 			id: '70cAsWGqbgU',
 			thumb: './images/video2.jpg',
-			title: 'Food Care',
+			title: 'A revolutionary mark on a revolutionary new line',
+			ctaTitle: 'Food Care',
 			cta: 'Play Video',
 			desc: false
 		},
 		{
 			id: '70cAsWGqbgU',
 			thumb: './images/video3.jpg',
-			title: '5-Door',
+			title: 'A revolutionary mark on a revolutionary new line',
+			ctaTitle: '5-Door',
 			cta: 'Play Video',
 			desc: false
 		}

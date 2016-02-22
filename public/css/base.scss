@@ -11,8 +11,10 @@ rl-ka-refer-landing {
 
 	@import 'components/videoplayer.scss';
 
+	width: 100%;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 12pt;
+	position: relative;
 
 	h1,h2,h3,h4,h5 {
 		color: $titleColor;

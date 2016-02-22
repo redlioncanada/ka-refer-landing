@@ -1,0 +1,38 @@
+videoplayer {
+	width: 80%;
+	position: relative;
+
+	h1 {
+		width: 100%;
+		text-transform: uppercase;
+		text-align: center;
+		margin-bottom: 20px;
+		font-weight: 800;
+	}
+}
+
+videoplayer-player {
+	width: 100%;
+	li {
+
+	}
+
+	.text {
+		width: 100%;
+		background-color: $videoPlayer-backgroundColor;
+		color: $videoPlayer-copyColor;
+
+		.title {
+			text-transform: uppercase;
+			text-align: center;
+		}
+	}
+}
+
+videoplayer-selector {
+	width: 100%;
+}
+
+videoplayer-video {
+	width: 100%;
+}
