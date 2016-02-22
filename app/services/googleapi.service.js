@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', './services/logger.service'], function(exports_1) {
+System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', './logger.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9,7 +9,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', './services/logger
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, http_1, logger_service_1;
-    var Video;
+    var GoogleApi;
     return {
         setters:[
             function (core_1_1) {
@@ -23,49 +23,44 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', './services/logger
                 logger_service_1 = logger_service_1_1;
             }],
         execute: function() {
-            Video = (function () {
-                function Video(http, logger) {
+            GoogleApi = (function () {
+                function GoogleApi(http, logger) {
                     this.http = http;
                     this.logger = logger;
                     this.http = http;
                     this.logger = logger;
                 }
-                Video.prototype.ngOnInit = function () {
-                    var _this = this;
+                GoogleApi.prototype.video = function (id, cb) {
                     var params = {
-                        id: this.id,
+                        id: id,
                         part: 'snippet',
                         key: 'AIzaSyB9daYpfuJEn6L6pNi69tPYeX75DxhonYE'
                     };
-                    this.http.get(this.constructURL('https://googleapis.com/youtube/v3/videos', params))
+                    this.http.get(this.constructURL('https://www.googleapis.com/youtube/v3/videos', params))
                         .map(function (res) { return res.json(); })
-                        .subscribe(function (data) { _this.initialize(data); }, function (err) { return _this.logger.error(err); });
+                        .subscribe(function (data) { cb(data, false); }, function (err) { return cb(false, err); });
                 };
-                Video.prototype.initialize = function (data) {
-                    this.description = data.description.replace(/\\n/g, '');
+                GoogleApi.prototype.initialize = function (data) {
+                    //assumes 1 result
+                    data = data.items[0];
+                    console.log(data);
+                    this.description = data.snippet.description.replace(/\\n/g, '');
                 };
-                Video.prototype.constructURL = function (url, params) {
+                GoogleApi.prototype.constructURL = function (url, params) {
                     var r = '';
                     for (var i in params) {
                         r += i + '=' + params[i] + '&';
                     }
                     return url + '?' + r;
                 };
-                __decorate([
-                    core_1.Input(), 
-                    __metadata('design:type', String)
-                ], Video.prototype, "id", void 0);
-                Video = __decorate([
-                    core_1.Component({
-                        selector: 'video',
-                        template: "\n\t\t<div>{{description}}</div>\n\t"
-                    }), 
+                GoogleApi = __decorate([
+                    core_1.Injectable(), 
                     __metadata('design:paramtypes', [http_1.Http, logger_service_1.Logger])
-                ], Video);
-                return Video;
+                ], GoogleApi);
+                return GoogleApi;
             })();
-            exports_1("Video", Video);
+            exports_1("GoogleApi", GoogleApi);
         }
     }
 });
-//# sourceMappingURL=video.component.js.map
+//# sourceMappingURL=googleapi.service.js.map

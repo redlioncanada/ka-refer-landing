@@ -25,7 +25,7 @@ System.register(['angular2/core', './videoplayer.component'], function(exports_1
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<video-player></video-player>',
+                        template: '<videoplayer></videoplayer>',
                         directives: [videoplayer_component_1.VideoPlayer]
                     }), 
                     __metadata('design:paramtypes', [])

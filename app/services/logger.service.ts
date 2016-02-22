@@ -3,11 +3,11 @@ import {Injectable} from 'angular2/core';
 
 @Injectable()
 export class Logger {
-	log(s: string) {
+	log(s) {
 		console.log(s)
 	}
 
-	error(s: string) {
+	error(s) {
 		console.error(s)
 	}
 }
