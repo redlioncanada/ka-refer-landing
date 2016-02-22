@@ -4,9 +4,17 @@ html, body {
 
 rl-ka-refer-landing {
 	@import 'reset.scss';
+	@import 'variables.scss';
 	@import 'mixins.scss';
 	@import 'utils.scss';
 	@import 'animations.scss';
 
 	@import 'components/videoplayer.scss';
+
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12pt;
+
+	h1,h2,h3,h4,h5 {
+		color: $titleColor;
+	}
 }

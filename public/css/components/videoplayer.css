@@ -1,3 +1,9 @@
 videoplayer {
   width: 100%;
   position: relative; }
+  videoplayer h1 {
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 800; }

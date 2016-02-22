@@ -6,7 +6,9 @@ rl-ka-refer-landing {
    v2.0 | 20110126
    License: none (public domain)
 */
-  /* HTML5 display-role reset for older browsers */ }
+  /* HTML5 display-role reset for older browsers */
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12pt; }
   rl-ka-refer-landing html, rl-ka-refer-landing body, rl-ka-refer-landing div, rl-ka-refer-landing span, rl-ka-refer-landing applet, rl-ka-refer-landing object, rl-ka-refer-landing iframe, rl-ka-refer-landing h1, rl-ka-refer-landing h2, rl-ka-refer-landing h3, rl-ka-refer-landing h4, rl-ka-refer-landing h5, rl-ka-refer-landing h6, rl-ka-refer-landing p, rl-ka-refer-landing blockquote, rl-ka-refer-landing pre, rl-ka-refer-landing a, rl-ka-refer-landing abbr, rl-ka-refer-landing acronym, rl-ka-refer-landing address, rl-ka-refer-landing big, rl-ka-refer-landing cite, rl-ka-refer-landing code, rl-ka-refer-landing del, rl-ka-refer-landing dfn, rl-ka-refer-landing em, rl-ka-refer-landing img, rl-ka-refer-landing ins, rl-ka-refer-landing kbd, rl-ka-refer-landing q, rl-ka-refer-landing s, rl-ka-refer-landing samp, rl-ka-refer-landing small, rl-ka-refer-landing strike, rl-ka-refer-landing strong, rl-ka-refer-landing sub, rl-ka-refer-landing sup, rl-ka-refer-landing tt, rl-ka-refer-landing var, rl-ka-refer-landing b, rl-ka-refer-landing u, rl-ka-refer-landing i, rl-ka-refer-landing center, rl-ka-refer-landing dl, rl-ka-refer-landing dt, rl-ka-refer-landing dd, rl-ka-refer-landing ol, rl-ka-refer-landing ul, rl-ka-refer-landing li, rl-ka-refer-landing fieldset, rl-ka-refer-landing form, rl-ka-refer-landing label, rl-ka-refer-landing legend, rl-ka-refer-landing table, rl-ka-refer-landing caption, rl-ka-refer-landing tbody, rl-ka-refer-landing tfoot, rl-ka-refer-landing thead, rl-ka-refer-landing tr, rl-ka-refer-landing th, rl-ka-refer-landing td, rl-ka-refer-landing article, rl-ka-refer-landing aside, rl-ka-refer-landing canvas, rl-ka-refer-landing details, rl-ka-refer-landing embed, rl-ka-refer-landing figure, rl-ka-refer-landing figcaption, rl-ka-refer-landing footer, rl-ka-refer-landing header, rl-ka-refer-landing hgroup, rl-ka-refer-landing menu, rl-ka-refer-landing nav, rl-ka-refer-landing output, rl-ka-refer-landing ruby, rl-ka-refer-landing section, rl-ka-refer-landing summary, rl-ka-refer-landing time, rl-ka-refer-landing mark, rl-ka-refer-landing audio, rl-ka-refer-landing video {
     margin: 0;
     padding: 0;
@@ -14,6 +16,18 @@ rl-ka-refer-landing {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline; }
+  rl-ka-refer-landing h1 {
+    font-size: 2em; }
+  rl-ka-refer-landing h2 {
+    font-size: 1.5em; }
+  rl-ka-refer-landing h3 {
+    font-size: 1.17em; }
+  rl-ka-refer-landing h4 {
+    font-size: 1.12em; }
+  rl-ka-refer-landing h5 {
+    font-size: .83em; }
+  rl-ka-refer-landing h6 {
+    font-size: .75em; }
   rl-ka-refer-landing article, rl-ka-refer-landing aside, rl-ka-refer-landing details, rl-ka-refer-landing figcaption, rl-ka-refer-landing figure, rl-ka-refer-landing footer, rl-ka-refer-landing header, rl-ka-refer-landing hgroup, rl-ka-refer-landing menu, rl-ka-refer-landing nav, rl-ka-refer-landing section {
     display: block; }
   rl-ka-refer-landing body {
@@ -38,3 +52,11 @@ rl-ka-refer-landing {
   rl-ka-refer-landing videoplayer {
     width: 100%;
     position: relative; }
+    rl-ka-refer-landing videoplayer h1 {
+      width: 100%;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 800; }
+  rl-ka-refer-landing h1, rl-ka-refer-landing h2, rl-ka-refer-landing h3, rl-ka-refer-landing h4, rl-ka-refer-landing h5 {
+    color: #cc0000; }
