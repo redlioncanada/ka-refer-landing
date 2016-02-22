@@ -40,7 +40,6 @@ export class VideoPlayerSelector {
 	initialize(data) {
 		//assumes 1 result
 		data = data.items[0];
-		console.log(data);
 		this.data.desc = data.snippet.description.replace(/\\n/g, '');
 		this.ready = true
 	}

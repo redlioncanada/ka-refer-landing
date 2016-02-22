@@ -62,18 +62,10 @@ System.register(['angular2/core', './services/logger.service'], function(exports
                     core_1.Input(), 
                     __metadata('design:type', String)
                 ], VideoPlayerVideo.prototype, "id", void 0);
-                __decorate([
-                    core_1.Input(), 
-                    __metadata('design:type', String)
-                ], VideoPlayerVideo.prototype, "width", void 0);
-                __decorate([
-                    core_1.Input(), 
-                    __metadata('design:type', String)
-                ], VideoPlayerVideo.prototype, "height", void 0);
                 VideoPlayerVideo = __decorate([
                     core_1.Component({
                         selector: 'videoplayer-video',
-                        template: "\n    \t<iframe id=\"{{id}}\" src=\"http://www.youtube.com/embed/{{id}}?enablejsapi=1\" width=\"{{width}}\" height=\"{{height}}\" frameborder=\"0\"></iframe>\n\t"
+                        template: "\n    \t<iframe id=\"{{id}}\" src=\"http://www.youtube.com/embed/{{id}}?enablejsapi=1\" allowfullscreen frameborder=\"0\"></iframe>\n\t"
                     }), 
                     __metadata('design:paramtypes', [logger_service_1.Logger])
                 ], VideoPlayerVideo);

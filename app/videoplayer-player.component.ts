@@ -1,7 +1,6 @@
 import {Component, Input} from 'angular2/core'
 import {Logger} from './services/logger.service'
 import {VideoPlayerVideo} from './videoplayer-video.component'
-import { DOM } from 'angular2/src/platform/dom/dom_adapter';
 
 @Component({
 	selector: 'videoplayer-player',

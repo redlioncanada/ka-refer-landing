@@ -35,27 +35,21 @@ System.register(['angular2/core', './videoplayer-selector.component', './videopl
                             thumb: './images/video1.jpg',
                             title: 'Design',
                             cta: 'Play Video',
-                            desc: false,
-                            width: "100%",
-                            height: "100%"
+                            desc: false
                         },
                         {
                             id: '70cAsWGqbgU',
                             thumb: './images/video2.jpg',
                             title: 'Food Care',
                             cta: 'Play Video',
-                            desc: false,
-                            width: "100%",
-                            height: "100%"
+                            desc: false
                         },
                         {
                             id: '70cAsWGqbgU',
                             thumb: './images/video3.jpg',
                             title: '5-Door',
                             cta: 'Play Video',
-                            desc: false,
-                            width: "100%",
-                            height: "100%"
+                            desc: false
                         }
                     ];
                     this.currentId = 0;
