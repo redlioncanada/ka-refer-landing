@@ -6,11 +6,13 @@ import {GoogleApi} from './services/googleapi.service'
 import {Component} from 'angular2/core';
 
 import {VideoPlayer} from './videoplayer.component';
+import {AppMasthead} from './landing.masthead';
+import {Features} from './landing.feature';
 
 @Component({
     selector: 'rl-ka-refer-landing',
     templateUrl: 'app/views/app.view.html',
-    directives: [VideoPlayer]
+    directives: [VideoPlayer, AppMasthead, Features]
 })
 class AppComponent { }
 

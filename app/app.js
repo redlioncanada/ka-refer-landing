@@ -1,4 +1,6 @@
-System.register(['angular2/platform/browser', 'angular2/http', './services/logger.service', './services/googleapi.service', 'angular2/core', './videoplayer.component'], function(exports_1) {
+System.register(['angular2/platform/browser', 'angular2/http', './services/logger.service', './services/googleapi.service', 'angular2/core', './videoplayer.component', './landing.masthead', './landing.feature'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +10,7 @@ System.register(['angular2/platform/browser', 'angular2/http', './services/logge
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var browser_1, http_1, logger_service_1, googleapi_service_1, core_1, videoplayer_component_1;
+    var browser_1, http_1, logger_service_1, googleapi_service_1, core_1, videoplayer_component_1, landing_masthead_1, landing_feature_1;
     var AppComponent;
     return {
         setters:[
@@ -29,6 +31,12 @@ System.register(['angular2/platform/browser', 'angular2/http', './services/logge
             },
             function (videoplayer_component_1_1) {
                 videoplayer_component_1 = videoplayer_component_1_1;
+            },
+            function (landing_masthead_1_1) {
+                landing_masthead_1 = landing_masthead_1_1;
+            },
+            function (landing_feature_1_1) {
+                landing_feature_1 = landing_feature_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -38,12 +46,12 @@ System.register(['angular2/platform/browser', 'angular2/http', './services/logge
                     core_1.Component({
                         selector: 'rl-ka-refer-landing',
                         templateUrl: 'app/views/app.view.html',
-                        directives: [videoplayer_component_1.VideoPlayer]
+                        directives: [videoplayer_component_1.VideoPlayer, landing_masthead_1.AppMasthead, landing_feature_1.Features]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
-            })();
+            }());
             browser_1.bootstrap(AppComponent, [http_1.HTTP_PROVIDERS, logger_service_1.Logger, googleapi_service_1.GoogleApi]);
         }
     }
