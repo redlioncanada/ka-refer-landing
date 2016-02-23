@@ -1,22 +1,31 @@
-import {Component, Input, Inject, ElementRef} from 'angular2/core';
-import {DomRenderer, DomRootRenderer} from 'angular2/src/platform/dom/dom_renderer';
-import {ChangeDetectorGenConfig} from 'angular2/src/core/change_detection/interfaces';
+
+/// <reference path="../typings/jquery/jquery.d.ts" />
+import {bootstrap}    from 'angular2/platform/browser';
+import {Component, Input, Inject, ElementRef, AfterViewInit} from 'angular2/core';
+
+declare var jQuery:JQueryStatic;
 
 @Component({
     selector: 'feature-button',
     templateUrl:'app/views/landing.feature.button.view.html',
 })
-export class FeatureButton { 
+export class FeatureButton implements AfterViewInit  { 
     @Input() btnIcon;
     @Input() btnTitle;
     @Input() btnRollOverCopy;
+    
+
     
     public rootElement;
     elementRef: ElementRef;
 
     constructor(@Inject(ElementRef) elementRef: ElementRef) {
-        this.rootElement = elementRef.nativeElement;
-        console.log(elementRef.nativeElement.children);
+        this.elementRef = elementRef;
+        this.rootElement = this.elementRef.nativeElement;
+        
+    }
+    ngAfterViewInit() {
+        console.log(jQuery(this.rootElement).find('rl-ka-lnding-feature-icon'));  
     }
     
     

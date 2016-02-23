@@ -23,9 +23,12 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             FeatureButton = (function () {
                 function FeatureButton(elementRef) {
-                    this.rootElement = elementRef.nativeElement;
-                    console.log(elementRef.nativeElement.children);
+                    this.elementRef = elementRef;
+                    this.rootElement = this.elementRef.nativeElement;
                 }
+                FeatureButton.prototype.ngAfterViewInit = function () {
+                    console.log(jQuery(this.rootElement).find('rl-ka-lnding-feature-icon'));
+                };
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Object)
