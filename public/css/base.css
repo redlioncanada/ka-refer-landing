@@ -146,7 +146,7 @@ rl-ka-refer-landing {
   rl-ka-refer-landing masthead {
     width: 80%;
     position: relative; }
-    rl-ka-refer-landing masthead .ka-lndng-title h1 {
+    rl-ka-refer-landing masthead .ka-landing-title h1 {
       text-transform: uppercase;
       font-weight: 100;
       font-size: 32px;
@@ -155,29 +155,61 @@ rl-ka-refer-landing {
     width: 80%; }
     rl-ka-refer-landing features .row {
       width: 100%; }
-    rl-ka-refer-landing features .rl-ka-lnding-feature-icon {
+    rl-ka-refer-landing features .ka-landing-feature-icon {
       width: 100px;
       height: 100px;
       border-radius: 50px;
       background: #CC0000;
       top: 40px;
-      left: 95px; }
-      rl-ka-refer-landing features .rl-ka-lnding-feature-icon > img {
+      left: 95px;
+      overflow: hidden; }
+      rl-ka-refer-landing features .ka-landing-feature-icon > img {
         position: absolute;
         margin: auto;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0; }
-    rl-ka-refer-landing features .rl-ka-lnding-feature-title {
+    rl-ka-refer-landing features .ka-landing-feature-title {
       text-transform: uppercase;
       width: 100%;
       top: 165px;
       text-align: center;
       color: #CC0000; }
-    rl-ka-refer-landing features .rl-ka-lndng-feature-button-over {
-      display: none; }
-    rl-ka-refer-landing features .rl-ka-lndng-feature-button {
+    rl-ka-refer-landing features .ka-landing-feature-button-over {
+      opacity: 0;
+      z-index: 2;
+      display: table;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      -webkit-transition: 0.2s ease-in;
+      -moz-transition: 0.2s ease-in;
+      -o-transition: 0.2s ease-in;
+      transition: 0.2s ease-in; }
+    rl-ka-refer-landing features .ka-landing-feature-copy-container {
+      display: table-cell;
+      color: #FFFFFF;
+      position: relative;
+      height: inherit;
+      width: inherit;
+      vertical-align: middle; }
+    rl-ka-refer-landing features .ka-landing-feature-button-over:hover {
+      opacity: 1; }
+    rl-ka-refer-landing features .ka-landing-over-copy {
+      font-weight: 100;
+      margin-bottom: 2px; }
+    rl-ka-refer-landing features .ka-landing-over-copy, rl-ka-refer-landing features .ka-landing-over-cta {
+      width: 100%;
+      text-align: center; }
+    rl-ka-refer-landing features .ka-landing-over-cta {
+      font-weight: 400; }
+    rl-ka-refer-landing features .ka-landing-feature-button-over-background {
+      height: 100%;
+      width: 100%;
+      background-color: #cc0000;
+      position: absolute; }
+    rl-ka-refer-landing features .ka-landing-feature-button {
       width: 32%;
       margin: 5px;
       float: left;
@@ -186,9 +218,12 @@ rl-ka-refer-landing {
       border-color: #aaaaaa;
       border-width: 4px;
       position: relative; }
-      rl-ka-refer-landing features .rl-ka-lndng-feature-button .rl-ka-lndng-innerBtn {
+      rl-ka-refer-landing features .ka-landing-feature-button .ka-landing-feature-button-up {
+        position: relative;
+        z-index: 1; }
+      rl-ka-refer-landing features .ka-landing-feature-button .ka-landing-innerBtn {
         position: absolute; }
-      rl-ka-refer-landing features .rl-ka-lndng-feature-button .rl-ka-lnding-feature-rule {
+      rl-ka-refer-landing features .ka-landing-feature-button .ka-landing-feature-rule {
         width: 100px;
         height: 5px;
         background-color: #CC0000;
@@ -198,6 +233,9 @@ rl-ka-refer-landing {
         margin-left: auto;
         margin-right: auto; }
   rl-ka-refer-landing h1, rl-ka-refer-landing h2, rl-ka-refer-landing h3, rl-ka-refer-landing h4, rl-ka-refer-landing h5 {
-    color: #cc0000; }
+    color: #cc0000;
+    cursor: default; }
+  rl-ka-refer-landing p, rl-ka-refer-landing span, rl-ka-refer-landing div {
+    cursor: pointer; }
   rl-ka-refer-landing * {
     box-sizing: border-box; }

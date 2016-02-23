@@ -27,6 +27,11 @@ rl-ka-refer-landing {
 
 	h1,h2,h3,h4,h5 {
 		color: $titleColor;
+		cursor: default;
+	}
+
+	p,span,div {
+		cursor: pointer;
 	}
 
 	* {
