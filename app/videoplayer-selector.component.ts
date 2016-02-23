@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter} from 'angular2/core'
+import {Component, View, Input, Output, EventEmitter} from 'angular2/core'
 import {Logger} from './services/logger.service'
 import {GoogleApi} from './services/googleapi.service'
 import {VideoPlayer} from './videoplayer.component'
@@ -10,11 +10,13 @@ import {VideoPlayer} from './videoplayer.component'
 export class VideoPlayerSelector {
 	@Input() data
 	@Input() id
+	@Input() selected
 	@Output() selectedVideo = new EventEmitter()
 	ready: boolean
 
 	constructor(private logger: Logger, private api: GoogleApi) {
 		this.ready = false
+		this.selected = false
 	}
 
 	ngOnInit() {
@@ -38,5 +40,6 @@ export class VideoPlayerSelector {
 
 	select() {
 		this.selectedVideo.emit(this.id)
+		this.selected = true
 	}
 }

@@ -2,28 +2,48 @@ videoplayer {
 	width: 80%;
 	position: relative;
 
-	h1 {
-		width: 100%;
-		text-transform: uppercase;
-		text-align: center;
-		margin-bottom: 20px;
-		font-weight: 800;
+	> h2 {
+		@include header-text;
+		margin-bottom: 15px;
+	}
+
+	> ul {
+		li {
+			float: left;
+			width: 33.333333333%;
+			padding: 0 5px;
+			background-color: #000000;
+		}
+
+		li:last-child {
+			padding-right: 0;
+		}
+
+		li:first-child {
+			padding-left: 0;
+		}
+
+		li:nth-child(2) img {
+			width: 101.5%;
+		}
 	}
 }
 
 videoplayer-player {
 	width: 100%;
-	li {
-
-	}
 
 	.text {
 		width: 100%;
+		padding: 28px 40px;
 		background-color: $videoPlayer-backgroundColor;
 		color: $videoPlayer-copyColor;
 
 		.title {
+			font-weight: 800;
 			text-transform: uppercase;
+		}
+
+		.description, .title {
 			text-align: center;
 		}
 	}
@@ -31,6 +51,69 @@ videoplayer-player {
 
 videoplayer-selector {
 	width: 100%;
+
+	.text {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		z-index: 2;
+
+
+		.title, .button {
+			top: 50%;
+			text-align: center;
+			color: $videoPlayer-copyColor;
+			text-transform: uppercase;
+		}
+
+		.title {
+			font-size: 2em;
+			font-weight: 800;
+			margin-top: -20px;
+			width: 100%;
+		}
+
+		.button {
+			font-size: 0.8em;
+			position: relative;
+			top: 60%;
+			width: 32%;
+			margin: 0 auto;
+			background-color: $titleColor;
+			line-height: 25px;
+			@include transition(0.2s);
+		}
+
+		.button:hover {
+			@include grow;
+		}
+	}
+
+	.text h2, .text div {
+		position: absolute;
+	}
+
+	> div {
+		position: relative;
+		cursor: pointer;
+	}
+
+	img {
+		opacity: 0.45;
+		width: 100%;
+		z-index: 1;
+		@include transition(0.2s);
+	}
+
+	.selected {
+		.button, .title {
+			opacity: 0;
+		}
+
+		img {
+			opacity: 1;
+		}
+	}
 }
 
 videoplayer-video {

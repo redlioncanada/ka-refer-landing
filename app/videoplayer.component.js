@@ -32,23 +32,23 @@ System.register(['angular2/core', './videoplayer-selector.component', './videopl
                     this.videos = [
                         {
                             id: '70cAsWGqbgU',
-                            thumb: './images/video1.jpg',
+                            thumb: './public/images/video-select-1.jpg',
                             title: 'A revolutionary mark on a revolutionary new line',
                             ctaTitle: 'Design',
                             cta: 'Play Video',
                             desc: false
                         },
                         {
-                            id: '70cAsWGqbgU',
-                            thumb: './images/video2.jpg',
+                            id: 'RxnPMBOUWfk',
+                            thumb: './public/images/video-select-2.jpg',
                             title: 'A revolutionary mark on a revolutionary new line',
                             ctaTitle: 'Food Care',
                             cta: 'Play Video',
                             desc: false
                         },
                         {
-                            id: '70cAsWGqbgU',
-                            thumb: './images/video3.jpg',
+                            id: 'XSu9pHc1GdA',
+                            thumb: './public/images/video-select-3.jpg',
                             title: 'A revolutionary mark on a revolutionary new line',
                             ctaTitle: '5-Door',
                             cta: 'Play Video',

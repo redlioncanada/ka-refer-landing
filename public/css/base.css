@@ -1,6 +1,12 @@
 html, body {
   width: 944px; }
 
+@font-face {
+  font-family: 'Avenir';
+  src: url("../fonts/Avenir-Black.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
 rl-ka-refer-landing {
   /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -8,7 +14,7 @@ rl-ka-refer-landing {
 */
   /* HTML5 display-role reset for older browsers */
   width: 100%;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   font-size: 12pt;
   position: relative; }
   rl-ka-refer-landing html, rl-ka-refer-landing body, rl-ka-refer-landing div, rl-ka-refer-landing span, rl-ka-refer-landing applet, rl-ka-refer-landing object, rl-ka-refer-landing iframe, rl-ka-refer-landing h1, rl-ka-refer-landing h2, rl-ka-refer-landing h3, rl-ka-refer-landing h4, rl-ka-refer-landing h5, rl-ka-refer-landing h6, rl-ka-refer-landing p, rl-ka-refer-landing blockquote, rl-ka-refer-landing pre, rl-ka-refer-landing a, rl-ka-refer-landing abbr, rl-ka-refer-landing acronym, rl-ka-refer-landing address, rl-ka-refer-landing big, rl-ka-refer-landing cite, rl-ka-refer-landing code, rl-ka-refer-landing del, rl-ka-refer-landing dfn, rl-ka-refer-landing em, rl-ka-refer-landing img, rl-ka-refer-landing ins, rl-ka-refer-landing kbd, rl-ka-refer-landing q, rl-ka-refer-landing s, rl-ka-refer-landing samp, rl-ka-refer-landing small, rl-ka-refer-landing strike, rl-ka-refer-landing strong, rl-ka-refer-landing sub, rl-ka-refer-landing sup, rl-ka-refer-landing tt, rl-ka-refer-landing var, rl-ka-refer-landing b, rl-ka-refer-landing u, rl-ka-refer-landing i, rl-ka-refer-landing center, rl-ka-refer-landing dl, rl-ka-refer-landing dt, rl-ka-refer-landing dd, rl-ka-refer-landing ol, rl-ka-refer-landing ul, rl-ka-refer-landing li, rl-ka-refer-landing fieldset, rl-ka-refer-landing form, rl-ka-refer-landing label, rl-ka-refer-landing legend, rl-ka-refer-landing table, rl-ka-refer-landing caption, rl-ka-refer-landing tbody, rl-ka-refer-landing tfoot, rl-ka-refer-landing thead, rl-ka-refer-landing tr, rl-ka-refer-landing th, rl-ka-refer-landing td, rl-ka-refer-landing article, rl-ka-refer-landing aside, rl-ka-refer-landing canvas, rl-ka-refer-landing details, rl-ka-refer-landing embed, rl-ka-refer-landing figure, rl-ka-refer-landing figcaption, rl-ka-refer-landing footer, rl-ka-refer-landing header, rl-ka-refer-landing hgroup, rl-ka-refer-landing menu, rl-ka-refer-landing nav, rl-ka-refer-landing output, rl-ka-refer-landing ruby, rl-ka-refer-landing section, rl-ka-refer-landing summary, rl-ka-refer-landing time, rl-ka-refer-landing mark, rl-ka-refer-landing audio, rl-ka-refer-landing video {
@@ -51,27 +57,93 @@ rl-ka-refer-landing {
     display: none; }
   rl-ka-refer-landing .show {
     display: block; }
+  rl-ka-refer-landing .selected {
+    cursor: default; }
   rl-ka-refer-landing videoplayer {
     width: 80%;
     position: relative; }
-    rl-ka-refer-landing videoplayer h1 {
-      width: 100%;
+    rl-ka-refer-landing videoplayer > h2 {
+      font-size: 3em;
       text-transform: uppercase;
       text-align: center;
-      margin-bottom: 20px;
-      font-weight: 800; }
+      font-weight: 800;
+      width: 100%;
+      margin-bottom: 15px; }
+    rl-ka-refer-landing videoplayer > ul li {
+      float: left;
+      width: 33.333333333%;
+      padding: 0 5px;
+      background-color: #000000; }
+    rl-ka-refer-landing videoplayer > ul li:last-child {
+      padding-right: 0; }
+    rl-ka-refer-landing videoplayer > ul li:first-child {
+      padding-left: 0; }
+    rl-ka-refer-landing videoplayer > ul li:nth-child(2) img {
+      width: 101.5%; }
   rl-ka-refer-landing videoplayer-player {
     width: 100%; }
     rl-ka-refer-landing videoplayer-player .text {
       width: 100%;
+      padding: 28px 40px;
       background-color: #000000;
       color: #FFFFFF; }
       rl-ka-refer-landing videoplayer-player .text .title {
-        text-transform: uppercase;
+        font-weight: 800;
+        text-transform: uppercase; }
+      rl-ka-refer-landing videoplayer-player .text .description, rl-ka-refer-landing videoplayer-player .text .title {
         text-align: center; }
   rl-ka-refer-landing videoplayer-selector {
     width: 100%; }
+    rl-ka-refer-landing videoplayer-selector .text {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 2; }
+      rl-ka-refer-landing videoplayer-selector .text .title, rl-ka-refer-landing videoplayer-selector .text .button {
+        top: 50%;
+        text-align: center;
+        color: #FFFFFF;
+        text-transform: uppercase; }
+      rl-ka-refer-landing videoplayer-selector .text .title {
+        font-size: 2em;
+        font-weight: 800;
+        margin-top: -20px;
+        width: 100%; }
+      rl-ka-refer-landing videoplayer-selector .text .button {
+        font-size: 0.8em;
+        position: relative;
+        top: 60%;
+        width: 32%;
+        margin: 0 auto;
+        background-color: #cc0000;
+        line-height: 25px;
+        -webkit-transition: 0.2s ease-in;
+        -moz-transition: 0.2s ease-in;
+        -o-transition: 0.2s ease-in;
+        transition: 0.2s ease-in; }
+      rl-ka-refer-landing videoplayer-selector .text .button:hover {
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2); }
+    rl-ka-refer-landing videoplayer-selector .text h2, rl-ka-refer-landing videoplayer-selector .text div {
+      position: absolute; }
+    rl-ka-refer-landing videoplayer-selector > div {
+      position: relative;
+      cursor: pointer; }
+    rl-ka-refer-landing videoplayer-selector img {
+      opacity: 0.45;
+      width: 100%;
+      z-index: 1;
+      -webkit-transition: 0.2s ease-in;
+      -moz-transition: 0.2s ease-in;
+      -o-transition: 0.2s ease-in;
+      transition: 0.2s ease-in; }
+    rl-ka-refer-landing videoplayer-selector .selected .button, rl-ka-refer-landing videoplayer-selector .selected .title {
+      opacity: 0; }
+    rl-ka-refer-landing videoplayer-selector .selected img {
+      opacity: 1; }
   rl-ka-refer-landing videoplayer-video {
     width: 100%; }
   rl-ka-refer-landing h1, rl-ka-refer-landing h2, rl-ka-refer-landing h3, rl-ka-refer-landing h4, rl-ka-refer-landing h5 {
     color: #cc0000; }
+  rl-ka-refer-landing * {
+    box-sizing: border-box; }

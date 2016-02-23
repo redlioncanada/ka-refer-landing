@@ -7,34 +7,71 @@ import {Logger} from './services/logger.service'
 })
 export class VideoPlayerVideo {
 	@Input() id: string
+	@Input() selected: boolean
 	public player
 	public ready: boolean
-	private playerDOM
+	public ended: boolean
 
 	constructor(private logger: Logger) {
 		this.ready = false
+		this.selected = false
+		this.ended = false
 	}
 
-	ngOnInit() {
+	ngAfterViewInit() {
 		let self = this
+
 		this.player = new YT.Player(this.id, {
 			events: {
-				"onReady": function() {
+				onReady: function() {
 					self._onReady(self)
+				},
+				onStateChanged: function(state) {
+					switch(state) {
+						case 0:
+							//ended
+							self._onEnded(self)
+							break;
+						case 1:
+							//playing
+						case 2:
+							//paused
+						case 3:
+							//buffering
+						case 4:
+							//video cued
+					}
 				}
 			}
 		})
+		
+	}
+
+	ngOnChanges(changes) {
+		if ("selected" in changes) {
+			if (changes.selected.currentValue) {
+				if (this.ended) {
+					this.ended = false
+					this.restart(this)
+				} else {
+					this.play(this)
+				}
+			} else {
+				this.pause(this)
+			}
+		}
 	}
 
 	_onReady(self) {
-		//need to pass a ref to `this` since this is a callback on YT.Player
+		//need to pass a ref of `this` since this is a callback on YT.Player
 		self.ready = true
-		self.logger.log(`${this.id} ready`)
-		console.log(self.player)
-		self.play(self)
-		setTimeout(() => {
-			self.pause()
-		}, 5000)
+		if (self.selected) {
+			self.play(self)
+		}
+	}
+
+	_onEnded(self) {
+		this.ended = true
 	}
 
 	play(self) {
@@ -47,5 +84,15 @@ export class VideoPlayerVideo {
 		if (!self) self = this
 		if (!self.ready) return
 		self.player.pauseVideo()
+	}
+
+	restart(self) {
+		if (!self) self = this
+		if (!self.ready) return
+		//this is finicky, sometimes just doesn't work
+		//seems to be a bug with the player
+		//maybe we could que an interval on self.play until we see the state change, but that seems hacky
+		self.player.seekTo(0)
+		self.play(self)
 	}
 }

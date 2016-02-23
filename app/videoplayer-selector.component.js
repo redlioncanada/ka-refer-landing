@@ -28,6 +28,7 @@ System.register(['angular2/core', './services/logger.service', './services/googl
                     this.api = api;
                     this.selectedVideo = new core_1.EventEmitter();
                     this.ready = false;
+                    this.selected = false;
                 }
                 VideoPlayerSelector.prototype.ngOnInit = function () {
                     var self = this;
@@ -48,6 +49,7 @@ System.register(['angular2/core', './services/logger.service', './services/googl
                 };
                 VideoPlayerSelector.prototype.select = function () {
                     this.selectedVideo.emit(this.id);
+                    this.selected = true;
                 };
                 __decorate([
                     core_1.Input(), 
@@ -57,6 +59,10 @@ System.register(['angular2/core', './services/logger.service', './services/googl
                     core_1.Input(), 
                     __metadata('design:type', Object)
                 ], VideoPlayerSelector.prototype, "id", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], VideoPlayerSelector.prototype, "selected", void 0);
                 __decorate([
                     core_1.Output(), 
                     __metadata('design:type', Object)

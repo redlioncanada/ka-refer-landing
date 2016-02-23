@@ -1,0 +1,31 @@
+@mixin header-text() {
+	font-size: 3em;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 800;
+	width: 100%;
+}
+
+@mixin grow() {
+	transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+}
+
+@mixin transform-reset {
+	transform: initial;
+	-webkit-transform: initial;
+}
+
+@mixin transition($time) {
+	-webkit-transition: $time ease-in;
+    -moz-transition: $time ease-in;
+    -o-transition: $time ease-in;
+    transition: $time ease-in;
+}
+
+@mixin transition-reset() {
+	-webkit-transition: initial;
+    -moz-transition: initial;
+    -o-transition: initial;
+    transition: initial;
+}

@@ -23,26 +23,59 @@ System.register(['angular2/core', './services/logger.service'], function(exports
                 function VideoPlayerVideo(logger) {
                     this.logger = logger;
                     this.ready = false;
+                    this.selected = false;
+                    this.ended = false;
                 }
-                VideoPlayerVideo.prototype.ngOnInit = function () {
+                VideoPlayerVideo.prototype.ngAfterViewInit = function () {
                     var self = this;
                     this.player = new YT.Player(this.id, {
                         events: {
-                            "onReady": function () {
+                            onReady: function () {
                                 self._onReady(self);
+                            },
+                            onStateChanged: function (state) {
+                                switch (state) {
+                                    case 0:
+                                        //ended
+                                        self._onEnded(self);
+                                        break;
+                                    case 1:
+                                    //playing
+                                    case 2:
+                                    //paused
+                                    case 3:
+                                    //buffering
+                                    case 4:
+                                }
                             }
                         }
                     });
                 };
+                VideoPlayerVideo.prototype.ngOnChanges = function (changes) {
+                    if ("selected" in changes) {
+                        if (changes.selected.currentValue) {
+                            if (this.ended) {
+                                this.ended = false;
+                                this.restart(this);
+                            }
+                            else {
+                                this.play(this);
+                            }
+                        }
+                        else {
+                            this.pause(this);
+                        }
+                    }
+                };
                 VideoPlayerVideo.prototype._onReady = function (self) {
-                    //need to pass a ref to `this` since this is a callback on YT.Player
+                    //need to pass a ref of `this` since this is a callback on YT.Player
                     self.ready = true;
-                    self.logger.log(this.id + " ready");
-                    console.log(self.player);
-                    self.play(self);
-                    setTimeout(function () {
-                        self.pause();
-                    }, 5000);
+                    if (self.selected) {
+                        self.play(self);
+                    }
+                };
+                VideoPlayerVideo.prototype._onEnded = function (self) {
+                    this.ended = true;
                 };
                 VideoPlayerVideo.prototype.play = function (self) {
                     if (!self)
@@ -58,10 +91,25 @@ System.register(['angular2/core', './services/logger.service'], function(exports
                         return;
                     self.player.pauseVideo();
                 };
+                VideoPlayerVideo.prototype.restart = function (self) {
+                    if (!self)
+                        self = this;
+                    if (!self.ready)
+                        return;
+                    //this is finicky, sometimes just doesn't work
+                    //seems to be a bug with the player
+                    //maybe we could que an interval on self.play until we see the state change, but that seems hacky
+                    self.player.seekTo(0);
+                    self.play(self);
+                };
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', String)
                 ], VideoPlayerVideo.prototype, "id", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Boolean)
+                ], VideoPlayerVideo.prototype, "selected", void 0);
                 VideoPlayerVideo = __decorate([
                     core_1.Component({
                         selector: 'videoplayer-video',

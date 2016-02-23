@@ -1,7 +1,7 @@
 <div>
 	<ul>
 		<li *ngFor="#video of data; #i=index" class="{{currentId !== i ? 'hide' : 'show'}}">
-			<videoplayer-video [id]="video.id" [width]="video.width" [height]="video.height"></videoplayer-video>
+			<videoplayer-video [id]="video.id" [selected]="currentId == i" [width]="video.width" [height]="video.height"></videoplayer-video>
 		</li>
 	</ul>
     <div class="text">
