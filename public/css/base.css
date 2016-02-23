@@ -143,6 +143,60 @@ rl-ka-refer-landing {
       opacity: 1; }
   rl-ka-refer-landing videoplayer-video {
     width: 100%; }
+  rl-ka-refer-landing masthead {
+    width: 80%;
+    position: relative; }
+    rl-ka-refer-landing masthead .ka-lndng-title h1 {
+      text-transform: uppercase;
+      font-weight: 100;
+      font-size: 32px;
+      letter-spacing: 1px; }
+  rl-ka-refer-landing features {
+    width: 80%; }
+    rl-ka-refer-landing features .row {
+      width: 100%; }
+    rl-ka-refer-landing features .rl-ka-lnding-feature-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 50px;
+      background: #CC0000;
+      top: 40px;
+      left: 95px; }
+      rl-ka-refer-landing features .rl-ka-lnding-feature-icon > img {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0; }
+    rl-ka-refer-landing features .rl-ka-lnding-feature-title {
+      text-transform: uppercase;
+      width: 100%;
+      top: 165px;
+      text-align: center;
+      color: #CC0000; }
+    rl-ka-refer-landing features .rl-ka-lndng-feature-button-over {
+      display: none; }
+    rl-ka-refer-landing features .rl-ka-lndng-feature-button {
+      width: 32%;
+      margin: 5px;
+      float: left;
+      height: 266px;
+      border: solid;
+      border-color: #aaaaaa;
+      border-width: 4px;
+      position: relative; }
+      rl-ka-refer-landing features .rl-ka-lndng-feature-button .rl-ka-lndng-innerBtn {
+        position: absolute; }
+      rl-ka-refer-landing features .rl-ka-lndng-feature-button .rl-ka-lnding-feature-rule {
+        width: 100px;
+        height: 5px;
+        background-color: #CC0000;
+        top: 200px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto; }
   rl-ka-refer-landing h1, rl-ka-refer-landing h2, rl-ka-refer-landing h3, rl-ka-refer-landing h4, rl-ka-refer-landing h5 {
     color: #cc0000; }
   rl-ka-refer-landing * {

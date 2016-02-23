@@ -10,6 +10,9 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
+    var __param = (this && this.__param) || function (paramIndex, decorator) {
+        return function (target, key) { decorator(target, key, paramIndex); }
+    };
     var core_1;
     var FeatureButton;
     return {
@@ -19,14 +22,29 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             }],
         execute: function() {
             FeatureButton = (function () {
-                function FeatureButton() {
+                function FeatureButton(elementRef) {
+                    this.rootElement = elementRef.nativeElement;
+                    console.log(elementRef.nativeElement.children);
                 }
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], FeatureButton.prototype, "btnIcon", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], FeatureButton.prototype, "btnTitle", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], FeatureButton.prototype, "btnRollOverCopy", void 0);
                 FeatureButton = __decorate([
                     core_1.Component({
                         selector: 'feature-button',
-                        templateUrl: 'app/views/landing.feature.button.view.html'
-                    }), 
-                    __metadata('design:paramtypes', [])
+                        templateUrl: 'app/views/landing.feature.button.view.html',
+                    }),
+                    __param(0, core_1.Inject(core_1.ElementRef)), 
+                    __metadata('design:paramtypes', [core_1.ElementRef])
                 ], FeatureButton);
                 return FeatureButton;
             }());

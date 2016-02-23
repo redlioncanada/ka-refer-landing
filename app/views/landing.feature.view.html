@@ -1,5 +1,3 @@
 <div class="row">
-    <feature-button></feature-button>
-    <feature-button></feature-button>
-    <feature-button></feature-button>
+    <feature-button *ngFor="#feature of featureButtons; #i=index" [btnIcon]= "feature.btnIcon" [btnTitle]= "feature.btnTitle" [btnRollOverCopy]="feature.btnRollOverCopy" ></feature-button>
 </div>
