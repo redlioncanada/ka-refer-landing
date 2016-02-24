@@ -28,6 +28,7 @@ System.register(['angular2/core', './product.selector.slide', './models/products
             }],
         execute: function() {
             ProductSlides = (function () {
+                //
                 function ProductSlides(elementRef) {
                     this.products = [
                         new products_model_1.ProductModel("./public/images/products/5-door.png", "5 door", "A design so uniquely versatile, this 5-door style delivers optimal organization.", "http://kitchenAid.ca", "five-door"),
@@ -39,6 +40,9 @@ System.register(['angular2/core', './product.selector.slide', './models/products
                     ];
                     this.elementRef = elementRef;
                     this.rootElement = $(this.elementRef.nativeElement);
+                    this.fiveDoor = ($(this.rootElement).find('#five-door > .rl-ka-lndng-fridge'));
+                    this.fiveDoorTitle = ($(this.rootElement).find('#five-door > rl-ka-lndng-fridge-title'));
+                    this.fiveDoorDesc = ($(this.rootElement).find('#five-door > rl-ka-lndng-fridge-desc'));
                 }
                 ProductSlides = __decorate([
                     core_1.Component({

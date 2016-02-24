@@ -25,13 +25,37 @@ export class ProductSlides {
     
     private rootElement;
     private elementRef: ElementRef;
-    private target;
-    private targetWidth;
-    private targetHeight;
+    //
+    private fiveDoor;
+    private fiveDoorTitle;
+    private fiveDoorDesc;
+    //
+    private builtIn;
+    private builtInTitle;
+    private builtInDesc;
+    //
+    private frenchDoor;
+    private frenchDoorTitle;
+    private frenchDoorDesc;
+    //
+    private sideBy;
+    private sideByTitle;
+    private sideByDesc;
+    //
+    private bottomFreezer;
+    private bottomFreezerTitle;
+    private bottomFreezerDesc;
+    //
+    private underCounterDoor;
+    private underCounterTitle;
+    private underCounterDesc;
+    //
     
     public constructor(@Inject(ElementRef) elementRef: ElementRef) {
         this.elementRef = elementRef
         this.rootElement = $(this.elementRef.nativeElement)
-
+        this.fiveDoor = ($(this.rootElement).find('#five-door > .rl-ka-lndng-fridge'));
+        this.fiveDoorTitle = ($(this.rootElement).find('#five-door > rl-ka-lndng-fridge-title'));
+        this.fiveDoorDesc = ($(this.rootElement).find('#five-door > rl-ka-lndng-fridge-desc'));
     }
 }
