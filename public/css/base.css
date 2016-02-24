@@ -239,10 +239,14 @@ rl-ka-refer-landing {
     rl-ka-refer-landing product-selector .product-slide {
       position: absolute;
       width: 943px; }
-    rl-ka-refer-landing product-selector .row {
+    rl-ka-refer-landing product-selector > .row {
       height: 600px;
       overflow: hidden;
-      background-image: url("./public/images/refer-select-shadow.png"); }
+      background-image: url("../../public/images/refer-select-shadow.png");
+      background-repeat: no-repeat;
+      background-position-y: 50px; }
+    rl-ka-refer-landing product-selector .rl-ka-lndng-fridge img {
+      height: 420px; }
   rl-ka-refer-landing h1, rl-ka-refer-landing h2, rl-ka-refer-landing h3, rl-ka-refer-landing h4, rl-ka-refer-landing h5 {
     color: #cc0000;
     cursor: default; }
