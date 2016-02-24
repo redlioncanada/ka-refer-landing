@@ -1,0 +1,38 @@
+more-features {
+	display: block;
+	position: relative;
+	padding: 20px 0 70px 0;
+	overflow: hidden;
+
+	h2 {
+		@include header-text;
+		margin-bottom: 15px;
+	}
+
+	more-features-feature {
+		margin: 0 2px;
+	}
+
+	more-features-feature:first-of-type {
+		margin-left: initial;
+	}
+
+	more-features-feature:last-of-type {
+		margin-right: initial;
+	}
+}
+
+more-features-feature {
+	width: 33%;
+	float: left;
+
+	img {
+		width: 100%;
+	}
+
+	p {
+		text-align: center;
+		margin-top: 15px;
+		color: $moreFeaturesTitlesColor
+	}
+}
