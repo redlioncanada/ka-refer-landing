@@ -7,7 +7,7 @@ declare var $: JQueryStatic;
 
 @Component({
     selector: 'product-slide',
-    templateUrl: 'app/views/product.selector.slides.view.html',
+    templateUrl: 'app/views/product.selector.singleSlide.view.html',
     
 })
 export class ProductSlide {
