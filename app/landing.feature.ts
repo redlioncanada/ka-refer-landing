@@ -5,7 +5,7 @@ import {FeatureModel} from './models/features.model'
 @Component({
     selector: 'features',
     templateUrl: 'app/views/landing.feature.view.html',
-	directives: [FeatureButton],
+	directives: [FeatureButton, FeatureModel],
     
 })
 export class Features {
