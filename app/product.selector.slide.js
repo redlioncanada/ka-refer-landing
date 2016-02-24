@@ -42,6 +42,10 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     core_1.Input(), 
                     __metadata('design:type', Object)
                 ], ProductSlide.prototype, "fridgeUrl", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], ProductSlide.prototype, "fridgeId", void 0);
                 ProductSlide = __decorate([
                     core_1.Component({
                         selector: 'product-slide',

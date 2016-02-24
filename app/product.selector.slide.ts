@@ -16,6 +16,7 @@ export class ProductSlide {
     @Input() fridgeTitle
     @Input() fridgeDescription
     @Input() fridgeUrl
+    @Input() fridgeId
     
     private rootElement;
     private elementRef: ElementRef;
