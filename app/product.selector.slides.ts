@@ -29,6 +29,7 @@ export class ProductSlides {
     private fiveDoor;
     private fiveDoorTitle;
     private fiveDoorDesc;
+    private fiveDoorImg;
     //
     private builtIn;
     private builtInTitle;
@@ -54,8 +55,20 @@ export class ProductSlides {
     public constructor(@Inject(ElementRef) elementRef: ElementRef) {
         this.elementRef = elementRef
         this.rootElement = $(this.elementRef.nativeElement)
-        this.fiveDoor = ($(this.rootElement).find('#five-door > .rl-ka-lndng-fridge'));
-        this.fiveDoorTitle = ($(this.rootElement).find('#five-door > rl-ka-lndng-fridge-title'));
-        this.fiveDoorDesc = ($(this.rootElement).find('#five-door > rl-ka-lndng-fridge-desc'));
+        this.fiveDoor = ($(this.rootElement).find('#five-door'));
+        this.fiveDoorImg = ($(this.fiveDoor).find('.rl-ka-lndng-fridge'));
+        console.log(this.fiveDoorImg);
+        //this.fiveDoor = ($(this.rootElement).find('#five-door').children('.rl-ka-lndng-fridge'));
+        //this.fiveDoorTitle = ($(this.rootElement).find('#five-door').children('.rl-ka-lndng-fridge-title'));
+        //this.fiveDoorDesc = ($(this.rootElement).find('#five-door').children('rl-ka-lndng-fridge-desc'));
+        /*
+        TweenMax.to(this.fiveDoor, 0, {delay:0, opacity:0, top:100, ease:Power3.easeOut});
+        TweenMax.to(this.fiveDoorTitle, 0, {delay:0, opacity:0, top:100, ease:Power3.easeOut});
+        TweenMax.to(this.fiveDoorDesc, 0, {delay:0, opacity:0, top:115, ease:Power3.easeOut});
+       //
+       TweenMax.to(this.fiveDoor, 1, {delay:3, opacity:0, top:175, ease:Power3.easeOut});
+       TweenMax.to(this.fiveDoorTitle, 1, {delay:3.25, opacity:0, top:175, ease:Power3.easeOut});
+       TweenMax.to(this.fiveDoorDesc, 1, {delay:3.5, opacity:0, top:190, ease:Power3.easeOut});
+        */
     }
 }
