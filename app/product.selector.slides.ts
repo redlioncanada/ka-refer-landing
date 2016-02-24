@@ -1,8 +1,10 @@
 /// <reference path="../typings/jquery/jquery.d.ts" />
 /// <reference path="../typings/greensock/greensock.d.ts" />
+import {bootstrap}    from 'angular2/platform/browser'
 import {Component, Input, Inject, ElementRef} from 'angular2/core'
 import {ProductSlide} from './product.selector.slide'
 import {ProductModel} from './models/products.model'
+import {TimelineController} from './landing.timeline-controller'
 
 declare var $: JQueryStatic;
 
@@ -12,7 +14,7 @@ declare var $: JQueryStatic;
     directives: [ProductSlide] 
     
 })
-export class ProductSlides {
+export class ProductSlides  extends TimelineController {
     
     public products:[ProductModel] = [
         new ProductModel("./public/images/products/5-door.png", "5 door", "A design so uniquely versatile, this 5-door style delivers optimal organization.", "http://kitchenAid.ca", "five-door"),
@@ -53,22 +55,28 @@ export class ProductSlides {
     //
     
     public constructor(@Inject(ElementRef) elementRef: ElementRef) {
+        super()
         this.elementRef = elementRef
-        this.rootElement = $(this.elementRef.nativeElement)
-        this.fiveDoor = ($(this.rootElement).find('#five-door'));
-        this.fiveDoorImg = ($(this.fiveDoor).find('.rl-ka-lndng-fridge'));
-        console.log(this.fiveDoorImg);
-        //this.fiveDoor = ($(this.rootElement).find('#five-door').children('.rl-ka-lndng-fridge'));
-        //this.fiveDoorTitle = ($(this.rootElement).find('#five-door').children('.rl-ka-lndng-fridge-title'));
-        //this.fiveDoorDesc = ($(this.rootElement).find('#five-door').children('rl-ka-lndng-fridge-desc'));
-        /*
-        TweenMax.to(this.fiveDoor, 0, {delay:0, opacity:0, top:100, ease:Power3.easeOut});
-        TweenMax.to(this.fiveDoorTitle, 0, {delay:0, opacity:0, top:100, ease:Power3.easeOut});
-        TweenMax.to(this.fiveDoorDesc, 0, {delay:0, opacity:0, top:115, ease:Power3.easeOut});
-       //
-       TweenMax.to(this.fiveDoor, 1, {delay:3, opacity:0, top:175, ease:Power3.easeOut});
-       TweenMax.to(this.fiveDoorTitle, 1, {delay:3.25, opacity:0, top:175, ease:Power3.easeOut});
-       TweenMax.to(this.fiveDoorDesc, 1, {delay:3.5, opacity:0, top:190, ease:Power3.easeOut});
-        */
+       
     }
+     private ngAfterViewInit() {
+            
+            this.rootElement = $(this.elementRef.nativeElement)
+            this.fiveDoor = ($(this.rootElement).find('#five-door'));
+            this.fiveDoorImg = ($(this.fiveDoor).find('.rl-ka-lndng-fridge'));
+            this.fiveDoorTitle = ($(this.fiveDoor).find('.rl-ka-lndng-fridge-title'));
+            this.fiveDoorDesc = ($(this.fiveDoor).find('.rl-ka-lndng-fridge-desc'));
+            console.log(this.fiveDoorTitle);
+            //this.fiveDoor = ($(this.rootElement).find('#five-door').children('.rl-ka-lndng-fridge'));
+            //this.fiveDoorTitle = ($(this.rootElement).find('#five-door').children('.rl-ka-lndng-fridge-title'));
+            //this.fiveDoorDesc = ($(this.rootElement).find('#five-door').children('rl-ka-lndng-fridge-desc'));
+            
+            TweenMax.to(this.fiveDoorImg, 0, {delay:0, opacity:0, top:130, ease:Power3.easeOut});
+            TweenMax.to(this.fiveDoorTitle, 0, {delay:0, opacity:0, top:130, ease:Power3.easeOut});
+            TweenMax.to(this.fiveDoorDesc, 0, {delay:0, opacity:0, top:165, ease:Power3.easeOut});
+            //
+            TweenMax.to(this.fiveDoorImg, 2, {delay:2.5, opacity:1, top:155, ease:Power3.easeOut});
+            TweenMax.to(this.fiveDoorTitle, 2, {delay:3, opacity:1, top:170, ease:Power3.easeOut});
+            TweenMax.to(this.fiveDoorDesc, 2, {delay:3.5, opacity:1, top:215, ease:Power3.easeOut});
+        }
 }

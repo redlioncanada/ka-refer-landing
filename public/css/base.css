@@ -417,7 +417,8 @@ rl-ka-refer-landing {
       text-align: center;
       font-weight: 800;
       width: 100%;
-      margin: 50px; }
+      margin-top: 50px;
+      margin-bottom: 50px; }
     rl-ka-refer-landing videoplayer > ul {
       overflow: hidden; }
       rl-ka-refer-landing videoplayer > ul li {
@@ -593,7 +594,8 @@ rl-ka-refer-landing {
       text-align: center;
       font-weight: 800;
       width: 100%;
-      margin: 50px; }
+      margin-top: 50px;
+      margin-bottom: 50px; }
     rl-ka-refer-landing product-selector #french-door, rl-ka-refer-landing product-selector #side-by-side, rl-ka-refer-landing product-selector #bottom-freezer, rl-ka-refer-landing product-selector #under-counter, rl-ka-refer-landing product-selector #built-in {
       opacity: 0; }
     rl-ka-refer-landing product-selector .product-slide {
@@ -604,7 +606,7 @@ rl-ka-refer-landing {
       overflow: hidden;
       background-image: url("../../public/images/refer-select-shadow.png");
       background-repeat: no-repeat;
-      background-position-y: 50px; }
+      background-position-y: 150px; }
     rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-title {
       position: absolute;
       left: 565px;
@@ -623,11 +625,11 @@ rl-ka-refer-landing {
       position: absolute;
       left: 565px;
       top: 215px;
-      width: 350px;
+      width: 300px;
       font-family: 'Lato', Arial, Helvetica, sans-serif;
-      font-size: 22px;
+      font-size: 18.5px;
       font-weight: 100;
-      line-height: 35px;
+      line-height: 24px;
       letter-spacing: 1px;
       text-rendering: optimizeSpeed; }
   rl-ka-refer-landing learn-more-button {

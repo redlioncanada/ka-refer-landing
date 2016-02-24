@@ -68,9 +68,10 @@ System.register(['angular2/core', './videoplayer-selector.component', './videopl
                         templateUrl: 'app/views/videoplayer.view.html',
                         directives: [videoplayer_player_component_1.VideoPlayerPlayer, videoplayer_selector_component_1.VideoPlayerSelector]
                     }), 
-                    __metadata('design:paramtypes', [logger_service_1.Logger])
+                    __metadata('design:paramtypes', [(typeof (_a = typeof logger_service_1.Logger !== 'undefined' && logger_service_1.Logger) === 'function' && _a) || Object])
                 ], VideoPlayer);
                 return VideoPlayer;
+                var _a;
             }());
             exports_1("VideoPlayer", VideoPlayer);
         }
