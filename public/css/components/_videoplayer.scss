@@ -1,7 +1,6 @@
 videoplayer {
-	display: block;
+	width: 80%;
 	position: relative;
-	margin-bottom: 20px;
 
 	> h2 {
 		@include header-text;
@@ -9,8 +8,6 @@ videoplayer {
 	}
 
 	> ul {
-		overflow: hidden;
-
 		li {
 			float: left;
 			width: 33.333333333%;
@@ -88,7 +85,7 @@ videoplayer-selector {
 		}
 
 		.button:hover {
-			@include grow(1.2);
+			@include grow;
 		}
 	}
 

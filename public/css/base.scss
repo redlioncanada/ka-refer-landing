@@ -19,8 +19,6 @@ rl-ka-refer-landing {
 	@import 'components/videoplayer.scss';
     @import 'components/masthead.scss';
     @import 'components/features.scss';
-    @import 'components/learn-more-button.scss';
-    @import 'components/banner.scss';
 
 	width: 100%;
 	font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -38,9 +36,5 @@ rl-ka-refer-landing {
 
 	* {
 		box-sizing: border-box;
-	}
-
-	a {
-		color: $linkColor;
 	}
 }
