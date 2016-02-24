@@ -6,13 +6,19 @@ System.register([], function(exports_1, context_1) {
         setters:[],
         execute: function() {
             FeatureModel = (function () {
-                function FeatureModel(btnIcon, btnTitle, btnRollOverCopy) {
+                function FeatureModel(btnIcon, btnTitle, btnRollOverCopy, btnRollOverCTA, btnLink, btnType) {
                     if (btnIcon === void 0) { btnIcon = ""; }
                     if (btnTitle === void 0) { btnTitle = ""; }
                     if (btnRollOverCopy === void 0) { btnRollOverCopy = ""; }
+                    if (btnRollOverCTA === void 0) { btnRollOverCTA = ""; }
+                    if (btnLink === void 0) { btnLink = ""; }
+                    if (btnType === void 0) { btnType = ""; }
                     this.btnIcon = btnIcon;
                     this.btnTitle = btnTitle;
                     this.btnRollOverCopy = btnRollOverCopy;
+                    this.btnRollOverCTA = btnRollOverCTA;
+                    this.btnLink = btnLink;
+                    this.btnType = btnType;
                 }
                 return FeatureModel;
             }());
