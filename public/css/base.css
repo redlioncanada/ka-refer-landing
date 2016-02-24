@@ -154,7 +154,8 @@ rl-ka-refer-landing {
   rl-ka-refer-landing features {
     width: 80%; }
     rl-ka-refer-landing features .row {
-      width: 100%; }
+      width: 100%;
+      height: 300px; }
     rl-ka-refer-landing features .ka-landing-feature-icon {
       width: 100px;
       height: 100px;
@@ -232,6 +233,16 @@ rl-ka-refer-landing {
         right: 0;
         margin-left: auto;
         margin-right: auto; }
+  rl-ka-refer-landing product-selector {
+    width: 80%;
+    position: relative; }
+    rl-ka-refer-landing product-selector .product-slide {
+      position: absolute;
+      width: 943px; }
+    rl-ka-refer-landing product-selector .row {
+      height: 600px;
+      overflow: hidden;
+      background-image: url("./public/images/refer-select-shadow.png"); }
   rl-ka-refer-landing h1, rl-ka-refer-landing h2, rl-ka-refer-landing h3, rl-ka-refer-landing h4, rl-ka-refer-landing h5 {
     color: #cc0000;
     cursor: default; }
