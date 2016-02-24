@@ -1,7 +1,7 @@
 <div class="rl-ka-lndng-slide-holder">
     <div class="row">
-        <fproduct-slide *ngFor="#product of products; #i=index" [fridge]= "product.prodImage" [fridgeTitle]= "product.prodName" [fridgeDescription]="product.prodDescription" [fridgeUrl]="product.prodUrl">
+        <product-slide *ngFor="#product of products; #i=index" [fridge]= "product.prodImage" [fridgeTitle]= "product.prodName" [fridgeDescription]="product.prodDescription" [fridgeUrl]="product.prodUrl">
 
-        </feature-button>
+        </product-slide>
     </div>
 </div>
