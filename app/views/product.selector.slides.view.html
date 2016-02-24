@@ -1,6 +1,6 @@
 
     <div class="row">
-        <product-slide *ngFor="#product of products; #i=index" [fridge]= "product.prodImage" [fridgeTitle]= "product.prodName" [fridgeDescription]="product.prodDescription" [fridgeUrl]="product.prodUrl">
+        <product-slide *ngFor="#product of products; #i=index" [fridge]= "product.prodImage" [fridgeTitle]= "product.prodName" [fridgeDescription]="product.prodDescription" [fridgeUrl]="product.prodUrl" [fridgeId]="product.prodId">
 
         </product-slide>
     </div>

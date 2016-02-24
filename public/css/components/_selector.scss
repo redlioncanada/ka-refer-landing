@@ -2,6 +2,18 @@ product-selector {
 	width: 80%;
 	position: relative;
     
+    h2{
+        font-size: 3em;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 800;
+        width: 100%;
+        margin: 50px;
+    }
+    
+   #french-door, #side-by-side, #bottom-freezer, #under-counter, #built-in{
+        opacity: 0;
+    }
     
     .product-slide{
         position: absolute;
@@ -16,7 +28,37 @@ product-selector {
         background-position-y: 50px;
     }
     
+    .rl-ka-lndng-fridge-title{
+        position: absolute;
+        left: 565px;
+        top: 170px;
+        width: 300px;
+        font-family: 'Lato', Arial, Helvetica, sans-serif;
+        font-weight: 100;
+        font-size: 32px;
+        text-transform: uppercase;
+    }
+    
+    .rl-ka-lndng-fridge{
+        left: 240px;
+        position: absolute;
+    }
+    
     .rl-ka-lndng-fridge img{
         height: 420px;
     }
+    
+    .rl-ka-lndng-fridge-desc{
+            position: absolute;
+            left: 565px;
+            top: 215px;
+            width: 350px;
+            font-family: 'Lato', Arial, Helvetica, sans-serif;
+            font-size: 22px;
+            font-weight: 100;
+            line-height: 35px;
+            letter-spacing: 1px;
+            text-rendering: optimizeSpeed;
+    }
+    
 }
