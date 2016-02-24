@@ -10,9 +10,6 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var __param = (this && this.__param) || function (paramIndex, decorator) {
-        return function (target, key) { decorator(target, key, paramIndex); }
-    };
     var core_1;
     var MoreFeaturesFeature;
     return {
@@ -22,9 +19,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             }],
         execute: function() {
             MoreFeaturesFeature = (function () {
-                function MoreFeaturesFeature(elementRef) {
-                    this.elementRef = elementRef;
-                    this.rootElement = $(this.elementRef.nativeElement);
+                function MoreFeaturesFeature() {
                 }
                 __decorate([
                     core_1.Input(), 
@@ -34,13 +29,16 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     core_1.Input(), 
                     __metadata('design:type', Object)
                 ], MoreFeaturesFeature.prototype, "title", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], MoreFeaturesFeature.prototype, "link", void 0);
                 MoreFeaturesFeature = __decorate([
                     core_1.Component({
                         selector: 'more-features-feature',
                         templateUrl: 'app/views/landing.morefeatures.feature.view.html',
-                    }),
-                    __param(0, core_1.Inject(core_1.ElementRef)), 
-                    __metadata('design:paramtypes', [core_1.ElementRef])
+                    }), 
+                    __metadata('design:paramtypes', [])
                 ], MoreFeaturesFeature);
                 return MoreFeaturesFeature;
             }());

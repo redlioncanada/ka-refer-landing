@@ -64,7 +64,8 @@ rl-ka-refer-landing {
   rl-ka-refer-landing videoplayer {
     display: block;
     position: relative;
-    margin-bottom: 20px; }
+    padding: 20px 0;
+    overflow: hidden; }
     rl-ka-refer-landing videoplayer > h2 {
       font-size: 3em;
       text-transform: uppercase;
@@ -260,6 +261,33 @@ rl-ka-refer-landing {
   rl-ka-refer-landing learn-more-button:hover {
     transform: scale(1.2);
     -webkit-transform: scale(1.2); }
+  rl-ka-refer-landing more-features {
+    display: block;
+    position: relative;
+    padding: 20px 0 70px 0;
+    overflow: hidden; }
+    rl-ka-refer-landing more-features h2 {
+      font-size: 3em;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 800;
+      width: 100%;
+      margin-bottom: 15px; }
+    rl-ka-refer-landing more-features more-features-feature {
+      margin: 0 2px; }
+    rl-ka-refer-landing more-features more-features-feature:first-of-type {
+      margin-left: initial; }
+    rl-ka-refer-landing more-features more-features-feature:last-of-type {
+      margin-right: initial; }
+  rl-ka-refer-landing more-features-feature {
+    width: 33%;
+    float: left; }
+    rl-ka-refer-landing more-features-feature img {
+      width: 100%; }
+    rl-ka-refer-landing more-features-feature p {
+      text-align: center;
+      margin-top: 15px;
+      color: #000000; }
   rl-ka-refer-landing banner {
     position: relative;
     display: block;
