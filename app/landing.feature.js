@@ -36,7 +36,7 @@ System.register(['angular2/core', './landing.feature.button', './models/features
                     core_1.Component({
                         selector: 'features',
                         templateUrl: 'app/views/landing.feature.view.html',
-                        directives: [landing_feature_button_1.FeatureButton, features_model_1.FeatureModel],
+                        directives: [landing_feature_button_1.FeatureButton],
                     }), 
                     __metadata('design:paramtypes', [])
                 ], Features);

@@ -1,4 +1,4 @@
-System.register(['angular2/core', './models/products.model', './product.selector.slide'], function(exports_1, context_1) {
+System.register(['angular2/core', './product.selector.slide', './models/products.model'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,18 +10,18 @@ System.register(['angular2/core', './models/products.model', './product.selector
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, products_model_1, product_selector_slide_1;
+    var core_1, product_selector_slide_1, products_model_1;
     var ProductSlides;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (products_model_1_1) {
-                products_model_1 = products_model_1_1;
-            },
             function (product_selector_slide_1_1) {
                 product_selector_slide_1 = product_selector_slide_1_1;
+            },
+            function (products_model_1_1) {
+                products_model_1 = products_model_1_1;
             }],
         execute: function() {
             ProductSlides = (function () {
@@ -39,7 +39,7 @@ System.register(['angular2/core', './models/products.model', './product.selector
                     core_1.Component({
                         selector: 'product-slides',
                         templateUrl: 'app/views/product.selector.slides.view.html',
-                        directives: [products_model_1.ProductModel, product_selector_slide_1.ProductSlide]
+                        directives: [product_selector_slide_1.ProductSlide]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], ProductSlides);

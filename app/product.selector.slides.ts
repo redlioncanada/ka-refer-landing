@@ -1,11 +1,11 @@
 import {Component} from 'angular2/core'
-import {ProductModel} from './models/products.model'
 import {ProductSlide} from './product.selector.slide'
+import {ProductModel} from './models/products.model'
 
 @Component({
     selector: 'product-slides',
     templateUrl: 'app/views/product.selector.slides.view.html',
-    directives: [ProductModel, ProductSlide] 
+    directives: [ProductSlide] 
     
 })
 export class ProductSlides {
