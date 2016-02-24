@@ -1,4 +1,5 @@
 /// <reference path="../typings/jquery/jquery.d.ts" />
+/// <reference path="../typings/greensock/greensock.d.ts" />
 import {bootstrap}    from 'angular2/platform/browser'
 import {Component, Input, Inject, ElementRef} from 'angular2/core'
 import {TimelineController} from './landing.timeline-controller'
@@ -20,46 +21,98 @@ export class FeatureButton extends TimelineController {
 
     private rootElement;
     private elementRef: ElementRef;
+    private target;
+    private targetWidth;
+    private targetHeight;
 
-    constructor(@Inject(ElementRef) elementRef: ElementRef) {
+    public constructor(@Inject(ElementRef) elementRef: ElementRef) {
         this.elementRef = elementRef
         this.rootElement = $(this.elementRef.nativeElement)
 
         super()
     }
+    
+    public playAnimations(bType:string, targ:Object){
+         clearInterval(0);
+         
+        switch(bType) {
+            case "cart":
+                TweenMax.to(this.target, 1, {delay:.5, left:0, ease:Power3.easeOut});
+                TweenMax.to(this.target, 1, {delay:1, left:50, css: {transform:"rotate(5deg)"}, ease:Power3.easeOut});
+                TweenMax.to(this.target, .3, {delay:1.5, css: {transform:"rotate(0deg)"}, ease:Bounce.easeOut});
+                TweenMax.to(this.target, 1, {delay:6, left:150, opacity:0, ease:Power3.easeIn, onComplete:this.resetAnimations});
+                break;
+            case "star":
+                TweenMax.to(this.target, 1, {delay:0, top: 0, ease:Bounce.easeOut});
+                TweenMax.to(this.target, 1, {delay:6, top:150, opacity:0, ease:Power3.easeIn, onComplete:this.resetAnimations});
+                break;
+            case "magnifier":
+                TweenMax.to(this.target, 1, {delay:0, css: {transform:"scale(1)"}, ease:Back.easeOut});
+                TweenMax.to(this.target, 1, {delay:6, opacity:0, css: {transform:"scale(5)"}, ease:Power3.easeIn});
+                break;
+            }
+    }
+    
+    public resetAnimations(playIt:Function){
+            
+            switch(this.btnType) {
+            case "cart":
+                TweenMax.to(this.target, .1, {delay:0, opacity:1, left:-150, ease:Power3.easeOut});
+                break;
+            case "star":
+                TweenMax.to(this.target, .1, {delay:0, opacity:1, top:-150, ease:Power3.easeOut});
+                break;
+            case "magnifier":
+                TweenMax.to(this.target, .1, {delay:0, opacity:1, css: { transform: "scale(0.01)" }, ease:Power3.easeOut});
+                break;
+            }
+            
+            setTimeout(() => {
+                playIt(this.btnType);
+            }, 500);   
+    }
+    
+   
 
-    ngAfterViewInit() {
+    private ngAfterViewInit() {
 
         //this is ugly, but the syntax of gsap restricts me from decoupling animations from their target element
         //I could probably adjust timeline-controller to instantiate timelines without specifying a target element
         //but just want to get it working for now
-        var target = $(this.rootElement).find('img')
-        var width = $(this.rootElement).find('img').parent().width()
-        var height = $(this.rootElement).find('img').parent().width()
+        
+        //Not that ugly, but didn't hit the ask.
+        
+        this.target = $(this.rootElement).find('img')
+        this.targetWidth = $(this.rootElement).find('img').parent().width()
+        this.targetHeight = $(this.rootElement).find('img').parent().height()
+        
+        
 
-        switch(this.btnType) {
+       /* switch(this.btnType) {
             case "cart":
-                this.timeline.to(target, 0, { x: "-="+width })
-                    .to(target, 1, { ease: Power3.easeIn, x: "+="+width })
+                this.timeline.to(target, 0, { left: "-="+width })
+                    .to(target, 1, { ease: Power4.easeOut, left: "+="+width })
                     .to(target, 0.2, { ease: Power1.easeOut, css: {transform:"rotate(5deg)"} }).add('stop')
-                    .to(target, 0.1, { x: "+=" + 1 }, 'stop').add('backDown')
-                    .to(target, 0.1, { x: "-=" + 1 }, 'backDown')
-                    .to(target, 0.1, { ease: Power1.easeOut, css: {transform:"rotate(0deg)"} })
+                    .to(target, 0.1, { left: "+=" + 1 }, 'stop').add('backDown')
+                    .to(target, 0.1, { left: "-=" + 1 }, 'backDown')
+                    .to(target, 0.1, { ease: Power1.easeIn, css: {transform:"rotate(0deg)"} })
                 break;
             case "star":
-                this.timeline.add('start').set({}, {}, 'start+=0.5')
-                    .to(target, 0, { y: "-="+height })
-                    .to(target, 1, { ease: Bounce.easeOut, y: "+="+height })
+                this.timeline.add('start').set({}, {}, 'start=2')
+                    .to(target, 0, { top: "-="+height })
+                    .to(target, 1, { ease: Bounce.easeOut, top: "+="+height })
                 break;
             case "magnifier":
-                this.timeline.add('start').set({}, {}, 'start+=0.8')
+                this.timeline.add('start').set({}, {}, 'start=3')
                     .to(target, 0, { opacity: 0, css: { transform: "scale(0.2)" } })
-                    .to(target, 0.15, { ease: Power1.easeIn, opacity: 1, css: {transform:"scale(1)"} })
+                    .to(target, .5
+                    , { ease: Back.easeOut, opacity: 1, css: {transform:"scale(1)"} })
                 break;
-        }
+        } */
 
-        setInterval(() => {
-            this.restart()
-        }, 2000)
+        //setInterval(() => {
+        //    this.restart()
+       // }, 10000)
+       this.resetAnimations(this.playAnimations);
     }
 }

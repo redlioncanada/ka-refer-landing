@@ -1,7 +1,8 @@
 /// <reference path="../typings/greensock/greensock.d.ts" />
 
 export class TimelineController {
-	protected timeline: TimelineMax
+	protected timeline: TimelineMax;
+    protected tweenThis: TimelineMax;
 
 	constructor() {
 		this.timeline = new TimelineMax()

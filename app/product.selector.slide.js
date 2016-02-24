@@ -1,4 +1,4 @@
-System.register(['angular2/core', './product.selector.slides'], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,32 +10,28 @@ System.register(['angular2/core', './product.selector.slides'], function(exports
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, product_selector_slides_1;
-    var ProductSelector;
+    var core_1;
+    var ProductSlide;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (product_selector_slides_1_1) {
-                product_selector_slides_1 = product_selector_slides_1_1;
             }],
         execute: function() {
-            ProductSelector = (function () {
-                function ProductSelector() {
+            ProductSlide = (function () {
+                function ProductSlide() {
                 }
-                ProductSelector = __decorate([
+                ProductSlide = __decorate([
                     core_1.Component({
-                        selector: 'product-selector',
-                        templateUrl: 'app/views/product.selector.view.html',
-                        directives: [product_selector_slides_1.ProductSlides],
+                        selector: 'product-slide',
+                        templateUrl: 'app/views/product.selector.slide.view.html',
                     }), 
                     __metadata('design:paramtypes', [])
-                ], ProductSelector);
-                return ProductSelector;
+                ], ProductSlide);
+                return ProductSlide;
             }());
-            exports_1("ProductSelector", ProductSelector);
+            exports_1("ProductSlide", ProductSlide);
         }
     }
 });
-//# sourceMappingURL=product.selector.js.map
+//# sourceMappingURL=product.selector.slide.js.map
