@@ -53,8 +53,6 @@ rl-ka-refer-landing {
   rl-ka-refer-landing table {
     border-collapse: collapse;
     border-spacing: 0; }
-  rl-ka-refer-landing a {
-    text-decoration: none; }
   rl-ka-refer-landing .hide {
     display: none; }
   rl-ka-refer-landing .show {
@@ -62,10 +60,8 @@ rl-ka-refer-landing {
   rl-ka-refer-landing .selected {
     cursor: default; }
   rl-ka-refer-landing videoplayer {
-    display: block;
-    position: relative;
-    padding: 20px 0;
-    overflow: hidden; }
+    width: 80%;
+    position: relative; }
     rl-ka-refer-landing videoplayer > h2 {
       font-size: 3em;
       text-transform: uppercase;
@@ -73,19 +69,17 @@ rl-ka-refer-landing {
       font-weight: 800;
       width: 100%;
       margin-bottom: 15px; }
-    rl-ka-refer-landing videoplayer > ul {
-      overflow: hidden; }
-      rl-ka-refer-landing videoplayer > ul li {
-        float: left;
-        width: 33.333333333%;
-        padding: 0 5px;
-        background-color: #000000; }
-      rl-ka-refer-landing videoplayer > ul li:last-child {
-        padding-right: 0; }
-      rl-ka-refer-landing videoplayer > ul li:first-child {
-        padding-left: 0; }
-      rl-ka-refer-landing videoplayer > ul li:nth-child(2) img {
-        width: 101.5%; }
+    rl-ka-refer-landing videoplayer > ul li {
+      float: left;
+      width: 33.333333333%;
+      padding: 0 5px;
+      background-color: #000000; }
+    rl-ka-refer-landing videoplayer > ul li:last-child {
+      padding-right: 0; }
+    rl-ka-refer-landing videoplayer > ul li:first-child {
+      padding-left: 0; }
+    rl-ka-refer-landing videoplayer > ul li:nth-child(2) img {
+      width: 101.5%; }
   rl-ka-refer-landing videoplayer-player {
     width: 100%; }
     rl-ka-refer-landing videoplayer-player .text {
@@ -123,10 +117,10 @@ rl-ka-refer-landing {
         margin: 0 auto;
         background-color: #cc0000;
         line-height: 25px;
-        -webkit-transition: all 0.2s ease;
-        -moz-transition: all 0.2s ease;
-        -o-transition: all 0.2s ease;
-        transition: all 0.2s ease; }
+        -webkit-transition: 0.2s ease-in;
+        -moz-transition: 0.2s ease-in;
+        -o-transition: 0.2s ease-in;
+        transition: 0.2s ease-in; }
       rl-ka-refer-landing videoplayer-selector .text .button:hover {
         transform: scale(1.2);
         -webkit-transform: scale(1.2); }
@@ -139,10 +133,10 @@ rl-ka-refer-landing {
       opacity: 0.45;
       width: 100%;
       z-index: 1;
-      -webkit-transition: all 0.2s ease;
-      -moz-transition: all 0.2s ease;
-      -o-transition: all 0.2s ease;
-      transition: all 0.2s ease; }
+      -webkit-transition: 0.2s ease-in;
+      -moz-transition: 0.2s ease-in;
+      -o-transition: 0.2s ease-in;
+      transition: 0.2s ease-in; }
     rl-ka-refer-landing videoplayer-selector .selected .button, rl-ka-refer-landing videoplayer-selector .selected .title {
       opacity: 0; }
     rl-ka-refer-landing videoplayer-selector .selected img {
@@ -190,10 +184,10 @@ rl-ka-refer-landing {
       width: 100%;
       height: 100%;
       position: relative;
-      -webkit-transition: all 0.2s ease;
-      -moz-transition: all 0.2s ease;
-      -o-transition: all 0.2s ease;
-      transition: all 0.2s ease; }
+      -webkit-transition: 0.2s ease-in;
+      -moz-transition: 0.2s ease-in;
+      -o-transition: 0.2s ease-in;
+      transition: 0.2s ease-in; }
     rl-ka-refer-landing features .ka-landing-feature-copy-container {
       display: table-cell;
       color: #FFFFFF;
@@ -245,68 +239,14 @@ rl-ka-refer-landing {
     rl-ka-refer-landing product-selector .product-slide {
       position: absolute;
       width: 943px; }
-    rl-ka-refer-landing product-selector .row {
+    rl-ka-refer-landing product-selector > .row {
       height: 600px;
       overflow: hidden;
-      background-image: url("./public/images/refer-select-shadow.png"); }
-  rl-ka-refer-landing learn-more-button {
-    display: block;
-    position: absolute;
-    top: 50%;
-    width: 180px;
-    height: 40px;
-    margin-top: -20px;
-    background-color: #cc0000;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease; }
-    rl-ka-refer-landing learn-more-button div {
-      width: 100%;
-      height: 100%;
-      display: table; }
-    rl-ka-refer-landing learn-more-button p {
-      display: table-cell;
-      vertical-align: middle;
-      text-align: center; }
-  rl-ka-refer-landing learn-more-button:hover {
-    transform: scale(1.2);
-    -webkit-transform: scale(1.2); }
-  rl-ka-refer-landing more-features {
-    display: block;
-    position: relative;
-    padding: 20px 0 70px 0;
-    overflow: hidden; }
-    rl-ka-refer-landing more-features h2 {
-      font-size: 3em;
-      text-transform: uppercase;
-      text-align: center;
-      font-weight: 800;
-      width: 100%;
-      margin-bottom: 15px; }
-    rl-ka-refer-landing more-features more-features-feature {
-      margin: 0 2px; }
-    rl-ka-refer-landing more-features more-features-feature:first-of-type {
-      margin-left: initial; }
-    rl-ka-refer-landing more-features more-features-feature:last-of-type {
-      margin-right: initial; }
-  rl-ka-refer-landing more-features-feature {
-    width: 33%;
-    float: left; }
-    rl-ka-refer-landing more-features-feature img {
-      width: 100%; }
-    rl-ka-refer-landing more-features-feature p {
-      text-align: center;
-      margin-top: 15px;
-      color: #000000; }
-  rl-ka-refer-landing banner {
-    position: relative;
-    display: block;
-    cursor: default; }
-    rl-ka-refer-landing banner img {
-      width: 100%; }
-    rl-ka-refer-landing banner learn-more-button {
-      right: 7%; }
+      background-image: url("../../public/images/refer-select-shadow.png");
+      background-repeat: no-repeat;
+      background-position-y: 50px; }
+    rl-ka-refer-landing product-selector .rl-ka-lndng-fridge img {
+      height: 420px; }
   rl-ka-refer-landing h1, rl-ka-refer-landing h2, rl-ka-refer-landing h3, rl-ka-refer-landing h4, rl-ka-refer-landing h5 {
     color: #cc0000;
     cursor: default; }
@@ -314,5 +254,3 @@ rl-ka-refer-landing {
     cursor: pointer; }
   rl-ka-refer-landing * {
     box-sizing: border-box; }
-  rl-ka-refer-landing a {
-    color: #FFFFFF; }

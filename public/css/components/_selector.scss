@@ -2,14 +2,21 @@ product-selector {
 	width: 80%;
 	position: relative;
     
+    
     .product-slide{
         position: absolute;
         width: 943px;
     }
 
-    .row{
+    > .row{
         height: 600px;
         overflow: hidden;
-        background-image: url('./public/images/refer-select-shadow.png');
+        background-image: url('../../public/images/refer-select-shadow.png');
+        background-repeat: no-repeat;
+        background-position-y: 50px;
+    }
+    
+    .rl-ka-lndng-fridge img{
+        height: 420px;
     }
 }
