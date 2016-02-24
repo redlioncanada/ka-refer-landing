@@ -19,7 +19,7 @@ export class GoogleApi {
 			key: 'AIzaSyB9daYpfuJEn6L6pNi69tPYeX75DxhonYE'
 		}
 
-		this.http.get(this.constructURL('//www.googleapis.com/youtube/v3/videos', params))
+		this.http.get(this.constructURL('https://www.googleapis.com/youtube/v3/videos', params))
 			.map((res: Response) => res.json())
 			.subscribe(
 				data => { cb(data, false) },
