@@ -8,11 +8,13 @@ import {Component} from 'angular2/core';
 import {VideoPlayer} from './videoplayer.component';
 import {AppMasthead} from './landing.masthead';
 import {Features} from './landing.feature';
+import {ProductSelector} from './product.selector'
+
 
 @Component({
     selector: 'rl-ka-refer-landing',
     templateUrl: 'app/views/app.view.html',
-    directives: [VideoPlayer, AppMasthead, Features]
+    directives: [VideoPlayer, AppMasthead, Features, ProductSelector]
 })
 class AppComponent { }
 

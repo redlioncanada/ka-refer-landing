@@ -45,7 +45,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 ProductSlide = __decorate([
                     core_1.Component({
                         selector: 'product-slide',
-                        templateUrl: 'app/views/product.selector.slide.view.html',
+                        templateUrl: 'app/views/product.selector.slides.view.html',
                     }),
                     __param(0, core_1.Inject(core_1.ElementRef)), 
                     __metadata('design:paramtypes', [core_1.ElementRef])
