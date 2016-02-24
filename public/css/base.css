@@ -249,6 +249,8 @@ rl-ka-refer-landing {
       font-weight: 800;
       width: 100%;
       margin: 50px; }
+    rl-ka-refer-landing product-selector #french-door, rl-ka-refer-landing product-selector #side-by-side, rl-ka-refer-landing product-selector #bottom-freezer, rl-ka-refer-landing product-selector #under-counter, rl-ka-refer-landing product-selector #built-in {
+      opacity: 0; }
     rl-ka-refer-landing product-selector .product-slide {
       position: absolute;
       width: 943px; }
@@ -260,7 +262,8 @@ rl-ka-refer-landing {
       background-position-y: 50px; }
     rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-title {
       position: absolute;
-      left: 640px;
+      left: 565px;
+      top: 170px;
       width: 300px;
       font-family: 'Lato', Arial, Helvetica, sans-serif;
       font-weight: 100;
@@ -273,8 +276,8 @@ rl-ka-refer-landing {
       height: 420px; }
     rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-desc {
       position: absolute;
-      left: 640px;
-      top: 200px;
+      left: 565px;
+      top: 215px;
       width: 350px;
       font-family: 'Lato', Arial, Helvetica, sans-serif;
       font-size: 22px;

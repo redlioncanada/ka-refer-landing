@@ -10,9 +10,6 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var __param = (this && this.__param) || function (paramIndex, decorator) {
-        return function (target, key) { decorator(target, key, paramIndex); }
-    };
     var core_1;
     var ProductSlide;
     return {
@@ -22,9 +19,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             }],
         execute: function() {
             ProductSlide = (function () {
-                function ProductSlide(elementRef) {
-                    this.elementRef = elementRef;
-                    this.rootElement = $(this.elementRef.nativeElement);
+                function ProductSlide() {
                 }
                 __decorate([
                     core_1.Input(), 
@@ -50,9 +45,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     core_1.Component({
                         selector: 'product-slide',
                         templateUrl: 'app/views/product.selector.singleSlide.view.html',
-                    }),
-                    __param(0, core_1.Inject(core_1.ElementRef)), 
-                    __metadata('design:paramtypes', [core_1.ElementRef])
+                    }), 
+                    __metadata('design:paramtypes', [])
                 ], ProductSlide);
                 return ProductSlide;
             }());

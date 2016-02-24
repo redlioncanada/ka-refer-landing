@@ -1,9 +1,6 @@
-/// <reference path="../typings/jquery/jquery.d.ts" />
-/// <reference path="../typings/greensock/greensock.d.ts" />
 import {bootstrap}    from 'angular2/platform/browser'
 import {Component, Input, Inject, ElementRef} from 'angular2/core'
 
-declare var $: JQueryStatic;
 
 @Component({
     selector: 'product-slide',
@@ -17,17 +14,6 @@ export class ProductSlide {
     @Input() fridgeDescription
     @Input() fridgeUrl
     @Input() fridgeId
-    
-    private rootElement;
-    private elementRef: ElementRef;
-    private target;
-    private targetWidth;
-    private targetHeight;
 
-    public constructor(@Inject(ElementRef) elementRef: ElementRef) {
-        this.elementRef = elementRef
-        this.rootElement = $(this.elementRef.nativeElement)
-
-    }
     
 }
