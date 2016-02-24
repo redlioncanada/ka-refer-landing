@@ -1,4 +1,4 @@
-System.register(['angular2/platform/browser', 'angular2/http', './services/logger.service', './services/googleapi.service', 'angular2/core', './videoplayer.component', './landing.masthead', './landing.feature', './product.selector', './landing.morefeatures', './landing.banner'], function(exports_1, context_1) {
+System.register(['angular2/platform/browser', 'angular2/http', './services/logger.service', './services/googleapi.service', 'angular2/core', './videoplayer.component', './landing.masthead', './landing.feature', './product.selector', './landing.morefeatures', './landing.banner', './landing.header', './landing.footer'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/platform/browser', 'angular2/http', './services/logge
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var browser_1, http_1, logger_service_1, googleapi_service_1, core_1, videoplayer_component_1, landing_masthead_1, landing_feature_1, product_selector_1, landing_morefeatures_1, landing_banner_1;
+    var browser_1, http_1, logger_service_1, googleapi_service_1, core_1, videoplayer_component_1, landing_masthead_1, landing_feature_1, product_selector_1, landing_morefeatures_1, landing_banner_1, landing_header_1, landing_footer_1;
     var AppComponent;
     return {
         setters:[
@@ -46,6 +46,12 @@ System.register(['angular2/platform/browser', 'angular2/http', './services/logge
             },
             function (landing_banner_1_1) {
                 landing_banner_1 = landing_banner_1_1;
+            },
+            function (landing_header_1_1) {
+                landing_header_1 = landing_header_1_1;
+            },
+            function (landing_footer_1_1) {
+                landing_footer_1 = landing_footer_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -55,7 +61,7 @@ System.register(['angular2/platform/browser', 'angular2/http', './services/logge
                     core_1.Component({
                         selector: 'rl-ka-refer-landing',
                         templateUrl: 'app/views/app.view.html',
-                        directives: [videoplayer_component_1.VideoPlayer, landing_masthead_1.AppMasthead, landing_feature_1.Features, product_selector_1.ProductSelector, landing_banner_1.Banner, landing_morefeatures_1.MoreFeatures]
+                        directives: [videoplayer_component_1.VideoPlayer, landing_masthead_1.AppMasthead, landing_feature_1.Features, product_selector_1.ProductSelector, landing_banner_1.Banner, landing_morefeatures_1.MoreFeatures, landing_header_1.Header, landing_footer_1.Footer]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

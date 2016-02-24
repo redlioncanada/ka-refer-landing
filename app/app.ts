@@ -11,12 +11,14 @@ import {Features} from './landing.feature';
 import {ProductSelector} from './product.selector'
 import {MoreFeatures} from './landing.morefeatures'
 import {Banner} from './landing.banner'
+import {Header} from './landing.header'
+import {Footer} from './landing.footer'
 
 
 @Component({
     selector: 'rl-ka-refer-landing',
     templateUrl: 'app/views/app.view.html',
-    directives: [VideoPlayer, AppMasthead, Features, ProductSelector, Banner, MoreFeatures]
+    directives: [VideoPlayer, AppMasthead, Features, ProductSelector, Banner, MoreFeatures, Header, Footer]
 })
 class AppComponent { }
 
