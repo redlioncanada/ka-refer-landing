@@ -74,10 +74,9 @@ System.register(['angular2/core', './services/logger.service', './services/googl
                         selector: 'videoplayer-selector',
                         templateUrl: 'app/views/videoplayer-selector.view.html'
                     }), 
-                    __metadata('design:paramtypes', [(typeof (_a = typeof logger_service_1.Logger !== 'undefined' && logger_service_1.Logger) === 'function' && _a) || Object, (typeof (_b = typeof googleapi_service_1.GoogleApi !== 'undefined' && googleapi_service_1.GoogleApi) === 'function' && _b) || Object])
+                    __metadata('design:paramtypes', [logger_service_1.Logger, googleapi_service_1.GoogleApi])
                 ], VideoPlayerSelector);
                 return VideoPlayerSelector;
-                var _a, _b;
             }());
             exports_1("VideoPlayerSelector", VideoPlayerSelector);
         }

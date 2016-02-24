@@ -117,10 +117,9 @@ System.register(['angular2/core', './services/logger.service'], function(exports
                         selector: 'videoplayer-video',
                         templateUrl: 'app/views/videoplayer-video.view.html'
                     }), 
-                    __metadata('design:paramtypes', [(typeof (_a = typeof logger_service_1.Logger !== 'undefined' && logger_service_1.Logger) === 'function' && _a) || Object])
+                    __metadata('design:paramtypes', [logger_service_1.Logger])
                 ], VideoPlayerVideo);
                 return VideoPlayerVideo;
-                var _a;
             }());
             exports_1("VideoPlayerVideo", VideoPlayerVideo);
         }

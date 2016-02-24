@@ -50,16 +50,7 @@ System.register(['angular2/core', './product.selector.slide', './models/products
                     ];
                     this.elementRef = elementRef;
                 }
-                ProductSlides.prototype.ngAfterViewInit = function () {
-                    this.rootElement = $(this.elementRef.nativeElement);
-                    this.fiveDoor = ($(this.rootElement).find('#five-door'));
-                    this.fiveDoorImg = ($(this.fiveDoor).find('.rl-ka-lndng-fridge'));
-                    this.fiveDoorTitle = ($(this.fiveDoor).find('.rl-ka-lndng-fridge-title'));
-                    this.fiveDoorDesc = ($(this.fiveDoor).find('.rl-ka-lndng-fridge-desc'));
-                    console.log(this.fiveDoorTitle);
-                    //this.fiveDoor = ($(this.rootElement).find('#five-door').children('.rl-ka-lndng-fridge'));
-                    //this.fiveDoorTitle = ($(this.rootElement).find('#five-door').children('.rl-ka-lndng-fridge-title'));
-                    //this.fiveDoorDesc = ($(this.rootElement).find('#five-door').children('rl-ka-lndng-fridge-desc'));
+                ProductSlides.prototype.playIn = function () {
                     TweenMax.to(this.fiveDoorImg, 0, { delay: 0, opacity: 0, top: 130, ease: Power3.easeOut });
                     TweenMax.to(this.fiveDoorTitle, 0, { delay: 0, opacity: 0, top: 130, ease: Power3.easeOut });
                     TweenMax.to(this.fiveDoorDesc, 0, { delay: 0, opacity: 0, top: 165, ease: Power3.easeOut });
@@ -67,6 +58,17 @@ System.register(['angular2/core', './product.selector.slide', './models/products
                     TweenMax.to(this.fiveDoorImg, 2, { delay: 2.5, opacity: 1, top: 155, ease: Power3.easeOut });
                     TweenMax.to(this.fiveDoorTitle, 2, { delay: 3, opacity: 1, top: 170, ease: Power3.easeOut });
                     TweenMax.to(this.fiveDoorDesc, 2, { delay: 3.5, opacity: 1, top: 215, ease: Power3.easeOut });
+                };
+                ProductSlides.prototype.ngAfterViewInit = function () {
+                    this.rootElement = $(this.elementRef.nativeElement);
+                    this.fiveDoor = ($(this.rootElement).find('#five-door'));
+                    this.fiveDoorImg = ($(this.fiveDoor).find('.rl-ka-lndng-fridge'));
+                    this.fiveDoorTitle = ($(this.fiveDoor).find('.rl-ka-lndng-fridge-title'));
+                    this.fiveDoorDesc = ($(this.fiveDoor).find('.rl-ka-lndng-fridge-desc'));
+                    this.fiveDoorLearn = ($(this.fiveDoor).find('learn-more-button'));
+                    //this.fiveDoor = ($(this.rootElement).find('#five-door').children('.rl-ka-lndng-fridge'));
+                    //this.fiveDoorTitle = ($(this.rootElement).find('#five-door').children('.rl-ka-lndng-fridge-title'));
+                    //this.fiveDoorDesc = ($(this.rootElement).find('#five-door').children('rl-ka-lndng-fridge-desc'));
                 };
                 ProductSlides = __decorate([
                     core_1.Component({

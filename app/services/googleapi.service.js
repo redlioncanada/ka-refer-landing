@@ -38,7 +38,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', './logger.service'
                         part: 'snippet',
                         key: 'AIzaSyB9daYpfuJEn6L6pNi69tPYeX75DxhonYE'
                     };
-                    this.http.get(this.constructURL('https://www.googleapis.com/youtube/v3/videos', params))
+                    this.http.get(this.constructURL('http://www.googleapis.com/youtube/v3/videos', params))
                         .map(function (res) { return res.json(); })
                         .subscribe(function (data) { cb(data, false); }, function (err) { return cb(false, err); });
                 };
