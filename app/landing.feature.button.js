@@ -36,41 +36,38 @@ System.register(['angular2/core', './landing.timeline-controller'], function(exp
                     this.rootElement = $(this.elementRef.nativeElement);
                     _super.call(this);
                 }
-                FeatureButton.prototype.playAnimations = function (bType, targ) {
-                    clearInterval(0);
+                FeatureButton.prototype.playAnimations = function (bType) {
+                    console.log(bType);
                     switch (bType) {
                         case "cart":
-                            TweenMax.to(this.target, 1, { delay: .5, left: 0, ease: Power3.easeOut });
-                            TweenMax.to(this.target, 1, { delay: 1, left: 50, css: { transform: "rotate(5deg)" }, ease: Power3.easeOut });
-                            TweenMax.to(this.target, .3, { delay: 1.5, css: { transform: "rotate(0deg)" }, ease: Bounce.easeOut });
-                            TweenMax.to(this.target, 1, { delay: 6, left: 150, opacity: 0, ease: Power3.easeIn, onComplete: this.resetAnimations });
+                            TweenMax.to(this.target, 1, { delay: 1.5, left: 0, ease: Power3.easeOut });
+                            TweenMax.to(this.target, 1, { delay: 2, left: 50, css: { transform: "rotate(5deg)" }, ease: Power3.easeOut });
+                            TweenMax.to(this.target, .3, { delay: 2.5, css: { transform: "rotate(0deg)" }, ease: Bounce.easeOut });
+                            //TweenMax.to(this.target, 1, {delay:6, left:150, opacity:0, ease:Power3.easeIn});
                             break;
                         case "star":
-                            TweenMax.to(this.target, 1, { delay: 0, top: 0, ease: Bounce.easeOut });
-                            TweenMax.to(this.target, 1, { delay: 6, top: 150, opacity: 0, ease: Power3.easeIn, onComplete: this.resetAnimations });
+                            TweenMax.to(this.target, 1, { delay: 2.2, top: 0, ease: Bounce.easeOut });
+                            //TweenMax.to(this.target, 1, {delay:6, top:150, opacity:0, ease:Power3.easeIn});
                             break;
                         case "magnifier":
-                            TweenMax.to(this.target, 1, { delay: 0, css: { transform: "scale(1)" }, ease: Back.easeOut });
-                            TweenMax.to(this.target, 1, { delay: 6, opacity: 0, css: { transform: "scale(5)" }, ease: Power3.easeIn });
+                            TweenMax.to(this.target, 1, { delay: 3, css: { transform: "scale(1)" }, ease: Back.easeOut });
+                            //TweenMax.to(this.target, 1, {delay:6, opacity:0, ease:Power3.easeIn});
                             break;
                     }
                 };
-                FeatureButton.prototype.resetAnimations = function (playIt) {
-                    var _this = this;
+                FeatureButton.prototype.resetAnimations = function () {
                     switch (this.btnType) {
                         case "cart":
-                            TweenMax.to(this.target, .1, { delay: 0, opacity: 1, left: -150, ease: Power3.easeOut });
+                            TweenMax.to(this.target, 0, { delay: 0, opacity: 1, left: -150, ease: Power3.easeOut });
                             break;
                         case "star":
-                            TweenMax.to(this.target, .1, { delay: 0, opacity: 1, top: -150, ease: Power3.easeOut });
+                            TweenMax.to(this.target, 0, { delay: 0, opacity: 1, top: -150, ease: Power3.easeOut });
                             break;
                         case "magnifier":
-                            TweenMax.to(this.target, .1, { delay: 0, opacity: 1, css: { transform: "scale(0.01)" }, ease: Power3.easeOut });
+                            TweenMax.to(this.target, 0, { delay: 0, opacity: 1, css: { transform: "scale(0.01)" }, ease: Power3.easeOut });
                             break;
                     }
-                    setTimeout(function () {
-                        playIt(_this.btnType);
-                    }, 500);
+                    this.playAnimations(this.btnType);
                 };
                 FeatureButton.prototype.ngAfterViewInit = function () {
                     //this is ugly, but the syntax of gsap restricts me from decoupling animations from their target element
@@ -104,7 +101,7 @@ System.register(['angular2/core', './landing.timeline-controller'], function(exp
                     //setInterval(() => {
                     //    this.restart()
                     // }, 10000)
-                    this.resetAnimations(this.playAnimations);
+                    this.resetAnimations();
                 };
                 __decorate([
                     core_1.Input(), 

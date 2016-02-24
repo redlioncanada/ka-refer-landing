@@ -195,7 +195,7 @@ rl-ka-refer-landing {
       width: inherit;
       vertical-align: middle; }
     rl-ka-refer-landing features .ka-landing-feature-button-over:hover {
-      opacity: 1; }
+      opacity: .8; }
     rl-ka-refer-landing features .ka-landing-over-copy {
       font-weight: 100;
       margin-bottom: 2px; }

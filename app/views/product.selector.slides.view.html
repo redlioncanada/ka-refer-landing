@@ -1,3 +1,7 @@
 <div class="rl-ka-lndng-slide-holder">
-    <!-- insert the ngfor with the slides here -->
+    <div class="row">
+        <fproduct-slide *ngFor="#product of products; #i=index" [fridge]= "product.prodImage" [fridgeTitle]= "product.prodName" [fridgeDescription]="product.prodDescription" [fridgeUrl]="product.prodUrl">
+
+        </feature-button>
+    </div>
 </div>
