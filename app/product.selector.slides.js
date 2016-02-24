@@ -1,4 +1,4 @@
-System.register(['angular2/core', './product.selector.slide', './models/products.model', './landing.timeline-controller'], function(exports_1, context_1) {
+System.register(['angular2/core', './product.selector.slide', './models/products.model', './landing.timeline-controller', './landing.learn-more.button'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __extends = (this && this.__extends) || function (d, b) {
@@ -18,7 +18,7 @@ System.register(['angular2/core', './product.selector.slide', './models/products
     var __param = (this && this.__param) || function (paramIndex, decorator) {
         return function (target, key) { decorator(target, key, paramIndex); }
     };
-    var core_1, product_selector_slide_1, products_model_1, landing_timeline_controller_1;
+    var core_1, product_selector_slide_1, products_model_1, landing_timeline_controller_1, landing_learn_more_button_1;
     var ProductSlides;
     return {
         setters:[
@@ -33,6 +33,9 @@ System.register(['angular2/core', './product.selector.slide', './models/products
             },
             function (landing_timeline_controller_1_1) {
                 landing_timeline_controller_1 = landing_timeline_controller_1_1;
+            },
+            function (landing_learn_more_button_1_1) {
+                landing_learn_more_button_1 = landing_learn_more_button_1_1;
             }],
         execute: function() {
             ProductSlides = (function (_super) {
@@ -72,7 +75,7 @@ System.register(['angular2/core', './product.selector.slide', './models/products
                     core_1.Component({
                         selector: 'product-slides',
                         templateUrl: 'app/views/product.selector.slides.view.html',
-                        directives: [product_selector_slide_1.ProductSlide]
+                        directives: [product_selector_slide_1.ProductSlide, landing_learn_more_button_1.LearnMoreButton]
                     }),
                     __param(0, core_1.Inject(core_1.ElementRef)), 
                     __metadata('design:paramtypes', [core_1.ElementRef])

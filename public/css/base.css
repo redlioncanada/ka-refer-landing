@@ -609,21 +609,21 @@ rl-ka-refer-landing {
       background-position-y: 150px; }
     rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-title {
       position: absolute;
-      left: 565px;
+      left: 490px;
       top: 170px;
       width: 300px;
       font-family: 'Lato', Arial, Helvetica, sans-serif;
-      font-weight: 100;
+      font-weight: 300;
       font-size: 32px;
       text-transform: uppercase; }
     rl-ka-refer-landing product-selector .rl-ka-lndng-fridge {
-      left: 240px;
+      left: 165px;
       position: absolute; }
     rl-ka-refer-landing product-selector .rl-ka-lndng-fridge img {
       height: 420px; }
     rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-desc {
       position: absolute;
-      left: 565px;
+      left: 490px;
       top: 215px;
       width: 300px;
       font-family: 'Lato', Arial, Helvetica, sans-serif;

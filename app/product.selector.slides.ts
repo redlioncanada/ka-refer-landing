@@ -5,13 +5,14 @@ import {Component, Input, Inject, ElementRef} from 'angular2/core'
 import {ProductSlide} from './product.selector.slide'
 import {ProductModel} from './models/products.model'
 import {TimelineController} from './landing.timeline-controller'
+import {LearnMoreButton} from './landing.learn-more.button'
 
 declare var $: JQueryStatic;
 
 @Component({
     selector: 'product-slides',
     templateUrl: 'app/views/product.selector.slides.view.html',
-    directives: [ProductSlide] 
+    directives: [ProductSlide, LearnMoreButton] 
     
 })
 export class ProductSlides  extends TimelineController {
