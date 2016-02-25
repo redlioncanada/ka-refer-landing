@@ -4,13 +4,15 @@ features {
         height: 300px;
     }
     .ka-landing-feature-icon {
-        width:100px;
-        height:100px;
-        border-radius:50px;
-        background:#CC0000;
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        background: #CC0000;
         top: 40px;
-        left: 95px;
+        left: 0;
+        right: 0;
         overflow: hidden;
+        margin: auto;
         
         > img {
             position: absolute;
@@ -83,6 +85,10 @@ features {
         border-color: #aaaaaa;
         border-width: 4px;
         position: relative;
+        
+        @media screen and (max-width: 768px) {
+            margin: 3px;
+        }
     
         .ka-landing-feature-button-up {
             position: relative;
@@ -102,6 +108,7 @@ features {
             right: 0;
             margin-left: auto;
             margin-right: auto;
+            margin-top: 10px;
         }
     
     }

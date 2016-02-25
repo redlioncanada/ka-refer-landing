@@ -4,7 +4,7 @@ import {bootstrap}    from 'angular2/platform/browser'
 import {Component, Input, Output, Inject, ElementRef, EventEmitter} from 'angular2/core'
 import {ProductSlide} from './product.selector.slide'
 import {ProductModel} from './models/products.model'
-import {SelectorModel} from './models/selector.model'
+//import {SelectorModel} from './models/selector.model'
 import {TimelineController} from './landing.timeline-controller'
 
 declare var $: JQueryStatic;
@@ -69,10 +69,10 @@ export class ProductSlides extends TimelineController {
 
           this.animating = true;
 
-          TweenMax.to(image, 2, { delay: 0, opacity: 0, top: 130, ease: Power3.easeOut });
-          TweenMax.to(title, 2, { delay: 0.5, opacity: 0, top: 130, ease: Power3.easeOut });
-          TweenMax.to(desc, 2, { delay: 1, opacity: 0, top: 130, ease: Power3.easeOut });
-          TweenMax.to(learn, 2, { delay: 1.5, opacity: 0, top: 130, ease: Power3.easeOut, onComplete: function() {
+          TweenMax.to(image, .3, { delay: 0, opacity: 0, ease: Power3.easeOut });
+          TweenMax.to(title, .3, { delay: 0.1, opacity: 0, ease: Power3.easeOut });
+          TweenMax.to(desc, .3, { delay: 0.2, opacity: 0, ease: Power3.easeOut });
+          TweenMax.to(learn, .3, { delay: 0.3, opacity: 0, ease: Power3.easeOut, onComplete: function() {
               TweenMax.to(target, 0, { delay: 0, opacity: 0 });
               console.log('playOut done')
               cb()
@@ -90,29 +90,48 @@ export class ProductSlides extends TimelineController {
           var desc = ($(target).find('.rl-ka-lndng-fridge-desc'))
           var learn = ($(target).find('learn-more-button'))
 
-          TweenMax.to(image, 0, { delay: 0, opacity: 0, top: 130 });
-          TweenMax.to(title, 0, { delay: 0, opacity: 0, top: 130 });
-          TweenMax.to(desc, 0, { delay: 0, opacity: 0, top: 165 });
-          TweenMax.to(learn, 0, { delay: 0, opacity: 0, top: 290 });
+          TweenMax.to(image, 0, { delay: 0, top: 130 });
+          TweenMax.to(title, 0, { delay: 0, top: 130 });
+          TweenMax.to(desc, 0, { delay: 0, top: 165 });
+          
+          if($(window).innerWidth() < 686){
+                TweenMax.to(learn, 0, { delay: 0, top: 450 });
+              } else {
+                  TweenMax.to(learn, 0, { delay: 0, top: 290 }); 
+              }
           TweenMax.to(target, 0, { delay: 0.1, opacity: 1 });
           //
           if (delay) {
-              TweenMax.to(image, 2, { delay: 2.5, opacity: 1, top: 155, ease: Power3.easeOut });
-              TweenMax.to(title, 2, { delay: 3, opacity: 1, top: 170, ease: Power3.easeOut });
-              TweenMax.to(desc, 2, { delay: 3.5, opacity: 1, top: 215, ease: Power3.easeOut });
-              TweenMax.to(learn, 2, { delay: 4, opacity: 1, top: 325, ease: Power3.easeOut, onComplete: function() {
-                  console.log('playIn done')
-                  self.animating = false;
-              } });
+              TweenMax.to(image, 1.5, { delay: 2.5, top: 155, opacity: 1, ease: Power1.easeOut });
+              TweenMax.to(title, 1.5, { delay: 2.7, top: 170, opacity: 1, ease: Power1.easeOut });
+              TweenMax.to(desc, 1.5, { delay: 2.9, top: 215, opacity: 1, ease: Power1.easeOut });
+              if($(window).innerWidth() < 686){
+                TweenMax.to(learn, 1.5, { delay: 2.9, top: 500, opacity: 1, ease: Power1.easeOut, onComplete: function() {
+                    console.log('playIn done')
+                    self.animating = false;
+                } }); 
+              } else {
+                  TweenMax.to(learn, 1.5, { delay: 2.9, top: 325, opacity: 1, ease: Power1.easeOut, onComplete: function() {
+                    console.log('playIn done')
+                    self.animating = false;
+                } }); 
+              }
+              
           } else {
-              TweenMax.to(image, 2, { delay: 0, opacity: 1, top: 155, ease: Power3.easeOut });
-              TweenMax.to(title, 2, { delay: 0.5, opacity: 1, top: 170, ease: Power3.easeOut });
-              TweenMax.to(desc, 2, { delay: 1, opacity: 1, top: 215, ease: Power3.easeOut });
-              TweenMax.to(learn, 2, { delay: 1.5, opacity: 1, top: 325, ease: Power3.easeOut, onComplete: function() {
-                      console.log('playIn done')
-                      self.animating = false;
-                  }
-              });
+              TweenMax.to(image, 1.5, { delay: .5, top: 155, opacity: 1, ease: Power1.easeOut });
+              TweenMax.to(title, 1.5, { delay: 0.7, top: 170, opacity: 1, ease: Power1.easeOut });
+              TweenMax.to(desc, 1.5, { delay: 0.9, top: 215, opacity: 1, ease: Power1.easeOut });
+              if($(window).innerWidth() < 686){
+                TweenMax.to(learn, 1.5, { delay: 0.9, top: 500, opacity: 1, ease: Power1.easeOut, onComplete: function() {
+                    console.log('playIn done')
+                    self.animating = false;
+                } }); 
+              } else {
+                  TweenMax.to(learn, 1.5, { delay: 0.9, top: 325, opacity: 1, ease: Power1.easeOut, onComplete: function() {
+                    console.log('playIn done')
+                    self.animating = false;
+                } }); 
+              }
           }
       }
 }

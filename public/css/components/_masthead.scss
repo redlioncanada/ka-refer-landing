@@ -3,11 +3,25 @@ masthead {
 	position: relative;
 	display: block;
 	padding-top: 40px;
+    
+    #ka-landing-masthead {
+        height: 323px;
+        overflow: hidden;
+    }
+    
+    img{
+        height: 100%;
+    }
 
     .ka-landing-title h1{
         text-transform: uppercase;
         font-weight: 100;
         font-size: 32px;
         letter-spacing: 1px;
+        
+        @media screen and (max-width: 768px) {
+            text-align: center;
+            padding-bottom: 10px;
+        }
     }
 }

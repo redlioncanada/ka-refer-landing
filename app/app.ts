@@ -20,6 +20,8 @@ import {Footer} from './landing.footer'
     templateUrl: 'app/views/app.view.html',
     directives: [VideoPlayer, AppMasthead, Features, ProductSelector, Banner, MoreFeatures, Header, Footer]
 })
-class AppComponent { }
+class AppComponent {
+    
+ }
 
 bootstrap(AppComponent, [HTTP_PROVIDERS, Logger, GoogleApi])

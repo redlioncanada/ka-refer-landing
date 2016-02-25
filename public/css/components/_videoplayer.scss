@@ -60,6 +60,9 @@ videoplayer-selector {
 		width: 100%;
 		position: absolute;
 		z-index: 2;
+        @media screen and (max-width: 685px) {
+            top: -5px;
+        }
 
 
 		.title, .button {
@@ -85,6 +88,9 @@ videoplayer-selector {
 			background-color: $titleColor;
 			line-height: 25px;
 			@include transition(0.2s);
+            @media screen and (max-width: 785px) {
+                display: none;
+            }
 		}
 
 		.button:hover {
