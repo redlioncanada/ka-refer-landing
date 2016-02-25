@@ -838,7 +838,10 @@ rl-ka-refer-landing {
   rl-ka-refer-landing more-features-feature {
     width: 32%;
     float: left;
-    display: table; }
+    display: table;
+    cursor: default; }
+    rl-ka-refer-landing more-features-feature * {
+      cursor: default !important; }
     rl-ka-refer-landing more-features-feature .hover {
       position: relative; }
     rl-ka-refer-landing more-features-feature .text-container:hover {
