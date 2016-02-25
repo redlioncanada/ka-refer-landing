@@ -555,6 +555,8 @@ rl-ka-refer-landing {
     overflow: hidden;
     margin: auto; }
     rl-ka-refer-landing features .ka-landing-feature-icon > img {
+      width: 75px;
+      height: 75px;
       position: absolute;
       margin: auto;
       top: 0;

@@ -61,7 +61,7 @@ System.register(['angular2/core', './landing.timeline-controller'], function(exp
                             TweenMax.to(this.target, 0, { delay: 0, opacity: 1, left: -150, ease: Power3.easeOut });
                             break;
                         case "star":
-                            TweenMax.to(this.target, 0, { delay: 0, opacity: 1, top: -150, ease: Power3.easeOut });
+                            TweenMax.to(this.target, 0, { delay: 0, opacity: 1, top: -160, ease: Power3.easeOut });
                             break;
                         case "magnifier":
                             TweenMax.to(this.target, 0, { delay: 0, opacity: 1, css: { transform: "scale(0.01)" }, ease: Power3.easeOut });
