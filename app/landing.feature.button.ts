@@ -36,17 +36,19 @@ export class FeatureButton extends TimelineController {
         console.log(bType)
             switch(bType) {
                 case "cart":
-                    TweenMax.to(this.target, 1, {delay:1.5, left:0, ease:Power3.easeOut});
-                    TweenMax.to(this.target, 1, {delay:2, left:50, css: {transform:"rotate(5deg)"}, ease:Power3.easeOut});
-                    TweenMax.to(this.target, .3, {delay:2.5, css: {transform:"rotate(0deg)"}, ease:Bounce.easeOut});
+                    //TweenMax.to(this.target, 1, {delay:1.5, left:0, ease:Power3.easeOut});
+                    //TweenMax.to(this.target, 1, {delay:2, left:50, css: {transform:"rotate(5deg)"}, ease:Power3.easeOut});
+                    //TweenMax.to(this.target, .3, {delay:2.5, css: {transform:"rotate(0deg)"}, ease:Bounce.easeOut});
                     //TweenMax.to(this.target, 1, {delay:6, left:150, opacity:0, ease:Power3.easeIn});
+                    TweenMax.to(this.target, 2, {delay:1, css: {transform:"scale(1)"}, ease:Elastic.easeOut});
                     break;
                 case "star":
-                    TweenMax.to(this.target, 1, {delay:2.2, top: 0, ease:Bounce.easeOut});
+                    //TweenMax.to(this.target, 1, {delay:2.2, top: 0, ease:Bounce.easeOut});
                     //TweenMax.to(this.target, 1, {delay:6, top:150, opacity:0, ease:Power3.easeIn});
+                    TweenMax.to(this.target, 2, {delay:1.3, css: {transform:"scale(1)"}, ease:Elastic.easeOut});
                     break;
                 case "magnifier":
-                    TweenMax.to(this.target, 1, {delay:3, css: {transform:"scale(1)"}, ease:Back.easeOut});
+                    TweenMax.to(this.target, 2, {delay:1.6, css: {transform:"scale(1)"}, ease:Elastic.easeOut});
                     //TweenMax.to(this.target, 1, {delay:6, opacity:0, ease:Power3.easeIn});
                     break;
                 }
@@ -56,10 +58,12 @@ export class FeatureButton extends TimelineController {
             
             switch(this.btnType) {
             case "cart":
-                TweenMax.to(this.target, 0, {delay:0, opacity:1, left:-150, ease:Power3.easeOut});
+                //TweenMax.to(this.target, 0, {delay:0, opacity:1, left:-150, ease:Power3.easeOut});
+                TweenMax.to(this.target, 0, {delay:0, opacity:1, css: { transform: "scale(0.01)" }, ease:Power3.easeOut});
                 break;
             case "star":
-                TweenMax.to(this.target, 0, {delay:0, opacity:1, top:-160, ease:Power3.easeOut});
+                //TweenMax.to(this.target, 0, {delay:0, opacity:1, top:-160, ease:Power3.easeOut});
+                TweenMax.to(this.target, 0, {delay:0, opacity:1, css: { transform: "scale(0.01)" }, ease:Power3.easeOut});
                 break;
             case "magnifier":
                 TweenMax.to(this.target, 0, {delay:0, opacity:1, css: { transform: "scale(0.01)" }, ease:Power3.easeOut});
