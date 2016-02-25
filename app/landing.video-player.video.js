@@ -73,9 +73,6 @@ System.register(['angular2/core', './services/logger.service'], function(exports
                 VideoPlayerVideo.prototype._onReady = function (self) {
                     //need to pass a ref of `this` since this is a callback on YT.Player
                     self.ready = true;
-                    if (self.selected) {
-                        self.play(self);
-                    }
                 };
                 VideoPlayerVideo.prototype._onEnded = function (self) {
                     this.ended = true;

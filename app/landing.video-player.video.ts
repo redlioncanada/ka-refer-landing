@@ -66,9 +66,6 @@ export class VideoPlayerVideo {
 	_onReady(self) {
 		//need to pass a ref of `this` since this is a callback on YT.Player
 		self.ready = true
-		if (self.selected) {
-			self.play(self)
-		}
 	}
 
 	_onEnded(self) {
