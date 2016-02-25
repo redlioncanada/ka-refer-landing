@@ -653,7 +653,8 @@ rl-ka-refer-landing {
     rl-ka-refer-landing product-selector #french-door, rl-ka-refer-landing product-selector #side-by-side, rl-ka-refer-landing product-selector #bottom-freezer, rl-ka-refer-landing product-selector #under-counter, rl-ka-refer-landing product-selector #built-in {
       opacity: 0; }
     rl-ka-refer-landing product-selector product-slides {
-      display: block; }
+      display: block;
+      width: 100%; }
     rl-ka-refer-landing product-selector .product-slide {
       position: absolute;
       width: 943px; }
@@ -664,15 +665,22 @@ rl-ka-refer-landing {
       top: -160px; }
       @media screen and (max-width: 820px) {
         rl-ka-refer-landing product-selector product-slide {
-          left: -120px; } }
-      @media screen and (max-width: 685px) {
-        rl-ka-refer-landing product-selector product-slide {
-          left: -240px; } }
+          position: absolute;
+          height: initial;
+          top: initial;
+          width: 100%;
+          left: 0; } }
+    @media screen and (max-width: 820px) {
+      rl-ka-refer-landing product-selector product-slide:first-of-type {
+        position: relative; } }
     rl-ka-refer-landing product-selector > .row {
       overflow: hidden;
       background-image: url("../../public/images/refer-select-shadow.png");
       background-repeat: no-repeat;
       background-position-y: 150px; }
+      @media screen and (max-width: 820px) {
+        rl-ka-refer-landing product-selector > .row {
+          background-position-y: 30px; } }
     rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-title {
       position: absolute;
       left: 490px;
@@ -682,6 +690,15 @@ rl-ka-refer-landing {
       font-size: 32px;
       text-transform: uppercase;
       opacity: 0; }
+      @media screen and (max-width: 820px) {
+        rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-title {
+          position: relative;
+          top: initial;
+          left: initial;
+          display: block;
+          text-align: center;
+          margin: 0 auto;
+          margin-top: 20px; } }
     rl-ka-refer-landing product-selector learn-more-button {
       position: absolute;
       left: 490px;
@@ -694,12 +711,31 @@ rl-ka-refer-landing {
           transform: scale(1.5, 1.5);
           -webkit-transform: scale(1.5, 1.5);
           left: 515px; } }
+      @media screen and (max-width: 820px) {
+        rl-ka-refer-landing product-selector learn-more-button {
+          position: relative;
+          top: initial;
+          left: initial;
+          display: block;
+          text-align: center;
+          margin: 0 auto; } }
     rl-ka-refer-landing product-selector .rl-ka-lndng-fridge {
       left: 165px;
       position: absolute;
       opacity: 0; }
+      @media screen and (max-width: 820px) {
+        rl-ka-refer-landing product-selector .rl-ka-lndng-fridge {
+          left: initial;
+          position: relative;
+          display: block;
+          top: 0; } }
     rl-ka-refer-landing product-selector .rl-ka-lndng-fridge img {
       height: 420px; }
+      @media screen and (max-width: 820px) {
+        rl-ka-refer-landing product-selector .rl-ka-lndng-fridge img {
+          height: 200px;
+          display: block;
+          margin: 0 auto; } }
     rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-desc {
       position: absolute;
       left: 490px;
@@ -711,11 +747,19 @@ rl-ka-refer-landing {
       letter-spacing: 1px;
       text-rendering: optimizeSpeed;
       opacity: 0; }
+      @media screen and (max-width: 820px) {
+        rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-desc {
+          position: relative;
+          top: initial;
+          left: initial;
+          display: block;
+          text-align: center;
+          margin: 0 auto;
+          margin-bottom: 30px; } }
       @media screen and (max-width: 685px) {
         rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-desc {
           font-size: 18px;
-          line-height: 24px;
-          width: 50vw; } }
+          line-height: 24px; } }
   rl-ka-refer-landing product-selector-nav {
     position: relative;
     display: block;

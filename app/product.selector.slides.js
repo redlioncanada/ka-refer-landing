@@ -51,8 +51,8 @@ System.register(['angular2/core', './product.selector.slide', './landing.timelin
                     configurable: true
                 });
                 ProductSlides.prototype.ngAfterViewInit = function () {
+                    window.onresize = this.resize;
                     this.rootElement = $(this.elementRef.nativeElement);
-                    // var target = $(this.rootElement).find('#five-door');
                     var target = this.selectedProduct.prodId;
                     this.playIn(this, true, target);
                 };
@@ -67,9 +67,7 @@ System.register(['angular2/core', './product.selector.slide', './landing.timelin
                     }
                 };
                 ProductSlides.prototype.playOut = function (target, cb) {
-                    console.log('playOut');
                     var self = this;
-                    console.log('#' + target);
                     target = $(this.rootElement).find('#' + target);
                     var image = ($(target).find('.rl-ka-lndng-fridge'));
                     var title = ($(target).find('.rl-ka-lndng-fridge-title'));
@@ -81,66 +79,71 @@ System.register(['angular2/core', './product.selector.slide', './landing.timelin
                     TweenMax.to(desc, .3, { delay: 0.2, opacity: 0, ease: Power3.easeOut });
                     TweenMax.to(learn, .3, { delay: 0.3, opacity: 0, ease: Power3.easeOut, onComplete: function () {
                             TweenMax.to(target, 0, { delay: 0, opacity: 0 });
-                            console.log('playOut done');
                             cb();
                         } });
                 };
                 ProductSlides.prototype.playIn = function (self, delay, target) {
                     if (delay === void 0) { delay = true; }
-                    console.log('playIn');
                     if (!self)
                         self = this;
-                    console.log('#' + target);
                     target = $(self.rootElement).find('#' + target);
                     var image = ($(target).find('.rl-ka-lndng-fridge'));
                     var title = ($(target).find('.rl-ka-lndng-fridge-title'));
                     var desc = ($(target).find('.rl-ka-lndng-fridge-desc'));
                     var learn = ($(target).find('learn-more-button'));
-                    TweenMax.to(image, 0, { delay: 0, top: 130 });
-                    TweenMax.to(title, 0, { delay: 0, top: 130 });
-                    TweenMax.to(desc, 0, { delay: 0, top: 165 });
-                    if ($(window).innerWidth() < 686) {
-                        TweenMax.to(learn, 0, { delay: 0, top: 450 });
+                    var isMobile = $(window).innerWidth() <= 820;
+                    if (isMobile) {
+                        TweenMax.to(image, 0, { delay: 0, top: -20 });
+                        TweenMax.to(title, 0, { delay: 0, top: -20 });
+                        TweenMax.to(desc, 0, { delay: 0, top: -20 });
+                        TweenMax.to(learn, 0, { delay: 0, top: -20 });
                     }
                     else {
+                        TweenMax.to(image, 0, { delay: 0, top: 130 });
+                        TweenMax.to(title, 0, { delay: 0, top: 130 });
+                        TweenMax.to(desc, 0, { delay: 0, top: 165 });
                         TweenMax.to(learn, 0, { delay: 0, top: 410 });
                     }
                     TweenMax.to(target, 0, { delay: 0.1, opacity: 1 });
-                    //
                     if (delay) {
-                        TweenMax.to(image, 1.5, { delay: 2.5, top: 155, opacity: 1, ease: Power1.easeOut });
-                        TweenMax.to(title, 1.5, { delay: 2.7, top: 170, opacity: 1, ease: Power1.easeOut });
-                        TweenMax.to(desc, 1.5, { delay: 2.9, top: 215, opacity: 1, ease: Power1.easeOut });
-                        if ($(window).innerWidth() < 686) {
-                            TweenMax.to(learn, 1.5, { delay: 2.9, top: 500, opacity: 1, ease: Power1.easeOut, onComplete: function () {
-                                    console.log('playIn done');
+                        if (isMobile) {
+                            TweenMax.to(image, 1.5, { delay: 2.5, top: 0, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(title, 1.5, { delay: 2.7, top: 0, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(desc, 1.5, { delay: 2.9, top: 0, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(learn, 1.5, { delay: 2.9, top: 0, opacity: 1, ease: Power1.easeOut, onComplete: function () {
                                     self.animating = false;
                                 } });
                         }
                         else {
-                            TweenMax.to(learn, 1.5, { delay: 2.9, top: 465, opacity: 1, ease: Power1.easeOut, onComplete: function () {
-                                    console.log('playIn done');
+                            TweenMax.to(image, 1.5, { delay: 2.5, top: 155, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(title, 1.5, { delay: 2.7, top: 170, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(desc, 1.5, { delay: 2.9, top: 215, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(learn, 1.5, { delay: 2.9, top: 445, opacity: 1, ease: Power1.easeOut, onComplete: function () {
                                     self.animating = false;
                                 } });
                         }
                     }
                     else {
-                        TweenMax.to(image, 1.5, { delay: .5, top: 155, opacity: 1, ease: Power1.easeOut });
-                        TweenMax.to(title, 1.5, { delay: 0.7, top: 170, opacity: 1, ease: Power1.easeOut });
-                        TweenMax.to(desc, 1.5, { delay: 0.9, top: 215, opacity: 1, ease: Power1.easeOut });
-                        if ($(window).innerWidth() < 686) {
-                            TweenMax.to(learn, 1.5, { delay: 0.9, top: 500, opacity: 1, ease: Power1.easeOut, onComplete: function () {
-                                    console.log('playIn done');
+                        if (isMobile) {
+                            TweenMax.to(image, 1.5, { delay: .5, top: 0, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(title, 1.5, { delay: 0.7, top: 0, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(desc, 1.5, { delay: 0.9, top: 0, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(learn, 1.5, { delay: 0.9, top: 0, opacity: 1, ease: Power1.easeOut, onComplete: function () {
                                     self.animating = false;
                                 } });
                         }
                         else {
-                            TweenMax.to(learn, 1.5, { delay: 0.9, top: 465, opacity: 1, ease: Power1.easeOut, onComplete: function () {
-                                    console.log('playIn done');
+                            TweenMax.to(image, 1.5, { delay: .5, top: 155, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(title, 1.5, { delay: 0.7, top: 170, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(desc, 1.5, { delay: 0.9, top: 215, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(learn, 1.5, { delay: 0.9, top: 445, opacity: 1, ease: Power1.easeOut, onComplete: function () {
                                     self.animating = false;
                                 } });
                         }
                     }
+                };
+                ProductSlides.prototype.resize = function (e) {
+                    console.log(e);
                 };
                 __decorate([
                     core_1.Input(), 

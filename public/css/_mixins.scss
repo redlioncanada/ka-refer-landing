@@ -44,3 +44,12 @@
     vertical-align: middle;
     text-align: center;
 }
+
+@mixin mobile-block-element() {
+    position: relative;
+    top: initial;
+    left: initial;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
