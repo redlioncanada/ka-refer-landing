@@ -39,6 +39,10 @@ System.register(['angular2/core', './product.selector.slide', './landing.timelin
                     this.isAnimating = new core_1.EventEmitter();
                     this.elementRef = elementRef;
                     this.animating = false;
+                    this.imageTop = 155;
+                    this.titleTop = 170;
+                    this.descTop = 215;
+                    this.learnTop = 445;
                 }
                 Object.defineProperty(ProductSlides.prototype, "animating", {
                     set: function (a) {
@@ -110,17 +114,21 @@ System.register(['angular2/core', './product.selector.slide', './landing.timelin
                             TweenMax.to(image, 1.5, { delay: 2.5, top: 0, opacity: 1, ease: Power1.easeOut });
                             TweenMax.to(title, 1.5, { delay: 2.7, top: 0, opacity: 1, ease: Power1.easeOut });
                             TweenMax.to(desc, 1.5, { delay: 2.9, top: 0, opacity: 1, ease: Power1.easeOut });
-                            TweenMax.to(learn, 1.5, { delay: 2.9, top: 0, opacity: 1, ease: Power1.easeOut, onComplete: function () {
+                            TweenMax.to(learn, 1.5, {
+                                delay: 2.9, top: 0, opacity: 1, ease: Power1.easeOut, onComplete: function () {
                                     self.animating = false;
-                                } });
+                                }
+                            });
                         }
                         else {
-                            TweenMax.to(image, 1.5, { delay: 2.5, top: 155, opacity: 1, ease: Power1.easeOut });
-                            TweenMax.to(title, 1.5, { delay: 2.7, top: 170, opacity: 1, ease: Power1.easeOut });
-                            TweenMax.to(desc, 1.5, { delay: 2.9, top: 215, opacity: 1, ease: Power1.easeOut });
-                            TweenMax.to(learn, 1.5, { delay: 2.9, top: 445, opacity: 1, ease: Power1.easeOut, onComplete: function () {
+                            TweenMax.to(image, 1.5, { delay: 2.5, top: this.imageTop, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(title, 1.5, { delay: 2.7, top: this.titleTop, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(desc, 1.5, { delay: 2.9, top: this.descTop, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(learn, 1.5, {
+                                delay: 2.9, top: this.learnTop, opacity: 1, ease: Power1.easeOut, onComplete: function () {
                                     self.animating = false;
-                                } });
+                                }
+                            });
                         }
                     }
                     else {
@@ -128,17 +136,21 @@ System.register(['angular2/core', './product.selector.slide', './landing.timelin
                             TweenMax.to(image, 1.5, { delay: .5, top: 0, opacity: 1, ease: Power1.easeOut });
                             TweenMax.to(title, 1.5, { delay: 0.7, top: 0, opacity: 1, ease: Power1.easeOut });
                             TweenMax.to(desc, 1.5, { delay: 0.9, top: 0, opacity: 1, ease: Power1.easeOut });
-                            TweenMax.to(learn, 1.5, { delay: 0.9, top: 0, opacity: 1, ease: Power1.easeOut, onComplete: function () {
+                            TweenMax.to(learn, 1.5, {
+                                delay: 0.9, top: 0, opacity: 1, ease: Power1.easeOut, onComplete: function () {
                                     self.animating = false;
-                                } });
+                                }
+                            });
                         }
                         else {
-                            TweenMax.to(image, 1.5, { delay: .5, top: 155, opacity: 1, ease: Power1.easeOut });
-                            TweenMax.to(title, 1.5, { delay: 0.7, top: 170, opacity: 1, ease: Power1.easeOut });
-                            TweenMax.to(desc, 1.5, { delay: 0.9, top: 215, opacity: 1, ease: Power1.easeOut });
-                            TweenMax.to(learn, 1.5, { delay: 0.9, top: 445, opacity: 1, ease: Power1.easeOut, onComplete: function () {
+                            TweenMax.to(image, 1.5, { delay: 2.5, top: this.imageTop, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(title, 1.5, { delay: 2.7, top: this.titleTop, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(desc, 1.5, { delay: 2.9, top: this.descTop, opacity: 1, ease: Power1.easeOut });
+                            TweenMax.to(learn, 1.5, {
+                                delay: 2.9, top: this.learnTop, opacity: 1, ease: Power1.easeOut, onComplete: function () {
                                     self.animating = false;
-                                } });
+                                }
+                            });
                         }
                     }
                 };
