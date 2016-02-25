@@ -16,7 +16,7 @@ export class GoogleApi {
 		var params = {
 			id: id,
 			part: 'snippet',
-			key: 'eAIzaSyARK_mU0WFMzPWWT6LcNWJX4I0kw0c7t6Q'
+			key: 'AIzaSyAzWTgldNKQqc8MPajiWHPhJ6UI6SPdaSE'
 		}
 
 		this.http.get(this.constructURL('https://www.googleapis.com/youtube/v3/videos', params))
