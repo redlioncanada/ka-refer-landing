@@ -14,7 +14,7 @@ export class VideoPlayerVideo {
 
 	constructor(private logger: Logger) {
 		this.ready = false
-		this.selected = false
+		this.selected = true
 		this.ended = false
 	}
 
@@ -49,13 +49,14 @@ export class VideoPlayerVideo {
 
 	ngOnChanges(changes) {
 		if ("selected" in changes) {
+            console.log(changes);
 			if (changes.selected.currentValue) {
-				if (this.ended) {
+				//if (this.ended) {
 					this.ended = false
 					this.restart(this)
-				} else {
-					this.play(this)
-				}
+				//} else {
+				//	this.play(this)
+				//}
 			} else {
 				this.pause(this)
 				this.reset(this)
@@ -90,13 +91,14 @@ export class VideoPlayerVideo {
 		//this is finicky, sometimes just doesn't work
 		//seems to be a bug with the player
 		//maybe we could que an interval on self.play until we see the state change, but that seems hacky
-		self.reset(self)
+		//self.reset(self)
+        self.player.seekTo(0)
 		self.play(self)
 	}
 
 	reset(self) {
 		if (!self) self = this
 		if (!self.ready) return
-		self.player.seekTo(0)
+		//self.player.seekTo(0)
 	}
 }

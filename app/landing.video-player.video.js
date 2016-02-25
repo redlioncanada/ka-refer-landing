@@ -25,7 +25,7 @@ System.register(['angular2/core', './services/logger.service'], function(exports
                 function VideoPlayerVideo(logger) {
                     this.logger = logger;
                     this.ready = false;
-                    this.selected = false;
+                    this.selected = true;
                     this.ended = false;
                 }
                 VideoPlayerVideo.prototype.ngAfterViewInit = function () {
@@ -55,14 +55,11 @@ System.register(['angular2/core', './services/logger.service'], function(exports
                 };
                 VideoPlayerVideo.prototype.ngOnChanges = function (changes) {
                     if ("selected" in changes) {
+                        console.log(changes);
                         if (changes.selected.currentValue) {
-                            if (this.ended) {
-                                this.ended = false;
-                                this.restart(this);
-                            }
-                            else {
-                                this.play(this);
-                            }
+                            //if (this.ended) {
+                            this.ended = false;
+                            this.restart(this);
                         }
                         else {
                             this.pause(this);
@@ -99,7 +96,8 @@ System.register(['angular2/core', './services/logger.service'], function(exports
                     //this is finicky, sometimes just doesn't work
                     //seems to be a bug with the player
                     //maybe we could que an interval on self.play until we see the state change, but that seems hacky
-                    self.reset(self);
+                    //self.reset(self)
+                    self.player.seekTo(0);
                     self.play(self);
                 };
                 VideoPlayerVideo.prototype.reset = function (self) {
@@ -107,7 +105,7 @@ System.register(['angular2/core', './services/logger.service'], function(exports
                         self = this;
                     if (!self.ready)
                         return;
-                    self.player.seekTo(0);
+                    //self.player.seekTo(0)
                 };
                 __decorate([
                     core_1.Input(), 
