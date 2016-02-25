@@ -29,3 +29,9 @@
     -o-transition: initial;
     transition: initial;
 }
+
+@mixin centered-table-cell() {
+	display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}

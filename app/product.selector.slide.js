@@ -24,6 +24,11 @@ System.register(['angular2/core', './landing.learn-more.button'], function(expor
             ProductSlide = (function () {
                 function ProductSlide() {
                 }
+                ProductSlide.prototype.ngOnChanges = function (changes) {
+                    if ("selected" in changes) {
+                        console.log(changes);
+                    }
+                };
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Object)
@@ -44,6 +49,10 @@ System.register(['angular2/core', './landing.learn-more.button'], function(expor
                     core_1.Input(), 
                     __metadata('design:type', Object)
                 ], ProductSlide.prototype, "fridgeId", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], ProductSlide.prototype, "selected", void 0);
                 ProductSlide = __decorate([
                     core_1.Component({
                         selector: 'product-slide',

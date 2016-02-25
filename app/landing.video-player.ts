@@ -1,11 +1,11 @@
 import {Component} from 'angular2/core'
-import {VideoPlayerSelector} from './videoplayer-selector.component'
-import {VideoPlayerPlayer} from './videoplayer-player.component'
+import {VideoPlayerSelector} from './landing.video-player.selector'
+import {VideoPlayerPlayer} from './landing.video-player.player'
 import {Logger} from './services/logger.service'
 
 @Component({
     selector: 'videoplayer',
-    templateUrl: 'app/views/videoplayer.view.html',
+    templateUrl: 'app/views/landing.video-player.view.html',
 	directives: [VideoPlayerPlayer, VideoPlayerSelector]
 })
 export class VideoPlayer {

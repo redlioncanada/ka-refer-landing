@@ -115,7 +115,7 @@ System.register(['angular2/core', './services/logger.service'], function(exports
                 VideoPlayerVideo = __decorate([
                     core_1.Component({
                         selector: 'videoplayer-video',
-                        templateUrl: 'app/views/videoplayer-video.view.html'
+                        templateUrl: 'app/views/landing.video-player.video.view.html'
                     }), 
                     __metadata('design:paramtypes', [logger_service_1.Logger])
                 ], VideoPlayerVideo);
@@ -125,4 +125,4 @@ System.register(['angular2/core', './services/logger.service'], function(exports
         }
     }
 });
-//# sourceMappingURL=videoplayer-video.component.js.map
+//# sourceMappingURL=landing.video-player.video.js.map

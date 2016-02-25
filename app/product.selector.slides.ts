@@ -1,7 +1,7 @@
 /// <reference path="../typings/jquery/jquery.d.ts" />
 /// <reference path="../typings/greensock/greensock.d.ts" />
 import {bootstrap}    from 'angular2/platform/browser'
-import {Component, Input, Inject, ElementRef} from 'angular2/core'
+import {Component, Input, Output, Inject, ElementRef, EventEmitter} from 'angular2/core'
 import {ProductSlide} from './product.selector.slide'
 import {ProductModel} from './models/products.model'
 import {SelectorModel} from './models/selector.model'
@@ -12,90 +12,107 @@ declare var $: JQueryStatic;
 @Component({
     selector: 'product-slides',
     templateUrl: 'app/views/product.selector.slides.view.html',
-    directives: [ProductSlide] 
+    directives: [ProductSlide]
     
 })
-export class ProductSlides  extends TimelineController {
-    
-    public products:[ProductModel] = [
-        new ProductModel("./public/images/products/5-door.png", "5 door", "A design so uniquely versatile, this 5-door style delivers optimal organization.", "http://kitchenAid.ca", "five-door"),
-        new ProductModel("./public/images/products/built-in.png", "Built-in", "A design so uniquely versatile, this 5-door style delivers optimal organization.", "http://kitchenAid.ca", "built-in"),
-        new ProductModel("./public/images/products/french-door.png", "French Door", "A design so uniquely versatile, this 5-door style delivers optimal organization.", "http://kitchenAid.ca", "french-door"),
-        new ProductModel("./public/images/products/side-by-side.png", "Side-By-Side", "A design so uniquely versatile, this 5-door style delivers optimal organization.", "http://kitchenAid.ca", "side-by-side"),
-        new ProductModel("./public/images/products/bottom-freezer.png", "Bottom Freezer", "A design so uniquely versatile, this 5-door style delivers optimal organization.", "http://kitchenAid.ca", "bottom-freezer"),
-        new ProductModel("./public/images/products/under-counter.png", "Under Counter", "A design so uniquely versatile, this 5-door style delivers optimal organization.", "http://kitchenAid.ca", "under-counter"),
-    ];
-    
-    public slides:[SelectorModel];
+export class ProductSlides extends TimelineController {
+    @Input() products;
+    @Input() selectedProduct;
+    @Output() isAnimating = new EventEmitter();
     
     private rootElement;
     private elementRef: ElementRef;
-    //
-    private fiveDoor;
-    private fiveDoorTitle;
-    private fiveDoorDesc;
-    private fiveDoorImg;
-    private fiveDoorLearn;
-    //
-    private builtIn;
-    private builtInTitle;
-    private builtInDesc;
-    private builtInImg;
-    private fbuiltInLearn;
-    //
-    private frenchDoor;
-    private frenchDoorTitle;
-    private frenchDoorDesc;
-    private frenchDoorImg;
-    private frenchDoorLearn;
-    //
-    private sideBy;
-    private sideByTitle;
-    private sideByDesc;
-    private sideByImg;
-    private sideByLearn;
-    //
-    private bottomFreezer;
-    private bottomFreezerTitle;
-    private bottomFreezerDesc;
-    private bottomFreezerImg;
-    private bottomFreezerLearn;
-    //
-    private underCounterDoor;
-    private underCounterTitle;
-    private underCounterDesc;
-    private underCounterImg;
-    private underCounterLearn;
-    //
-    
+    private _animating: boolean;
+
+    set animating(a:boolean) {
+        if (this._animating != a) {
+            this._animating = a
+            this.isAnimating.emit(a)
+        }
+    }
+
     public constructor(@Inject(ElementRef) elementRef: ElementRef) {
         super()
         this.elementRef = elementRef
-       
+        this.animating = false
     }
-    public playIn(){
-        TweenMax.to(this.fiveDoorImg, 0, {delay:0, opacity:0, top:130, ease:Power3.easeOut});
-            TweenMax.to(this.fiveDoorTitle, 0, {delay:0, opacity:0, top:130, ease:Power3.easeOut});
-            TweenMax.to(this.fiveDoorDesc, 0, {delay:0, opacity:0, top:165, ease:Power3.easeOut});
-            //
-            TweenMax.to(this.fiveDoorImg, 2, {delay:2.5, opacity:1, top:155, ease:Power3.easeOut});
-            TweenMax.to(this.fiveDoorTitle, 2, {delay:3, opacity:1, top:170, ease:Power3.easeOut});
-            TweenMax.to(this.fiveDoorDesc, 2, {delay:3.5, opacity:1, top:215, ease:Power3.easeOut});
-    }
-    
+
      private ngAfterViewInit() {
-            
             this.rootElement = $(this.elementRef.nativeElement)
-            
-            this.fiveDoor = ($(this.rootElement).find('#five-door'));
-            this.fiveDoorImg = ($(this.fiveDoor).find('.rl-ka-lndng-fridge'));
-            this.fiveDoorTitle = ($(this.fiveDoor).find('.rl-ka-lndng-fridge-title'));
-            this.fiveDoorDesc = ($(this.fiveDoor).find('.rl-ka-lndng-fridge-desc'));
-            this.fiveDoorLearn = ($(this.fiveDoor).find('learn-more-button'));
-            //this.fiveDoor = ($(this.rootElement).find('#five-door').children('.rl-ka-lndng-fridge'));
-            //this.fiveDoorTitle = ($(this.rootElement).find('#five-door').children('.rl-ka-lndng-fridge-title'));
-            //this.fiveDoorDesc = ($(this.rootElement).find('#five-door').children('rl-ka-lndng-fridge-desc'));
-            
-            
+            // var target = $(this.rootElement).find('#five-door');
+            var target = this.selectedProduct.prodId
+
+            this.playIn(this,true,target)
         }
+
+      private ngOnChanges(changes) {
+          var self = this
+          if ("selectedProduct" in changes && !this.animating) {
+              console.log('product.selector.slides current:',changes.selectedProduct.currentValue)
+              console.log('product.selector.slides previous:',changes.selectedProduct.previousValue)
+              this.playOut(changes.selectedProduct.previousValue.prodId, function() {
+                  self.playIn(self, false, changes.selectedProduct.currentValue.prodId)
+              })
+          }
+      }
+
+      public playOut(target, cb) {
+          console.log('playOut')
+          var self = this
+          console.log('#' + target)
+          target = $(this.rootElement).find('#'+target)
+          
+          var image = ($(target).find('.rl-ka-lndng-fridge'))
+          var title = ($(target).find('.rl-ka-lndng-fridge-title'))
+          var desc = ($(target).find('.rl-ka-lndng-fridge-desc'))
+          var learn = ($(target).find('learn-more-button'))
+
+          this.animating = true;
+
+          TweenMax.to(image, 2, { delay: 0, opacity: 0, top: 130, ease: Power3.easeOut });
+          TweenMax.to(title, 2, { delay: 0.5, opacity: 0, top: 130, ease: Power3.easeOut });
+          TweenMax.to(desc, 2, { delay: 1, opacity: 0, top: 130, ease: Power3.easeOut });
+          TweenMax.to(learn, 2, { delay: 1.5, opacity: 0, top: 130, ease: Power3.easeOut, onComplete: function() {
+              TweenMax.to(target, 0, { delay: 0, opacity: 0 });
+              console.log('playOut done')
+              cb()
+          }});
+      }
+
+      public playIn(self, delay=true, target) {
+          console.log('playIn')
+          if (!self) self = this
+          console.log('#' + target)
+          target = $(self.rootElement).find('#'+target)
+      
+          var image = ($(target).find('.rl-ka-lndng-fridge'))
+          var title = ($(target).find('.rl-ka-lndng-fridge-title'))
+          var desc = ($(target).find('.rl-ka-lndng-fridge-desc'))
+          var learn = ($(target).find('learn-more-button'))
+
+          TweenMax.to(image, 0, { delay: 0, opacity: 0, top: 130 });
+          TweenMax.to(title, 0, { delay: 0, opacity: 0, top: 130 });
+          TweenMax.to(desc, 0, { delay: 0, opacity: 0, top: 165 });
+          TweenMax.to(learn, 0, { delay: 0, opacity: 0, top: 290 });
+          TweenMax.to(target, 0, { delay: 0.1, opacity: 1 });
+          //
+          if (delay) {
+              TweenMax.to(image, 2, { delay: 2.5, opacity: 1, top: 155, ease: Power3.easeOut });
+              TweenMax.to(title, 2, { delay: 3, opacity: 1, top: 170, ease: Power3.easeOut });
+              TweenMax.to(desc, 2, { delay: 3.5, opacity: 1, top: 215, ease: Power3.easeOut });
+              TweenMax.to(learn, 2, { delay: 4, opacity: 1, top: 325, ease: Power3.easeOut, onComplete: function() {
+                  console.log('playIn done')
+                  self.animating = false;
+              } });
+          } else {
+              TweenMax.to(image, 2, { delay: 0, opacity: 1, top: 155, ease: Power3.easeOut });
+              TweenMax.to(title, 2, { delay: 0.5, opacity: 1, top: 170, ease: Power3.easeOut });
+              TweenMax.to(desc, 2, { delay: 1, opacity: 1, top: 215, ease: Power3.easeOut });
+              TweenMax.to(learn, 2, { delay: 1.5, opacity: 1, top: 325, ease: Power3.easeOut, onComplete: function() {
+                      console.log('playIn done')
+                      self.animating = false;
+                  }
+              });
+          }
+      }
 }

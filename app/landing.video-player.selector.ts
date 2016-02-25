@@ -1,11 +1,11 @@
 import {Component, View, Input, Output, EventEmitter} from 'angular2/core'
 import {Logger} from './services/logger.service'
 import {GoogleApi} from './services/googleapi.service'
-import {VideoPlayer} from './videoplayer.component'
+import {VideoPlayer} from './landing.video-player'
 
 @Component({
 	selector: 'videoplayer-selector',
-    templateUrl: 'app/views/videoplayer-selector.view.html'
+    templateUrl: 'app/views/landing.video-player.selector.view.html'
 })
 export class VideoPlayerSelector {
 	@Input() data

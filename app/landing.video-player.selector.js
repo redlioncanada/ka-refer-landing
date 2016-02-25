@@ -72,7 +72,7 @@ System.register(['angular2/core', './services/logger.service', './services/googl
                 VideoPlayerSelector = __decorate([
                     core_1.Component({
                         selector: 'videoplayer-selector',
-                        templateUrl: 'app/views/videoplayer-selector.view.html'
+                        templateUrl: 'app/views/landing.video-player.selector.view.html'
                     }), 
                     __metadata('design:paramtypes', [logger_service_1.Logger, googleapi_service_1.GoogleApi])
                 ], VideoPlayerSelector);
@@ -82,4 +82,4 @@ System.register(['angular2/core', './services/logger.service', './services/googl
         }
     }
 });
-//# sourceMappingURL=videoplayer-selector.component.js.map
+//# sourceMappingURL=landing.video-player.selector.js.map

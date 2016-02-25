@@ -1,4 +1,4 @@
-System.register(['angular2/core', './services/logger.service', './videoplayer-video.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './services/logger.service', './landing.video-player.video'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './services/logger.service', './videoplayer-vi
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, logger_service_1, videoplayer_video_component_1;
+    var core_1, logger_service_1, landing_video_player_video_1;
     var VideoPlayerPlayer;
     return {
         setters:[
@@ -20,8 +20,8 @@ System.register(['angular2/core', './services/logger.service', './videoplayer-vi
             function (logger_service_1_1) {
                 logger_service_1 = logger_service_1_1;
             },
-            function (videoplayer_video_component_1_1) {
-                videoplayer_video_component_1 = videoplayer_video_component_1_1;
+            function (landing_video_player_video_1_1) {
+                landing_video_player_video_1 = landing_video_player_video_1_1;
             }],
         execute: function() {
             VideoPlayerPlayer = (function () {
@@ -39,8 +39,8 @@ System.register(['angular2/core', './services/logger.service', './videoplayer-vi
                 VideoPlayerPlayer = __decorate([
                     core_1.Component({
                         selector: 'videoplayer-player',
-                        templateUrl: 'app/views/videoplayer-player.view.html',
-                        directives: [videoplayer_video_component_1.VideoPlayerVideo]
+                        templateUrl: 'app/views/landing.video-player.player.view.html',
+                        directives: [landing_video_player_video_1.VideoPlayerVideo]
                     }), 
                     __metadata('design:paramtypes', [logger_service_1.Logger])
                 ], VideoPlayerPlayer);
@@ -50,4 +50,4 @@ System.register(['angular2/core', './services/logger.service', './videoplayer-vi
         }
     }
 });
-//# sourceMappingURL=videoplayer-player.component.js.map
+//# sourceMappingURL=landing.video-player.player.js.map

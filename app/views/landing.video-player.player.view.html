@@ -9,7 +9,7 @@
     		{{data[currentId].title}}
     	</h2>
     	<div class="description">
-    		{{data[currentId].desc}}
+    		{{!!data[currentId].desc ? data[currentId].desc : ''}}
     	</div>
     </div>
 </div>

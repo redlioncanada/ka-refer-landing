@@ -16,6 +16,11 @@ export class ProductSlide {
     @Input() fridgeDescription
     @Input() fridgeUrl
     @Input() fridgeId
-
+    @Input() selected
     
+    ngOnChanges(changes) {
+        if ("selected" in changes) {
+            console.log(changes)
+        }
+    }
 }

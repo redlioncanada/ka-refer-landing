@@ -16,13 +16,19 @@ product-selector {
         opacity: 0;
     }
     
+    product-slides {
+        display: block;
+    }
     .product-slide{
         position: absolute;
         width: 943px;
     }
+    product-slide {
+        height: 420px;
+        display: inline-block;
+    }
 
     > .row{
-        height: 600px;
         overflow: hidden;
         background-image: url('../../public/images/refer-select-shadow.png');
         background-repeat: no-repeat;
@@ -70,4 +76,83 @@ product-selector {
         text-rendering: optimizeSpeed;
     }
     
+}
+
+product-selector-nav {
+    position: relative;
+    display: block;
+    padding-top: 70px;
+
+    .row {
+        position: relative;
+    }
+
+    .product,.see-all {
+        float: left;
+        width: 14.28571428571429%;
+        padding: 0 2px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .product:not(.selected) {
+        img {
+            opacity: 0.6;
+        }
+
+        .button {
+            color: $selectorTextColor;
+        }
+    }
+
+    .button {
+        margin-top: 20px;
+        height: 25px;
+        display: table;
+        color: $selectorTextColor;
+        border: 2px solid $selectorBackgroundColor;
+        width: 100%;
+        @include transition(0.2s);
+
+        p {
+            width: 100%;
+            @include centered-table-cell;
+            line-height: 13px;
+            font-size: 0.8em;
+        }
+    }
+
+    .button:hover {
+        background-color: $selectorBackgroundColor;
+        color: $selectorHighlightedTextColor !important;
+    }
+
+    .product.selected {
+        .button {
+            background-color: $selectorBackgroundColor;
+            color: $selectorHighlightedTextColor;
+        }
+    }
+
+    .see-all {
+        color: $selectorCTAColor;
+        border: 3px solid $selectorCTAColor;
+        text-transform: uppercase;
+        display: table;
+        height: 100%;
+        height: 190px;
+        @include transition(0.2s);
+
+        p {
+            @include centered-table-cell;
+        }
+    }
+
+    .see-all:hover {
+         p {
+            text-decoration: underline;
+         }
+    }
 }
