@@ -49,10 +49,11 @@ features {
         height: inherit;
         width: inherit;
         vertical-align: middle;
+        padding: 0 20px;
     }
 
     .ka-landing-feature-button-over:hover {
-        opacity: .8;
+        opacity: .9;
     }
 
     .ka-landing-over-copy {
@@ -77,14 +78,15 @@ features {
     }
 
     .ka-landing-feature-button {
-        width: 32%;
-        margin: 5px;
+        width: 33%;
+        margin: 2px;
         float: left;
         height: 266px;
         border: solid;
         border-color: #aaaaaa;
         border-width: 4px;
         position: relative;
+        box-sizing: border-box;
         
         @media screen and (max-width: 768px) {
             margin: 3px;
@@ -110,6 +112,17 @@ features {
             margin-right: auto;
             margin-top: 10px;
         }
-    
+    }
+
+    feature-button:first-of-type {
+        .ka-landing-feature-button {
+            margin-left: 0px;
+        }
+    }
+
+    feature-button:last-of-type {
+        .ka-landing-feature-button {
+            margin-right: 0px;
+        }
     }
 }

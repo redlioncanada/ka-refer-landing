@@ -12,7 +12,7 @@ export class VideoPlayer {
 	public title = "Designed To Inspire"
 	public videos = [
 		{
-			id: '70cAsWGqbgU',
+			id: '9IFIdkLo29Y',
 			thumb: './public/images/video-select-1.jpg',
 			title: 'A revolutionary mark on a revolutionary new line',
 			ctaTitle: 'Design',
@@ -20,7 +20,7 @@ export class VideoPlayer {
 			desc: false
 		},
 		{
-			id: 'RxnPMBOUWfk',
+			id: 'fWbEHxpUEwM',
 			thumb: './public/images/video-select-2.jpg',
 			title: 'A revolutionary mark on a revolutionary new line',
 			ctaTitle: 'Food Care',
@@ -28,7 +28,7 @@ export class VideoPlayer {
 			desc: false
 		},
 		{
-			id: 'XSu9pHc1GdA',
+			id: 'RxnPMBOUWfk',
 			thumb: './public/images/video-select-3.jpg',
 			title: 'A revolutionary mark on a revolutionary new line',
 			ctaTitle: '5-Door',

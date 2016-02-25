@@ -22,9 +22,9 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 function ProductSelectorNav() {
                     this.productSelected = new core_1.EventEmitter();
                     this.ctaText = 'See All';
+                    this.ctaLink = 'http://www.kitchenaid.ca/en_CA/shop/major-appliances-1/refrigerators-3/102310048/';
                 }
                 ProductSelectorNav.prototype.select = function (product) {
-                    console.log('selected' + product.prodId);
                     this.productSelected.emit(product);
                 };
                 __decorate([

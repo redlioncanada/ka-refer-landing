@@ -10,13 +10,14 @@ export class ProductSelectorNav {
 	@Input() selectedProduct
 	@Output() productSelected = new EventEmitter()
 	private ctaText: string
+	private ctaLink: string
 
 	constructor() {
 		this.ctaText = 'See All'
+		this.ctaLink = 'http://www.kitchenaid.ca/en_CA/shop/major-appliances-1/refrigerators-3/102310048/'
 	}
 
 	select(product) {
-		console.log('selected' +product.prodId)
 		this.productSelected.emit(product)
 	}
 }

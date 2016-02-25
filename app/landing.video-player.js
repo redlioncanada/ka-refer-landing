@@ -33,7 +33,7 @@ System.register(['angular2/core', './landing.video-player.selector', './landing.
                     this.title = "Designed To Inspire";
                     this.videos = [
                         {
-                            id: '70cAsWGqbgU',
+                            id: '9IFIdkLo29Y',
                             thumb: './public/images/video-select-1.jpg',
                             title: 'A revolutionary mark on a revolutionary new line',
                             ctaTitle: 'Design',
@@ -41,7 +41,7 @@ System.register(['angular2/core', './landing.video-player.selector', './landing.
                             desc: false
                         },
                         {
-                            id: 'RxnPMBOUWfk',
+                            id: 'fWbEHxpUEwM',
                             thumb: './public/images/video-select-2.jpg',
                             title: 'A revolutionary mark on a revolutionary new line',
                             ctaTitle: 'Food Care',
@@ -49,7 +49,7 @@ System.register(['angular2/core', './landing.video-player.selector', './landing.
                             desc: false
                         },
                         {
-                            id: 'XSu9pHc1GdA',
+                            id: 'RxnPMBOUWfk',
                             thumb: './public/images/video-select-3.jpg',
                             title: 'A revolutionary mark on a revolutionary new line',
                             ctaTitle: '5-Door',

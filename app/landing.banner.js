@@ -23,7 +23,7 @@ System.register(['angular2/core', './landing.learn-more.button'], function(expor
         execute: function() {
             Banner = (function () {
                 function Banner() {
-                    this.link = 'http://kitchenaid.ca';
+                    this.link = 'http://www.kitchenaid.ca/en_CA/new/';
                     this.image = './public/images/banner.jpg';
                 }
                 Banner = __decorate([

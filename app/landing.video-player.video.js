@@ -66,6 +66,7 @@ System.register(['angular2/core', './services/logger.service'], function(exports
                         }
                         else {
                             this.pause(this);
+                            this.reset(this);
                         }
                     }
                 };
@@ -101,8 +102,15 @@ System.register(['angular2/core', './services/logger.service'], function(exports
                     //this is finicky, sometimes just doesn't work
                     //seems to be a bug with the player
                     //maybe we could que an interval on self.play until we see the state change, but that seems hacky
-                    self.player.seekTo(0);
+                    self.reset(self);
                     self.play(self);
+                };
+                VideoPlayerVideo.prototype.reset = function (self) {
+                    if (!self)
+                        self = this;
+                    if (!self.ready)
+                        return;
+                    self.player.seekTo(0);
                 };
                 __decorate([
                     core_1.Input(), 

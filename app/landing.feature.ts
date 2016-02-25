@@ -21,13 +21,13 @@ export class Features {
         				"Ratings & Reviews",
         				"See what others are saying",
         				"Click Here",
-        				"http://kitchenaid.ca",
+        				"http://www.kitchenaid.ca/en_CA/2_2_89/global_best-products.content.html",
         				"star"),
         new FeatureModel("./public/images/refer-landing-mag-glass.png",
         				"Find Your Kitchenaid",
-        				"Need help finding your refrigerator",
+        				"Need help finding your refrigerator?",
         				"Click Here",
-        				"http://kitchenaid.ca",
+        				"http://findmy.kitchenaid.ca/#/question/Appliance",
         				"magnifier")
     ];
 }
