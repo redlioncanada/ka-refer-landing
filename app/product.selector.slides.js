@@ -103,7 +103,7 @@ System.register(['angular2/core', './product.selector.slide', './landing.timelin
                         TweenMax.to(learn, 0, { delay: 0, top: 450 });
                     }
                     else {
-                        TweenMax.to(learn, 0, { delay: 0, top: 290 });
+                        TweenMax.to(learn, 0, { delay: 0, top: 410 });
                     }
                     TweenMax.to(target, 0, { delay: 0.1, opacity: 1 });
                     //
@@ -118,7 +118,7 @@ System.register(['angular2/core', './product.selector.slide', './landing.timelin
                                 } });
                         }
                         else {
-                            TweenMax.to(learn, 1.5, { delay: 2.9, top: 325, opacity: 1, ease: Power1.easeOut, onComplete: function () {
+                            TweenMax.to(learn, 1.5, { delay: 2.9, top: 445, opacity: 1, ease: Power1.easeOut, onComplete: function () {
                                     console.log('playIn done');
                                     self.animating = false;
                                 } });
@@ -135,7 +135,7 @@ System.register(['angular2/core', './product.selector.slide', './landing.timelin
                                 } });
                         }
                         else {
-                            TweenMax.to(learn, 1.5, { delay: 0.9, top: 325, opacity: 1, ease: Power1.easeOut, onComplete: function () {
+                            TweenMax.to(learn, 1.5, { delay: 0.9, top: 445, opacity: 1, ease: Power1.easeOut, onComplete: function () {
                                     console.log('playIn done');
                                     self.animating = false;
                                 } });
