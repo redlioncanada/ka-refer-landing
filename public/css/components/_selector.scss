@@ -90,9 +90,9 @@ product-selector {
         text-rendering: optimizeSpeed;
         opacity: 0;
         @media screen and (max-width: 685px) {
-           font-size: 30px;
-           line-height: 36px;
-           width: 225px;
+           font-size: 18px;
+           line-height: 24px;
+           width: 50vw;
         }
     }
     

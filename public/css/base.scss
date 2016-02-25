@@ -29,10 +29,6 @@ html, body {
 
 #container{
     width: 100%;
-    
-    @media screen and (max-width: 480px) {
-        width: 480px;
-    }
 }
 
 rl-ka-refer-landing {
@@ -79,7 +75,7 @@ rl-ka-refer-landing {
 	> *:not(header):not(footer) {
 		width: 100%;
         max-width:$appWidth;
-        min-width: 480px;
+        min-width: 320px;
 		margin: 0 auto;
 		position: relative;
 		display: block;

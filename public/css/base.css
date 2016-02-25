@@ -24,9 +24,6 @@ html, body {
 
 #container {
   width: 100%; }
-  @media screen and (max-width: 480px) {
-    #container {
-      width: 480px; } }
 
 rl-ka-refer-landing {
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -530,9 +527,9 @@ rl-ka-refer-landing {
     display: block;
     padding-top: 40px; }
     rl-ka-refer-landing masthead #ka-landing-masthead {
-      height: 323px;
       overflow: hidden;
-      cursor: default; }
+      cursor: default;
+      margin-bottom: 20px; }
     rl-ka-refer-landing masthead img {
       width: 100%; }
     rl-ka-refer-landing masthead .ka-landing-title h1 {
@@ -606,7 +603,7 @@ rl-ka-refer-landing {
     background-color: #cc0000;
     position: absolute; }
   rl-ka-refer-landing features .ka-landing-feature-button {
-    width: 33%;
+    width: 32%;
     margin: 2px;
     float: left;
     height: 266px;
@@ -711,9 +708,9 @@ rl-ka-refer-landing {
       opacity: 0; }
       @media screen and (max-width: 685px) {
         rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-desc {
-          font-size: 30px;
-          line-height: 36px;
-          width: 225px; } }
+          font-size: 18px;
+          line-height: 24px;
+          width: 50vw; } }
   rl-ka-refer-landing product-selector-nav {
     position: relative;
     display: block;
@@ -905,7 +902,7 @@ rl-ka-refer-landing {
   rl-ka-refer-landing > *:not(header):not(footer) {
     width: 100%;
     max-width: 944px;
-    min-width: 480px;
+    min-width: 320px;
     margin: 0 auto;
     position: relative;
     display: block; }
