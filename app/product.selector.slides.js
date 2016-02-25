@@ -42,7 +42,7 @@ System.register(['angular2/core', './product.selector.slide', './landing.timelin
                     this.imageTop = 155;
                     this.titleTop = 170;
                     this.descTop = 215;
-                    this.learnTop = 445;
+                    this.learnTop = 485;
                 }
                 Object.defineProperty(ProductSlides.prototype, "animating", {
                     set: function (a) {
@@ -103,10 +103,10 @@ System.register(['angular2/core', './product.selector.slide', './landing.timelin
                         TweenMax.to(learn, 0, { delay: 0, top: -20 });
                     }
                     else {
-                        TweenMax.to(image, 0, { delay: 0, top: 130 });
-                        TweenMax.to(title, 0, { delay: 0, top: 130 });
-                        TweenMax.to(desc, 0, { delay: 0, top: 165 });
-                        TweenMax.to(learn, 0, { delay: 0, top: 410 });
+                        TweenMax.to(image, 0, { delay: 0, top: this.imageTop - 20 });
+                        TweenMax.to(title, 0, { delay: 0, top: this.titleTop - 20 });
+                        TweenMax.to(desc, 0, { delay: 0, top: this.descTop - 20 });
+                        TweenMax.to(learn, 0, { delay: 0, top: this.learnTop - 20 });
                     }
                     TweenMax.to(target, 0, { delay: 0.1, opacity: 1 });
                     if (delay) {
