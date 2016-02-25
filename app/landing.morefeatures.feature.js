@@ -33,6 +33,14 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     core_1.Input(), 
                     __metadata('design:type', Object)
                 ], MoreFeaturesFeature.prototype, "link", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], MoreFeaturesFeature.prototype, "text", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], MoreFeaturesFeature.prototype, "cta", void 0);
                 MoreFeaturesFeature = __decorate([
                     core_1.Component({
                         selector: 'more-features-feature',

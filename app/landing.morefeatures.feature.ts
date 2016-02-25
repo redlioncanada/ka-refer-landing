@@ -12,4 +12,6 @@ export class MoreFeaturesFeature {
     @Input() image
     @Input() title
     @Input() link
+    @Input() text
+    @Input() cta
 }

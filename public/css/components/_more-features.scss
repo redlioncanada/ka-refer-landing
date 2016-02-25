@@ -23,12 +23,56 @@ more-features {
 more-features-feature {
 	width: 32%;
 	float: left;
+	display: table;
+
+	.hover {
+		position: relative;
+	}
+
+	.text-container:hover {
+		opacity: 0.95;
+	}
+
+	.text-container {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  opacity: 0;
+	  @include transition(0.2s);
+	  background-color: $moreFeaturesBackgroundColor;
+	}
+
+	.text-container-cell {
+	  max-width: 50%;
+
+	  .cta {
+	  	@include Avenir-Bold;
+	  	margin-top: 5px;
+	  }
+
+	  p {
+	  	text-align: center;
+	  }
+	}
+
+	.spacer-top {
+		max-width: 50%;
+	  align-self: flex-start;
+	}
+
+	.spacer-bottom {
+		max-width: 50%;
+	  align-self: flex-end;
+	}
 
 	img {
 		width: 100%;
 	}
 
-	p {
+	.bottom-text {
 		text-align: center;
 		margin-top: 15px;
 		color: $moreFeaturesTitlesColor
