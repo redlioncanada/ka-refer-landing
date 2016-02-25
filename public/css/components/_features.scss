@@ -67,7 +67,7 @@ features {
     }
 
     .ka-landing-over-cta {
-        font-weight: 400;
+        @include Avenir-Bold;
     }
 
     .ka-landing-feature-button-over-background {

@@ -498,9 +498,6 @@ rl-ka-refer-landing {
         @media screen and (max-width: 785px) {
           rl-ka-refer-landing videoplayer-selector .text .button {
             display: none; } }
-      rl-ka-refer-landing videoplayer-selector .text .button:hover {
-        transform: scale(1.2);
-        -webkit-transform: scale(1.2); }
     rl-ka-refer-landing videoplayer-selector .text h2, rl-ka-refer-landing videoplayer-selector .text div {
       position: absolute; }
     rl-ka-refer-landing videoplayer-selector > div {
@@ -514,10 +511,17 @@ rl-ka-refer-landing {
       -moz-transition: all 0.2s ease;
       -o-transition: all 0.2s ease;
       transition: all 0.2s ease; }
-    rl-ka-refer-landing videoplayer-selector .selected .button, rl-ka-refer-landing videoplayer-selector .selected .title {
-      opacity: 0; }
-    rl-ka-refer-landing videoplayer-selector .selected img {
-      opacity: 1; }
+    rl-ka-refer-landing videoplayer-selector .selected {
+      cursor: default; }
+      rl-ka-refer-landing videoplayer-selector .selected * {
+        cursor: default; }
+      rl-ka-refer-landing videoplayer-selector .selected .button, rl-ka-refer-landing videoplayer-selector .selected .title {
+        opacity: 0; }
+      rl-ka-refer-landing videoplayer-selector .selected img {
+        opacity: 1; }
+  rl-ka-refer-landing videoplayer-selector:hover .button {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2); }
   rl-ka-refer-landing videoplayer-video {
     width: 100%; }
   rl-ka-refer-landing masthead {
@@ -594,7 +598,8 @@ rl-ka-refer-landing {
     width: 100%;
     text-align: center; }
   rl-ka-refer-landing features .ka-landing-over-cta {
-    font-weight: 400; }
+    font-family: 'Avenir-Black', Helvetica, Arial, sans-serif;
+    font-weight: 800; }
   rl-ka-refer-landing features .ka-landing-feature-button-over-background {
     height: 100%;
     width: 100%;
@@ -889,7 +894,8 @@ rl-ka-refer-landing {
   rl-ka-refer-landing h1, rl-ka-refer-landing h2, rl-ka-refer-landing h3, rl-ka-refer-landing h4, rl-ka-refer-landing h5, rl-ka-refer-landing [class*='title'] {
     color: #cc0000;
     cursor: default;
-    font-family: 'Avenir-Black', Helvetica, Arial, sans-serif; }
+    font-family: 'Avenir-Black', Helvetica, Arial, sans-serif;
+    font-weight: 800; }
   rl-ka-refer-landing p, rl-ka-refer-landing span, rl-ka-refer-landing div {
     cursor: pointer; }
   rl-ka-refer-landing * {

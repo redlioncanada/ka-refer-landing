@@ -53,7 +53,7 @@ rl-ka-refer-landing {
     @import 'components/footer.scss';
 
 	width: 100%;
-	font-family: 'Avenir-Light', Helvetica, Arial, sans-serif;
+	@include Avenir-Light;
 	font-size: 12pt;
 	position: relative;
 	display: block;
@@ -61,7 +61,7 @@ rl-ka-refer-landing {
 	h1,h2,h3,h4,h5,[class*='title'] {
 		color: $titleColor;
 		cursor: default;
-		font-family: 'Avenir-Black', Helvetica, Arial, sans-serif;
+		@include Avenir-Bold;
 	}
 
 	p,span,div {
