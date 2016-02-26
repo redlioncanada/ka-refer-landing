@@ -650,7 +650,8 @@ rl-ka-refer-landing {
         width: 49.3%; } }
     @media screen and (max-width: 685px) {
       rl-ka-refer-landing features .ka-landing-feature-button {
-        height: 200px; } }
+        height: 200px;
+        width: 49%; } }
     rl-ka-refer-landing features .ka-landing-feature-button .ka-landing-feature-button-up {
       position: relative;
       z-index: 1; }
