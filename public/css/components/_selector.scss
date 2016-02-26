@@ -85,6 +85,7 @@ product-selector {
            transform: scale(1.5,1.5);
            -webkit-transform: scale(1.5,1.5);
            left: 515px;
+           font-size: .7em;
         }
 
         @media screen and (max-width: $mobileBreakpoint) {
@@ -237,7 +238,7 @@ product-selector-nav {
         }
         @media screen and (max-width: $mobileBreakpoint) {
             clear: left;
-            width: 100%;
+            width: 97%;
             height: 100px;
             margin-top: 10px;
         }

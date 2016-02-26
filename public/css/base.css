@@ -481,7 +481,7 @@ rl-ka-refer-landing {
         font-weight: 800;
         margin-top: -20px;
         width: 100%; }
-        @media screen and (max-width: 320px) {
+        @media screen and (max-width: 685px) {
           rl-ka-refer-landing videoplayer-selector .text .title {
             font-size: 1.2em; } }
       rl-ka-refer-landing videoplayer-selector .text .button {
@@ -548,7 +548,7 @@ rl-ka-refer-landing {
   rl-ka-refer-landing features .row {
     width: 100%;
     height: 300px; }
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 685px) {
     rl-ka-refer-landing features .row {
       height: 180px; } }
   rl-ka-refer-landing features .ka-landing-feature-icon {
@@ -570,7 +570,7 @@ rl-ka-refer-landing {
       bottom: 0;
       left: 0;
       right: 0; }
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: 685px) {
       rl-ka-refer-landing features .ka-landing-feature-icon {
         width: 60px;
         height: 60px;
@@ -584,7 +584,7 @@ rl-ka-refer-landing {
     top: 165px;
     text-align: center;
     color: #CC0000; }
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: 685px) {
       rl-ka-refer-landing features .ka-landing-feature-title {
         top: 95px; } }
   rl-ka-refer-landing features .ka-landing-feature-button-over {
@@ -605,7 +605,7 @@ rl-ka-refer-landing {
     height: inherit;
     width: inherit;
     vertical-align: middle;
-    padding: 0 20px; }
+    padding: 0 14px; }
   rl-ka-refer-landing features .ka-landing-feature-button-over:hover {
     opacity: .9; }
   rl-ka-refer-landing features .ka-landing-over-copy {
@@ -623,7 +623,7 @@ rl-ka-refer-landing {
     background-color: #cc0000;
     position: absolute; }
   rl-ka-refer-landing features .ka-landing-feature-button {
-    width: 32%;
+    width: 32.2%;
     margin: 2px;
     float: left;
     height: 266px;
@@ -638,7 +638,7 @@ rl-ka-refer-landing {
     @media screen and (max-width: 768px) {
       rl-ka-refer-landing features .ka-landing-feature-button {
         margin: 3px; } }
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: 685px) {
       rl-ka-refer-landing features .ka-landing-feature-button {
         height: 175px; } }
     rl-ka-refer-landing features .ka-landing-feature-button .ka-landing-feature-button-up {
@@ -656,7 +656,7 @@ rl-ka-refer-landing {
       margin-left: auto;
       margin-right: auto;
       margin-top: 10px; }
-      @media screen and (max-width: 320px) {
+      @media screen and (max-width: 685px) {
         rl-ka-refer-landing features .ka-landing-feature-button .ka-landing-feature-rule {
           top: 130px;
           width: 60px; } }
@@ -735,7 +735,8 @@ rl-ka-refer-landing {
         rl-ka-refer-landing product-selector learn-more-button {
           transform: scale(1.5, 1.5);
           -webkit-transform: scale(1.5, 1.5);
-          left: 515px; } }
+          left: 515px;
+          font-size: .7em; } }
       @media screen and (max-width: 820px) {
         rl-ka-refer-landing product-selector learn-more-button {
           position: relative;
@@ -861,7 +862,7 @@ rl-ka-refer-landing {
       @media screen and (max-width: 820px) {
         rl-ka-refer-landing product-selector-nav .see-all {
           clear: left;
-          width: 100%;
+          width: 97%;
           height: 100px;
           margin-top: 10px; } }
     rl-ka-refer-landing product-selector-nav .see-all:hover p {
@@ -880,6 +881,9 @@ rl-ka-refer-landing {
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
     font-weight: 300; }
+    @media screen and (max-width: 685px) {
+      rl-ka-refer-landing learn-more-button {
+        font-size: .7em !important; } }
     rl-ka-refer-landing learn-more-button div {
       width: 100%;
       height: 100%;
@@ -908,7 +912,7 @@ rl-ka-refer-landing {
     rl-ka-refer-landing more-features more-features-feature:last-of-type {
       margin-right: initial; }
   rl-ka-refer-landing more-features-feature {
-    width: 32%;
+    width: 32.5%;
     float: left;
     display: table;
     cursor: default; }
