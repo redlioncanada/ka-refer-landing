@@ -77,6 +77,10 @@ videoplayer-selector {
 			font-weight: 800;
 			margin-top: -20px;
 			width: 100%;
+
+			@media screen and (max-width: 320px) {
+	        	font-size: 1.2em;
+	        }
 		}
 
 		.button {
