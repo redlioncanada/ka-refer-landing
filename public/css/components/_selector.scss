@@ -80,7 +80,6 @@ product-selector {
         width: 115px;
         height: 30px;
         opacity: 0;
-        display: none;
 
         @media screen and (max-width: 685px) {
            transform: scale(1.5,1.5);
@@ -144,12 +143,11 @@ product-selector {
 product-selector-nav {
     position: relative;
     display: block;
-    padding-top: 70px;
+    top: 70px;
 
     .row {
         position: relative;
     }
-    
     
     .product,.see-all {
         float: left;

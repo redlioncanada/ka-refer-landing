@@ -77,7 +77,6 @@ export class ProductSlides extends TimelineController {
           TweenMax.to(title, .3, { delay: 0.1, opacity: 0, ease: Power3.easeOut });
           TweenMax.to(desc, .3, { delay: 0.2, opacity: 0, ease: Power3.easeOut });
           TweenMax.to(learn, .3, { delay: 0.3, opacity: 0, ease: Power3.easeOut, onComplete: function() {
-              $(learn).css('display', 'none')
               TweenMax.to(target, 0, { delay: 0, opacity: 0 });
               cb()
           }});
@@ -86,6 +85,9 @@ export class ProductSlides extends TimelineController {
       public playIn(self, delay = true, target) {
         if (!self) self = this
         target = $(self.rootElement).find('#' + target)
+
+        $(self.rootElement).find('product-slide').css('zIndex', 1)
+        $(target).parent().css('zIndex', 2)
 
         var image = ($(target).find('.rl-ka-lndng-fridge'))
         var title = ($(target).find('.rl-ka-lndng-fridge-title'))
@@ -112,7 +114,6 @@ export class ProductSlides extends TimelineController {
             TweenMax.to(image, 1.5, { delay: .6, top: 0, opacity: 1, ease: Power1.easeOut });
             TweenMax.to(title, 1.5, { delay: .9, top: 0, opacity: 1, ease: Power1.easeOut });
             TweenMax.to(desc, 1.5, { delay: 1.2, top: 0, opacity: 1, ease: Power1.easeOut });
-            $(learn).css('display', 'block');
             TweenMax.to(learn, 1.5, {
               delay: 1.2, top: 0, opacity: 1, ease: Power1.easeOut, onComplete: function() {
                 self.animating = false;
@@ -122,7 +123,6 @@ export class ProductSlides extends TimelineController {
             TweenMax.to(image, 1.5, { delay: .6, top: this.imageTop, opacity: 1, ease: Power1.easeOut });
             TweenMax.to(title, 1.5, { delay: .9, top: this.titleTop, opacity: 1, ease: Power1.easeOut });
             TweenMax.to(desc, 1.5, { delay: 1.2, top: this.descTop, opacity: 1, ease: Power1.easeOut });
-            $(learn).css('display', 'block');
             TweenMax.to(learn, 1.5, {
               delay: 1.2, top: this.learnTop, opacity: 1, ease: Power1.easeOut, onComplete: function() {
                 self.animating = false;
@@ -134,7 +134,6 @@ export class ProductSlides extends TimelineController {
             TweenMax.to(image, 1.5, { delay: .5, top: 0, opacity: 1, ease: Power1.easeOut });
             TweenMax.to(title, 1.5, { delay: 0.7, top: 0, opacity: 1, ease: Power1.easeOut });
             TweenMax.to(desc, 1.5, { delay: 0.9, top: 0, opacity: 1, ease: Power1.easeOut });
-            $(learn).css('display', 'block');
             TweenMax.to(learn, 1.5, {
               delay: 0.9, top: 0, opacity: 1, ease: Power1.easeOut, onComplete: function() {
                 self.animating = false;
@@ -144,7 +143,6 @@ export class ProductSlides extends TimelineController {
             TweenMax.to(image, 1.5, { delay: .6, top: this.imageTop, opacity: 1, ease: Power1.easeOut });
             TweenMax.to(title, 1.5, { delay: .9, top: this.titleTop, opacity: 1, ease: Power1.easeOut });
             TweenMax.to(desc, 1.5, { delay: 1.2, top: this.descTop, opacity: 1, ease: Power1.easeOut });
-            $(learn).css('display', 'block');
             TweenMax.to(learn, 1.5, {
               delay: 1.2, top: this.learnTop, opacity: 1, ease: Power1.easeOut, onComplete: function() {
                 self.animating = false;

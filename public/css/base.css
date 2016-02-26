@@ -426,7 +426,8 @@ rl-ka-refer-landing {
       display: none !important; } }
   rl-ka-refer-landing videoplayer {
     padding: 20px 0;
-    overflow: hidden; }
+    overflow: hidden;
+    top: 70px; }
     rl-ka-refer-landing videoplayer > h2 {
       font-size: 3em;
       text-transform: uppercase;
@@ -729,8 +730,7 @@ rl-ka-refer-landing {
       top: 325px;
       width: 115px;
       height: 30px;
-      opacity: 0;
-      display: none; }
+      opacity: 0; }
       @media screen and (max-width: 685px) {
         rl-ka-refer-landing product-selector learn-more-button {
           transform: scale(1.5, 1.5);
@@ -788,7 +788,7 @@ rl-ka-refer-landing {
   rl-ka-refer-landing product-selector-nav {
     position: relative;
     display: block;
-    padding-top: 70px; }
+    top: 70px; }
     rl-ka-refer-landing product-selector-nav .row {
       position: relative; }
     rl-ka-refer-landing product-selector-nav .product, rl-ka-refer-landing product-selector-nav .see-all {
