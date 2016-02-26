@@ -115,18 +115,21 @@ features {
         border-width: 4px;
         position: relative;
         box-sizing: border-box;
-        
+
         @media screen and (min-width: 922px) {
             //width: 33%;
         }
         @media screen and (max-width: 770px) {
             margin: 3px;
+
+            //added for removal of buying guide
             width: 49.3%
         }
         @media screen and (max-width: 685px) {
             height: 200px;
+            // width: 32%;
         }
-    
+
         .ka-landing-feature-button-up {
             position: relative;
             z-index: 1;
