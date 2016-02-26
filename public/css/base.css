@@ -77,6 +77,15 @@ rl-ka-refer-landing {
     border-spacing: 0; }
   rl-ka-refer-landing a {
     text-decoration: none; }
+  rl-ka-refer-landing sub, rl-ka-refer-landing sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline; }
+  rl-ka-refer-landing sup {
+    top: -0.5em; }
+  rl-ka-refer-landing sub {
+    bottom: -0.25em; }
   rl-ka-refer-landing .hide {
     display: none; }
   rl-ka-refer-landing .show {
@@ -626,7 +635,7 @@ rl-ka-refer-landing {
     background-color: #cc0000;
     position: absolute; }
   rl-ka-refer-landing features .ka-landing-feature-button {
-    width: 33%;
+    width: 49.7%;
     margin: 2px;
     float: left;
     height: 266px;
@@ -635,13 +644,13 @@ rl-ka-refer-landing {
     border-width: 4px;
     position: relative;
     box-sizing: border-box; }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 770px) {
       rl-ka-refer-landing features .ka-landing-feature-button {
-        margin: 3px; } }
+        margin: 3px;
+        width: 49.3%; } }
     @media screen and (max-width: 685px) {
       rl-ka-refer-landing features .ka-landing-feature-button {
-        height: 200px;
-        width: 32%; } }
+        height: 200px; } }
     rl-ka-refer-landing features .ka-landing-feature-button .ka-landing-feature-button-up {
       position: relative;
       z-index: 1; }

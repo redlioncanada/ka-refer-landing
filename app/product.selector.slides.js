@@ -42,7 +42,7 @@ System.register(['angular2/core', './product.selector.slide', './landing.timelin
                     this.imageTop = 155;
                     this.titleTop = 170;
                     this.descTop = 215;
-                    this.learnTop = 485;
+                    this.learnTop = 500;
                 }
                 Object.defineProperty(ProductSlides.prototype, "animating", {
                     set: function (a) {

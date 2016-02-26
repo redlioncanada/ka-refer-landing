@@ -11,12 +11,12 @@ import {FeatureModel} from './models/features.model'
 export class Features {
     
     public featureButtons:[FeatureModel] = [
-        new FeatureModel("./public/images/refer-landing-shopping-cart.png",
-        				"Buying Guide",
-        				"What to look for when you are buying",
-        				"Click Here",
-        				"http://kitchenaid.ca",
-        				"cart"),
+        // new FeatureModel("./public/images/refer-landing-shopping-cart.png",
+        // 				"Buying Guide",
+        // 				"What to look for when you are buying",
+        // 				"Click Here",
+        // 				"http://kitchenaid.ca",
+        // 				"cart"),
         new FeatureModel("./public/images/refer-landing-star.png",
         				"Ratings & Reviews",
         				"See what others are saying",
