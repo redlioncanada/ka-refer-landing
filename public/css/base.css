@@ -587,6 +587,9 @@ rl-ka-refer-landing {
     @media screen and (max-width: 685px) {
       rl-ka-refer-landing features .ka-landing-feature-title {
         top: 95px; } }
+    @media screen and (max-width: 479px) {
+      rl-ka-refer-landing features .ka-landing-feature-title {
+        font-size: 12px; } }
   rl-ka-refer-landing features .ka-landing-feature-button-over {
     opacity: 0;
     z-index: 2;
@@ -623,7 +626,7 @@ rl-ka-refer-landing {
     background-color: #cc0000;
     position: absolute; }
   rl-ka-refer-landing features .ka-landing-feature-button {
-    width: 32.2%;
+    width: 33%;
     margin: 2px;
     float: left;
     height: 266px;
@@ -632,15 +635,13 @@ rl-ka-refer-landing {
     border-width: 4px;
     position: relative;
     box-sizing: border-box; }
-    @media screen and (min-width: 922px) {
-      rl-ka-refer-landing features .ka-landing-feature-button {
-        width: 33%; } }
     @media screen and (max-width: 768px) {
       rl-ka-refer-landing features .ka-landing-feature-button {
         margin: 3px; } }
     @media screen and (max-width: 685px) {
       rl-ka-refer-landing features .ka-landing-feature-button {
-        height: 175px; } }
+        height: 200px;
+        width: 32%; } }
     rl-ka-refer-landing features .ka-landing-feature-button .ka-landing-feature-button-up {
       position: relative;
       z-index: 1; }
@@ -658,7 +659,7 @@ rl-ka-refer-landing {
       margin-top: 10px; }
       @media screen and (max-width: 685px) {
         rl-ka-refer-landing features .ka-landing-feature-button .ka-landing-feature-rule {
-          top: 130px;
+          top: 150px;
           width: 60px; } }
   rl-ka-refer-landing features feature-button:first-of-type .ka-landing-feature-button {
     margin-left: 0px; }
