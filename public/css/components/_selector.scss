@@ -52,10 +52,10 @@ product-selector {
     > .row{
         background-image: url('../../public/images/refer-select-shadow.png');
         background-repeat: no-repeat;
-        background-position-y: 150px;
+        background-position-y: 100px;
 
         @media screen and (max-width: $mobileBreakpoint) {
-            background-position-y: 30px;
+            background-position-y: -30px;
         }
     }
     

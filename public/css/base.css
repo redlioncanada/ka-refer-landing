@@ -718,10 +718,10 @@ rl-ka-refer-landing {
     rl-ka-refer-landing product-selector > .row {
       background-image: url("../../public/images/refer-select-shadow.png");
       background-repeat: no-repeat;
-      background-position-y: 150px; }
+      background-position-y: 100px; }
       @media screen and (max-width: 820px) {
         rl-ka-refer-landing product-selector > .row {
-          background-position-y: 30px; } }
+          background-position-y: -30px; } }
     rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-title {
       position: absolute;
       left: 490px;
