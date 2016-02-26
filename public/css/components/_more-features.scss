@@ -1,10 +1,10 @@
 more-features {
-	padding: 20px 0 70px 0;
+	padding: 50px 0 70px 0;
 	overflow: hidden;
 
 	h2 {
 		@include header-text;
-		margin-bottom: 15px;
+		padding: 50px;
 	}
 
 	more-features-feature {

@@ -892,7 +892,7 @@ rl-ka-refer-landing {
     transform: scale(1.2);
     -webkit-transform: scale(1.2); }
   rl-ka-refer-landing more-features {
-    padding: 20px 0 70px 0;
+    padding: 50px 0 70px 0;
     overflow: hidden; }
     rl-ka-refer-landing more-features h2 {
       font-size: 3em;
@@ -900,7 +900,7 @@ rl-ka-refer-landing {
       text-align: center;
       font-weight: 800;
       width: 100%;
-      margin-bottom: 15px; }
+      padding: 50px; }
     rl-ka-refer-landing more-features more-features-feature {
       margin: 0 2px; }
     rl-ka-refer-landing more-features more-features-feature:first-of-type {
