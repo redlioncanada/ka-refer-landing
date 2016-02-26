@@ -14,7 +14,7 @@ export class VideoPlayer {
 		{
 			id: '9IFIdkLo29Y',
 			thumb: './public/images/video-select-1.jpg',
-			title: 'A revolutionary Mark On A Revolutionary New Line | The KitchenAid<sup>&reg;</sup> Medallion',
+			title: 'Design: A revolutionary Mark On A Revolutionary New Line | The KitchenAid<sup>&reg;</sup> Medallion',
 			ctaTitle: 'Design',
 			cta: 'Play Video',
 			desc: false
@@ -22,7 +22,7 @@ export class VideoPlayer {
 		{
 			id: 'fWbEHxpUEwM',
 			thumb: './public/images/video-select-2.jpg',
-			title: 'KitchenAid<sup>&reg;</sup> Preserva<sup>&reg;</sup> Food Care System',
+			title: 'Food Care: KitchenAid<sup>&reg;</sup> Preserva<sup>&reg;</sup> Food Care System',
 			ctaTitle: 'Food Care',
 			cta: 'Play Video',
 			desc: false
@@ -30,7 +30,7 @@ export class VideoPlayer {
 		{
 			id: 'RxnPMBOUWfk',
 			thumb: './public/images/video-select-3.jpg',
-			title: 'Revolutionary Five-Door Refrigerator | KitchenAid<sup>&reg;</sup>',
+			title: '5-Door: Revolutionary Five-Door Refrigerator | KitchenAid<sup>&reg;</sup>',
 			ctaTitle: '5-Door',
 			cta: 'Play Video',
 			desc: false
