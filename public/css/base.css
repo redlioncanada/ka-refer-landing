@@ -445,6 +445,9 @@ rl-ka-refer-landing {
       width: 100%;
       margin-top: 50px;
       margin-bottom: 50px; }
+      @media screen and (max-width: 685px) {
+        rl-ka-refer-landing videoplayer > h2 {
+          font-size: 2em; } }
     rl-ka-refer-landing videoplayer > ul {
       overflow: hidden; }
       rl-ka-refer-landing videoplayer > ul li {
@@ -686,6 +689,9 @@ rl-ka-refer-landing {
       width: 100%;
       margin-top: 50px;
       margin-bottom: 50px; }
+      @media screen and (max-width: 685px) {
+        rl-ka-refer-landing product-selector h2 {
+          font-size: 2em; } }
     rl-ka-refer-landing product-selector #french-door, rl-ka-refer-landing product-selector #side-by-side, rl-ka-refer-landing product-selector #bottom-freezer, rl-ka-refer-landing product-selector #under-counter, rl-ka-refer-landing product-selector #built-in {
       opacity: 0; }
     rl-ka-refer-landing product-selector product-slides {
@@ -916,6 +922,9 @@ rl-ka-refer-landing {
       font-weight: 800;
       width: 100%;
       padding: 50px; }
+      @media screen and (max-width: 685px) {
+        rl-ka-refer-landing more-features h2 {
+          font-size: 2em; } }
     rl-ka-refer-landing more-features more-features-feature {
       margin: 0 2px; }
     rl-ka-refer-landing more-features more-features-feature:first-of-type {
