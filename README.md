@@ -10,3 +10,8 @@ gulp
 ```
 npm start
 ```
+CUAT Deployment  
+  
+```
+gulp cuat
+```

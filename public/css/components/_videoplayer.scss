@@ -41,18 +41,27 @@ videoplayer {
 videoplayer-player {
 	width: 100%;
 
-	.text {
+	ul {
+		overflow: auto;
+	}
+
+	ul li {
+		width: 100%;
+	}
+
+	.ka-refer-landing-videoplayer-text {
 		width: 100%;
 		padding: 28px 40px;
 		background-color: $videoPlayer-backgroundColor;
 		color: $videoPlayer-copyColor;
+		margin-top: -5px;
 
-		.title {
+		.ka-refer-landing-videoplayer-title {
 			font-weight: 800;
 			text-transform: uppercase;
 		}
 
-		.description, .title {
+		.ka-refer-landing-videoplayer-description, .ka-refer-landing-videoplayer-title {
 			text-align: center;
 		}
 	}
@@ -61,7 +70,7 @@ videoplayer-player {
 videoplayer-selector {
 	width: 100%;
 
-	.text {
+	.ka-refer-landing-videoplayer-text {
 		height: 100%;
 		width: 100%;
 		position: absolute;
@@ -71,14 +80,14 @@ videoplayer-selector {
         }
 
 
-		.title, .button {
+		.ka-refer-landing-videoplayer-title, .ka-refer-landing-videoplayer-button {
 			top: 50%;
 			text-align: center;
 			color: $videoPlayer-copyColor;
 			text-transform: uppercase;
 		}
 
-		.title {
+		.ka-refer-landing-videoplayer-title {
 			font-size: 2em;
 			font-weight: 800;
 			margin-top: -20px;
@@ -89,7 +98,7 @@ videoplayer-selector {
 	        }
 		}
 
-		.button {
+		.ka-refer-landing-videoplayer-button {
 			font-size: 0.8em;
 			position: relative;
 			top: 60%;
@@ -104,7 +113,7 @@ videoplayer-selector {
 		}
 	}
 
-	.text h2, .text div {
+	.ka-refer-landing-videoplayer-text h2, .ka-refer-landing-videoplayer-text div {
 		position: absolute;
 	}
 
@@ -127,7 +136,7 @@ videoplayer-selector {
 			cursor: default;
 		}
 
-		.button, .title {
+		.ka-refer-landing-videoplayer-button, .ka-refer-landing-videoplayer-title {
 			opacity: 0;
 		}
 
@@ -138,7 +147,7 @@ videoplayer-selector {
 }
 
 videoplayer-selector:hover {
-	.button {
+	.ka-refer-landing-videoplayer-button {
 		@include grow(1.2);
 	}
 }
