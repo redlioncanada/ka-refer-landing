@@ -27,9 +27,14 @@ System.register(['angular2/core', './landing.feature.button', './models/features
             Features = (function () {
                 function Features() {
                     this.featureButtons = [
-                        new features_model_1.FeatureModel("./public/images/refer-landing-shopping-cart.png", "Buying Guide", "What to look for when you are buying", "Click Here", "http://kitchenaid.ca", "cart"),
-                        new features_model_1.FeatureModel("./public/images/refer-landing-star.png", "Ratings & Reviews", "See what others are saying", "Click Here", "http://kitchenaid.ca", "star"),
-                        new features_model_1.FeatureModel("./public/images/refer-landing-mag-glass.png", "Find Your Kitchenaid", "Need help finding your refrigerator", "Click Here", "http://kitchenaid.ca", "magnifier")
+                        // new FeatureModel("./public/images/refer-landing-shopping-cart.png",
+                        // 				"Buying Guide",
+                        // 				"What to look for when you are buying",
+                        // 				"Click Here",
+                        // 				"http://kitchenaid.ca",
+                        // 				"cart"),
+                        new features_model_1.FeatureModel("./public/images/refer-landing-star.png", "Ratings & Reviews", "See what others are saying", "Click Here", "http://www.kitchenaid.ca/en_CA/2_2_89/global_best-products.content.html", "star"),
+                        new features_model_1.FeatureModel("./public/images/refer-landing-mag-glass.png", "Find Your Kitchenaid", "Need help finding your refrigerator?", "Click Here", "http://findmy.kitchenaid.ca/#/question/Appliance", "magnifier")
                     ];
                 }
                 Features = __decorate([

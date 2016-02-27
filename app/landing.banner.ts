@@ -11,7 +11,7 @@ export class Banner {
 	private image: string
 
 	constructor() {
-		this.link = 'http://kitchenaid.ca'
+		this.link = 'http://www.kitchenaid.ca/en_CA/new/'
 		this.image = './public/images/banner.jpg'
 	}
 }

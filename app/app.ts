@@ -5,7 +5,7 @@ import {Logger} from './services/logger.service'
 import {GoogleApi} from './services/googleapi.service'
 import {Component} from 'angular2/core';
 
-import {VideoPlayer} from './videoplayer.component';
+import {VideoPlayer} from './landing.video-player';
 import {AppMasthead} from './landing.masthead';
 import {Features} from './landing.feature';
 import {ProductSelector} from './product.selector'
@@ -20,6 +20,8 @@ import {Footer} from './landing.footer'
     templateUrl: 'app/views/app.view.html',
     directives: [VideoPlayer, AppMasthead, Features, ProductSelector, Banner, MoreFeatures, Header, Footer]
 })
-class AppComponent { }
+class AppComponent {
+    
+ }
 
 bootstrap(AppComponent, [HTTP_PROVIDERS, Logger, GoogleApi])

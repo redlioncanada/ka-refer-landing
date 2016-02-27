@@ -1,3 +1,12 @@
+@mixin Avenir-Light() {
+	font-family: 'Avenir-Light', Helvetica, Arial, sans-serif;
+}
+
+@mixin Avenir-Bold() {
+	font-family: 'Avenir-Black', Helvetica, Arial, sans-serif;
+	font-weight: 800;
+}
+
 @mixin header-text() {
 	font-size: 3em;
 	text-transform: uppercase;
@@ -28,4 +37,19 @@
     -moz-transition: initial;
     -o-transition: initial;
     transition: initial;
+}
+
+@mixin centered-table-cell() {
+	display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+@mixin mobile-block-element() {
+    position: relative;
+    top: initial;
+    left: initial;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
 }

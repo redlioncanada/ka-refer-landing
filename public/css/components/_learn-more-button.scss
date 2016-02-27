@@ -7,6 +7,10 @@ learn-more-button {
 	margin-top: -20px;
 	background-color: $learnMoreBackgroundColor;
 	@include transition(0.2s);
+    font-weight: 300;
+    @media screen and (max-width: 685px) {
+        font-size: .7em !important;
+    }
 
 	div {
 		width: 100%;

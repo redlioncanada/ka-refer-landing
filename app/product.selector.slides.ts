@@ -1,74 +1,158 @@
 /// <reference path="../typings/jquery/jquery.d.ts" />
 /// <reference path="../typings/greensock/greensock.d.ts" />
-import {Component, Input, Inject, ElementRef} from 'angular2/core'
+import {bootstrap}    from 'angular2/platform/browser'
+import {Component, Input, Output, Inject, ElementRef, EventEmitter} from 'angular2/core'
 import {ProductSlide} from './product.selector.slide'
 import {ProductModel} from './models/products.model'
+import {TimelineController} from './landing.timeline-controller'
 
 declare var $: JQueryStatic;
 
 @Component({
     selector: 'product-slides',
     templateUrl: 'app/views/product.selector.slides.view.html',
-    directives: [ProductSlide] 
-    
+    directives: [ProductSlide]
 })
-export class ProductSlides {
-    
-    public products:[ProductModel] = [
-        new ProductModel("./public/images/products/5-door.png", "5 door", "A design so uniquely versatile, this 5-door style delivers optimal organization.", "http://kitchenAid.ca", "five-door"),
-        new ProductModel("./public/images/products/built-in.png", "Built-in", "A design so uniquely versatile, this 5-door style delivers optimal organization.", "http://kitchenAid.ca", "built-in"),
-        new ProductModel("./public/images/products/french-door.png", "French Door", "A design so uniquely versatile, this 5-door style delivers optimal organization.", "http://kitchenAid.ca", "french-door"),
-        new ProductModel("./public/images/products/side-by-side.png", "Side-By-Side", "A design so uniquely versatile, this 5-door style delivers optimal organization.", "http://kitchenAid.ca", "side-by-side"),
-        new ProductModel("./public/images/products/bottom-freezer.png", "Bottom Freezer", "A design so uniquely versatile, this 5-door style delivers optimal organization.", "http://kitchenAid.ca", "bottom-freezer"),
-        new ProductModel("./public/images/products/under-counter.png", "Under Counter", "A design so uniquely versatile, this 5-door style delivers optimal organization.", "http://kitchenAid.ca", "under-counter"),
-    ];
-    
+export class ProductSlides extends TimelineController {
+    @Input() products;
+    @Input() selectedProduct;
+    @Output() isAnimating = new EventEmitter();
+
     private rootElement;
     private elementRef: ElementRef;
-    //
-    private fiveDoor;
-    private fiveDoorTitle;
-    private fiveDoorDesc;
-    private fiveDoorImg;
-    //
-    private builtIn;
-    private builtInTitle;
-    private builtInDesc;
-    //
-    private frenchDoor;
-    private frenchDoorTitle;
-    private frenchDoorDesc;
-    //
-    private sideBy;
-    private sideByTitle;
-    private sideByDesc;
-    //
-    private bottomFreezer;
-    private bottomFreezerTitle;
-    private bottomFreezerDesc;
-    //
-    private underCounterDoor;
-    private underCounterTitle;
-    private underCounterDesc;
-    //
-    
-    public constructor(@Inject(ElementRef) elementRef: ElementRef) {
-        this.elementRef = elementRef
-        this.rootElement = $(this.elementRef.nativeElement)
-        this.fiveDoor = ($(this.rootElement).find('#five-door'));
-        this.fiveDoorImg = ($(this.fiveDoor).find('.rl-ka-lndng-fridge'));
-        console.log(this.fiveDoorImg);
-        //this.fiveDoor = ($(this.rootElement).find('#five-door').children('.rl-ka-lndng-fridge'));
-        //this.fiveDoorTitle = ($(this.rootElement).find('#five-door').children('.rl-ka-lndng-fridge-title'));
-        //this.fiveDoorDesc = ($(this.rootElement).find('#five-door').children('rl-ka-lndng-fridge-desc'));
-        /*
-        TweenMax.to(this.fiveDoor, 0, {delay:0, opacity:0, top:100, ease:Power3.easeOut});
-        TweenMax.to(this.fiveDoorTitle, 0, {delay:0, opacity:0, top:100, ease:Power3.easeOut});
-        TweenMax.to(this.fiveDoorDesc, 0, {delay:0, opacity:0, top:115, ease:Power3.easeOut});
-       //
-       TweenMax.to(this.fiveDoor, 1, {delay:3, opacity:0, top:175, ease:Power3.easeOut});
-       TweenMax.to(this.fiveDoorTitle, 1, {delay:3.25, opacity:0, top:175, ease:Power3.easeOut});
-       TweenMax.to(this.fiveDoorDesc, 1, {delay:3.5, opacity:0, top:190, ease:Power3.easeOut});
-        */
+    private _animating: boolean;
+
+    private imageTop;
+    private titleTop;
+    private descTop;
+    private learnTop;
+
+    set animating(a:boolean) {
+        if (this._animating != a) {
+            this._animating = a
+            this.isAnimating.emit(a)
+        }
     }
+
+    public constructor(@Inject(ElementRef) elementRef: ElementRef) {
+        super()
+        this.elementRef = elementRef
+        this.animating = false
+        this.imageTop = 155;
+        this.titleTop = 170;
+        this.descTop = 215;
+        this.learnTop = 500;
+    }
+
+     private ngAfterViewInit() {
+          window.onresize = this.resize
+          this.rootElement = $(this.elementRef.nativeElement)
+          var target = this.selectedProduct.prodId
+          this.playIn(this,true,target)
+      }
+
+      private ngOnChanges(changes) {
+          var self = this
+          if ("selectedProduct" in changes && !this.animating) {
+              console.log('product.selector.slides current:',changes.selectedProduct.currentValue)
+              console.log('product.selector.slides previous:',changes.selectedProduct.previousValue)
+              this.playOut(changes.selectedProduct.previousValue.prodId, function() {
+                  self.playIn(self, false, changes.selectedProduct.currentValue.prodId)
+              })
+          }
+      }
+
+      public playOut(target, cb) {
+          var self = this
+          target = $(this.rootElement).find('#'+target)
+
+          var image = ($(target).find('.rl-ka-lndng-fridge'))
+          var title = ($(target).find('.rl-ka-lndng-fridge-title'))
+          var desc = ($(target).find('.rl-ka-lndng-fridge-desc'))
+          var learn = ($(target).find('learn-more-button'))
+
+          this.animating = true;
+
+          TweenMax.to(image, .3, { delay: 0, opacity: 0, ease: Power3.easeOut });
+          TweenMax.to(title, .3, { delay: 0.1, opacity: 0, ease: Power3.easeOut });
+          TweenMax.to(desc, .3, { delay: 0.2, opacity: 0, ease: Power3.easeOut });
+          TweenMax.to(learn, .3, { delay: 0.3, opacity: 0, ease: Power3.easeOut, onComplete: function() {
+              TweenMax.to(target, 0, { delay: 0, opacity: 0 });
+              cb()
+          }});
+      }
+
+      public playIn(self, delay = true, target) {
+        if (!self) self = this
+        target = $(self.rootElement).find('#' + target)
+
+        $(self.rootElement).find('product-slide').css('zIndex', 1)
+        $(target).parent().css('zIndex', 2)
+
+        var image = ($(target).find('.rl-ka-lndng-fridge'))
+        var title = ($(target).find('.rl-ka-lndng-fridge-title'))
+        var desc = ($(target).find('.rl-ka-lndng-fridge-desc'))
+        var learn = ($(target).find('learn-more-button'))
+
+        var isMobile = $(window).innerWidth() <= 820
+
+        if (isMobile) {
+          TweenMax.to(image, 0, { delay: 0, top: -20 });
+          TweenMax.to(title, 0, { delay: 0, top: -20 });
+          TweenMax.to(desc, 0, { delay: 0, top: -20 });
+          TweenMax.to(learn, 0, { delay: 0, top: -20 });
+        } else {
+          TweenMax.to(image, 0, { delay: 0, top: this.imageTop-20 });
+          TweenMax.to(title, 0, { delay: 0, top: this.titleTop-20 });
+          TweenMax.to(desc, 0, { delay: 0, top: this.descTop-20 });
+          TweenMax.to(learn, 0, { delay: 0, top: this.learnTop-20 });
+        }
+        TweenMax.to(target, 0, { delay: 0.1, opacity: 1 });
+
+        if (delay) {
+          if (isMobile) {
+            TweenMax.to(image, 1.5, { delay: .6, top: 0, opacity: 1, ease: Power1.easeOut });
+            TweenMax.to(title, 1.5, { delay: .9, top: 0, opacity: 1, ease: Power1.easeOut });
+            TweenMax.to(desc, 1.5, { delay: 1.2, top: 0, opacity: 1, ease: Power1.easeOut });
+            TweenMax.to(learn, 1.5, {
+              delay: 1.2, top: 0, opacity: 1, ease: Power1.easeOut, onComplete: function() {
+                self.animating = false;
+              }
+            });
+          } else {
+            TweenMax.to(image, 1.5, { delay: .6, top: this.imageTop, opacity: 1, ease: Power1.easeOut });
+            TweenMax.to(title, 1.5, { delay: .9, top: this.titleTop, opacity: 1, ease: Power1.easeOut });
+            TweenMax.to(desc, 1.5, { delay: 1.2, top: this.descTop, opacity: 1, ease: Power1.easeOut });
+            TweenMax.to(learn, 1.5, {
+              delay: 1.2, top: this.learnTop, opacity: 1, ease: Power1.easeOut, onComplete: function() {
+                self.animating = false;
+              }
+            });
+          }
+        } else {
+          if (isMobile) {
+            TweenMax.to(image, 1.5, { delay: .5, top: 0, opacity: 1, ease: Power1.easeOut });
+            TweenMax.to(title, 1.5, { delay: 0.7, top: 0, opacity: 1, ease: Power1.easeOut });
+            TweenMax.to(desc, 1.5, { delay: 0.9, top: 0, opacity: 1, ease: Power1.easeOut });
+            TweenMax.to(learn, 1.5, {
+              delay: 0.9, top: 0, opacity: 1, ease: Power1.easeOut, onComplete: function() {
+                self.animating = false;
+              }
+            });
+          } else {
+            TweenMax.to(image, 1.5, { delay: .6, top: this.imageTop, opacity: 1, ease: Power1.easeOut });
+            TweenMax.to(title, 1.5, { delay: .9, top: this.titleTop, opacity: 1, ease: Power1.easeOut });
+            TweenMax.to(desc, 1.5, { delay: 1.2, top: this.descTop, opacity: 1, ease: Power1.easeOut });
+            TweenMax.to(learn, 1.5, {
+              delay: 1.2, top: this.learnTop, opacity: 1, ease: Power1.easeOut, onComplete: function() {
+                self.animating = false;
+              }
+            });
+          }
+        }
+      }
+
+      private resize(e) {
+        console.log(e)
+      }
 }

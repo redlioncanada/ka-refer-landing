@@ -3,7 +3,8 @@ header {
     font-family: Helvetica, Arial, sans-serif;
     $upperHeight: 35px;
     $lowerHeight: 22px;
-
+    overflow: hidden;
+    
     #upper-wrap {
         background-color: #EEE;
         height: $upperHeight;

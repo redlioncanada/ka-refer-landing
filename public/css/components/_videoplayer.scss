@@ -1,10 +1,17 @@
 videoplayer {
 	padding: 20px 0;
 	overflow: hidden;
+	top: 70px;
 
 	> h2 {
 		@include header-text;
-        margin: 50px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+         @media screen and (max-width: 685px) {
+         
+                font-size: 2em;
+         
+        }
 	}
 
 	> ul {
@@ -34,18 +41,27 @@ videoplayer {
 videoplayer-player {
 	width: 100%;
 
-	.text {
+	ul {
+		overflow: auto;
+	}
+
+	ul li {
+		width: 100%;
+	}
+
+	.ka-refer-landing-videoplayer-text {
 		width: 100%;
 		padding: 28px 40px;
 		background-color: $videoPlayer-backgroundColor;
 		color: $videoPlayer-copyColor;
+		margin-top: -5px;
 
-		.title {
+		.ka-refer-landing-videoplayer-title {
 			font-weight: 800;
 			text-transform: uppercase;
 		}
 
-		.description, .title {
+		.ka-refer-landing-videoplayer-description, .ka-refer-landing-videoplayer-title {
 			text-align: center;
 		}
 	}
@@ -54,28 +70,35 @@ videoplayer-player {
 videoplayer-selector {
 	width: 100%;
 
-	.text {
+	.ka-refer-landing-videoplayer-text {
 		height: 100%;
 		width: 100%;
 		position: absolute;
 		z-index: 2;
+        @media screen and (max-width: 685px) {
+            top: -5px;
+        }
 
 
-		.title, .button {
+		.ka-refer-landing-videoplayer-title, .ka-refer-landing-videoplayer-button {
 			top: 50%;
 			text-align: center;
 			color: $videoPlayer-copyColor;
 			text-transform: uppercase;
 		}
 
-		.title {
+		.ka-refer-landing-videoplayer-title {
 			font-size: 2em;
 			font-weight: 800;
 			margin-top: -20px;
 			width: 100%;
+
+			@media screen and (max-width: 685px) {
+	        	font-size: 1.2em;
+	        }
 		}
 
-		.button {
+		.ka-refer-landing-videoplayer-button {
 			font-size: 0.8em;
 			position: relative;
 			top: 60%;
@@ -84,14 +107,13 @@ videoplayer-selector {
 			background-color: $titleColor;
 			line-height: 25px;
 			@include transition(0.2s);
-		}
-
-		.button:hover {
-			@include grow(1.2);
+            @media screen and (max-width: 785px) {
+                display: none;
+            }
 		}
 	}
 
-	.text h2, .text div {
+	.ka-refer-landing-videoplayer-text h2, .ka-refer-landing-videoplayer-text div {
 		position: absolute;
 	}
 
@@ -108,13 +130,25 @@ videoplayer-selector {
 	}
 
 	.selected {
-		.button, .title {
+		cursor: default;
+
+		* {
+			cursor: default;
+		}
+
+		.ka-refer-landing-videoplayer-button, .ka-refer-landing-videoplayer-title {
 			opacity: 0;
 		}
 
 		img {
 			opacity: 1;
 		}
+	}
+}
+
+videoplayer-selector:hover {
+	.ka-refer-landing-videoplayer-button {
+		@include grow(1.2);
 	}
 }
 
