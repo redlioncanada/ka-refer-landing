@@ -8,10 +8,21 @@ masthead {
         overflow: hidden;
         cursor: default;
         margin-bottom: 20px;
+        
+        @media screen and (min-width: 768px) and  (max-width: 1275px){
+             height: 250px;
+        }
     }
     
     img{
         width: 100%;
+        @media screen and (min-width: 768px) and  (max-width: 1275px){
+                 width: 75%;
+                margin: auto;
+                position: absolute;
+                left: 0px;
+                right: 0px;
+        }
     }
 
     .ka-landing-title h1{
@@ -24,5 +35,6 @@ masthead {
             text-align: center;
             padding-bottom: 10px;
         }
+        
     }
 }
