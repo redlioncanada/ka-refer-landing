@@ -47,6 +47,10 @@ gulp.task('cuat', function() {
 		.pipe(replace('./public/js', '/javascript/'+base))
 		.pipe(replace('./public/css', '/css/'+base))
 		.pipe(replace('./public/images', '/images/'+base))
+		.pipe(replace('<html>','')).pipe(replace('</html>',''))
+		.pipe(replace('<body>','')).pipe(replace('</body>',''))
+		.pipe(replace('<head>','')).pipe(replace('</head>',''))
+		.pipe(replace(/<title>.*<\/title>/g, ''))
 		.pipe(gulp.dest('./cuat'))
 });
 
