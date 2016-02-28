@@ -576,6 +576,12 @@ rl-ka-refer-landing {
       width: 75%;
       position: relative;
       left: 13%; } }
+  @media screen and (max-width: 785px) {
+    rl-ka-refer-landing features .row {
+      height: 180px;
+      width: 100%;
+      position: relative;
+      left: .3%; } }
   rl-ka-refer-landing features .ka-landing-feature-icon {
     width: 100px;
     height: 100px;

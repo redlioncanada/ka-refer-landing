@@ -11,6 +11,14 @@ features {
             left: 13%;
         }
     }
+    @media screen and (max-width: 785px) {
+        .row {    
+            height: 180px;
+            width: 100%;
+            position: relative;
+            left: .3%;
+        }
+    }
     .ka-landing-feature-icon {
         width: 100px;
         height: 100px;
