@@ -839,8 +839,8 @@ rl-ka-refer-landing {
           text-align: center;
           margin: 0 auto;
           margin-bottom: 30px;
-          font-size: 14px;
-          line-height: 18px; } }
+          font-size: 14px !important;
+          line-height: 18px !important; } }
       @media screen and (max-width: 1275px) {
         rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-desc {
           font-size: 18px;

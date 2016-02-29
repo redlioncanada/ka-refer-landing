@@ -151,8 +151,8 @@ product-selector {
         @media screen and (max-width: $mobileBreakpoint) {
             @include mobile-block-element;
             margin-bottom: 30px;
-            font-size: 14px;
-            line-height: 18px;
+            font-size: 14px !important;
+            line-height: 18px !important;
         }
 
         @media screen and (max-width: 1275px) {
