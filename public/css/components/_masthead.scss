@@ -25,16 +25,24 @@ masthead {
         }
     }
 
-    .ka-landing-title h1{
-        text-transform: uppercase;
-        font-weight: 100;
-        font-size: 32px;
-        letter-spacing: 1px;
-        
-        @media screen and (max-width: 768px) {
-            text-align: center;
-            padding-bottom: 10px;
+    .ka-landing-title{
+        h1{
+            text-transform: uppercase;
+            font-weight: 100;
+            font-size: 32px;
+            letter-spacing: 1px;
+            margin-top: 125px;
+            @media screen and (max-width: 1275px) {
+                position: relative;
+                left: 12.5%;
+            }
+            
+            @media screen and (max-width: 768px) {
+                text-align: center;
+                padding-bottom: 10px;
+                left: 0;
+                
+            }
         }
-        
     }
 }
