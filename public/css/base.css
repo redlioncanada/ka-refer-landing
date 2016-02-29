@@ -943,6 +943,8 @@ rl-ka-refer-landing {
     @media screen and (max-width: 685px) {
       rl-ka-refer-landing learn-more-button {
         font-size: .7em !important; } }
+    rl-ka-refer-landing learn-more-button * {
+      color: #FFFFFF; }
     rl-ka-refer-landing learn-more-button div {
       width: 100%;
       height: 100%;

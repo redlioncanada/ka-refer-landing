@@ -13,6 +13,10 @@ learn-more-button {
         font-size: .7em !important;
     }
 
+    * {
+    	color: $learnMoreTextColor;
+    }
+
 	div {
 		width: 100%;
 		height: 100%;
