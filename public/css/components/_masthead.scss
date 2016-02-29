@@ -9,20 +9,28 @@ masthead {
         cursor: default;
         margin-bottom: 20px;
         
-        @media screen and (min-width: 768px) and  (max-width: 1275px){
+        @media screen and (min-width: 768px) and  (max-width: 1366px){
              height: 250px;
         }
     }
     
     img{
         width: 100%;
-        @media screen and (min-width: 768px) and  (max-width: 1275px){
+        @media screen and (min-width: 768px) and  (max-width: 1366px){
                  width: 75%;
                 margin: auto;
                 position: absolute;
                 left: 0px;
                 right: 0px;
         }
+    }
+
+    .ka-landing-title {
+        margin-top: 100px;
+        @media screen and (max-width: 768px) {
+            margin-top: 0;
+        }
+        
     }
 
     .ka-landing-title h1{
@@ -36,7 +44,7 @@ masthead {
             padding-bottom: 10px;
         }
 
-        @media screen and (min-width: 768px) and  (max-width: 1275px){
+        @media screen and (min-width: 768px) and  (max-width: 1366px){
             padding: 0 12.5%;
         }
     }

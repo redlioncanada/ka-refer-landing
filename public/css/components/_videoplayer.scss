@@ -13,6 +13,12 @@ videoplayer {
          
         }
 	}
+    
+    h2.ka-refer-landing-videoplayer-title{
+         @media screen and (max-width: 685px) {
+                font-size: 1em;
+         }
+    }
 
 	> ul {
 		overflow: hidden;
@@ -64,6 +70,12 @@ videoplayer-player {
 		.ka-refer-landing-videoplayer-description, .ka-refer-landing-videoplayer-title {
 			text-align: center;
 		}
+        
+        .ka-refer-landing-videoplayer-description{
+            @media screen and (max-width: 685px) {
+                font-size: 66%;
+         }
+        }
 	}
 }
 

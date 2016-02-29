@@ -11,7 +11,7 @@ product-selector {
         width: 100%;
         margin-top: 50px;
         margin-bottom: 50px;
-        @media screen and (max-width: 1275px) {
+        @media screen and (max-width: 1366px) {
                 font-size: 2em;
                 margin-top: 35px;
         }
@@ -73,6 +73,7 @@ product-selector {
             display: inline-block;
             width: 100%;
             margin-bottom: 10px;
+            color: #000000!important;
         }
     }
 
@@ -83,7 +84,7 @@ product-selector {
         width: 300px;
         font-weight: 300;
         font-size: 32px;
-        color: #000000;
+        color: #000000!important;
         text-transform: uppercase;
         opacity: 0;
 
@@ -100,7 +101,7 @@ product-selector {
         height: 30px;
         opacity: 0;
 
-        @media screen and (max-width: 1275px) {
+        @media screen and (max-width: 1366px) {
            transform: scale(1.5,1.5);
            -webkit-transform: scale(1.5,1.5);
            left: 515px;
@@ -155,7 +156,7 @@ product-selector {
             line-height: 18px !important;
         }
 
-        @media screen and (max-width: 1275px) {
+        @media screen and (max-width: 1366px) {
            font-size: 18px;
            line-height: 24px;
         }
