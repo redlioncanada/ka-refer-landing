@@ -5,6 +5,7 @@ learn-more-button {
 	width: 180px;
 	height: 40px;
 	margin-top: -20px;
+	color: $learnMoreTextColor;
 	background-color: $learnMoreBackgroundColor;
 	@include transition(0.2s);
     font-weight: 300;
