@@ -572,6 +572,9 @@ rl-ka-refer-landing {
         rl-ka-refer-landing masthead .ka-landing-title h1 {
           text-align: center;
           padding-bottom: 10px; } }
+      @media screen and (min-width: 768px) and (max-width: 1275px) {
+        rl-ka-refer-landing masthead .ka-landing-title h1 {
+          padding: 0 12.5%; } }
   rl-ka-refer-landing features .row {
     width: 100%;
     height: 300px; }
@@ -717,6 +720,9 @@ rl-ka-refer-landing {
         rl-ka-refer-landing product-selector h2 {
           font-size: 2em;
           margin-top: 35px; } }
+      @media screen and (max-width: 820px) {
+        rl-ka-refer-landing product-selector h2 {
+          margin-bottom: 0px; } }
     rl-ka-refer-landing product-selector #french-door, rl-ka-refer-landing product-selector #side-by-side, rl-ka-refer-landing product-selector #bottom-freezer, rl-ka-refer-landing product-selector #under-counter, rl-ka-refer-landing product-selector #built-in {
       opacity: 0; }
     rl-ka-refer-landing product-selector product-slides {
@@ -747,6 +753,20 @@ rl-ka-refer-landing {
       @media screen and (max-width: 820px) {
         rl-ka-refer-landing product-selector > .row {
           background-position-y: -30px; } }
+    rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-title.mobile {
+      display: none;
+      margin-bottom: 20px; }
+      @media screen and (max-width: 820px) {
+        rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-title.mobile {
+          position: relative;
+          top: initial;
+          left: initial;
+          display: block;
+          text-align: center;
+          margin: 0 auto;
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 10px; } }
     rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-title {
       position: absolute;
       left: 490px;
@@ -759,13 +779,7 @@ rl-ka-refer-landing {
       opacity: 0; }
       @media screen and (max-width: 820px) {
         rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-title {
-          position: relative;
-          top: initial;
-          left: initial;
-          display: block;
-          text-align: center;
-          margin: 0 auto;
-          margin-top: 20px; } }
+          display: none; } }
     rl-ka-refer-landing product-selector learn-more-button {
       position: absolute;
       left: 490px;
@@ -796,7 +810,8 @@ rl-ka-refer-landing {
           left: initial;
           position: relative;
           display: block;
-          top: 0; } }
+          top: 0;
+          margin-bottom: 20px; } }
     rl-ka-refer-landing product-selector .rl-ka-lndng-fridge img {
       height: 420px; }
       @media screen and (max-width: 820px) {
@@ -823,7 +838,9 @@ rl-ka-refer-landing {
           display: block;
           text-align: center;
           margin: 0 auto;
-          margin-bottom: 30px; } }
+          margin-bottom: 30px;
+          font-size: 14px;
+          line-height: 18px; } }
       @media screen and (max-width: 1275px) {
         rl-ka-refer-landing product-selector .rl-ka-lndng-fridge-desc {
           font-size: 18px;
@@ -840,9 +857,6 @@ rl-ka-refer-landing {
       padding: 0 2px; }
       rl-ka-refer-landing product-selector-nav .ka-refer-landing-product img, rl-ka-refer-landing product-selector-nav .see-all img {
         width: 100%; }
-    rl-ka-refer-landing product-selector-nav .see-all {
-      width: 13%;
-      margin-left: 1%; }
     @media screen and (max-width: 820px) {
       rl-ka-refer-landing product-selector-nav .ka-refer-landing-product {
         width: 16.5%; } }
@@ -882,6 +896,8 @@ rl-ka-refer-landing {
       background-color: #cc0000;
       color: #FFFFFF; }
     rl-ka-refer-landing product-selector-nav .see-all {
+      width: 13%;
+      margin-left: 1%;
       color: #959595;
       border: 3px solid #959595;
       text-transform: uppercase;
@@ -905,7 +921,7 @@ rl-ka-refer-landing {
         rl-ka-refer-landing product-selector-nav .see-all {
           clear: left;
           width: 97%;
-          height: 100px;
+          height: 40px;
           margin-top: 10px; } }
     rl-ka-refer-landing product-selector-nav .see-all:hover p {
       color: #FFFFFF;
