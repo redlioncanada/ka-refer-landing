@@ -1,4 +1,4 @@
-System.register(['angular2/core', './landing.video-player.selector', './landing.video-player.player', './services/logger.service'], function(exports_1, context_1) {
+System.register(['angular2/core', './landing.video-player.selector', './landing.video-player.player', './services/logger.service', './services/appdata.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './landing.video-player.selector', './landing.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, landing_video_player_selector_1, landing_video_player_player_1, logger_service_1;
+    var core_1, landing_video_player_selector_1, landing_video_player_player_1, logger_service_1, appdata_service_1;
     var VideoPlayer;
     return {
         setters:[
@@ -25,39 +25,21 @@ System.register(['angular2/core', './landing.video-player.selector', './landing.
             },
             function (logger_service_1_1) {
                 logger_service_1 = logger_service_1_1;
+            },
+            function (appdata_service_1_1) {
+                appdata_service_1 = appdata_service_1_1;
             }],
         execute: function() {
             VideoPlayer = (function () {
-                function VideoPlayer(logger) {
+                function VideoPlayer(appdata, logger) {
+                    this.appdata = appdata;
                     this.logger = logger;
-                    this.title = "Designed To Inspire";
-                    this.videos = [
-                        {
-                            id: '9IFIdkLo29Y',
-                            thumb: './public/images/video-select-1.jpg',
-                            title: 'Design: A revolutionary Mark On A Revolutionary New Line',
-                            ctaTitle: 'Design',
-                            cta: 'Play Video',
-                            desc: false
-                        },
-                        {
-                            id: 'fWbEHxpUEwM',
-                            thumb: './public/images/video-select-2.jpg',
-                            title: 'Food Care: KitchenAid<sup>&reg;</sup> Preserva<sup>&reg;</sup> Food Care System',
-                            ctaTitle: 'Food Care',
-                            cta: 'Play Video',
-                            desc: false
-                        },
-                        {
-                            id: 'RxnPMBOUWfk',
-                            thumb: './public/images/video-select-3.jpg',
-                            title: '5-Door: Revolutionary Five-Door Refrigerator',
-                            ctaTitle: '5-Door',
-                            cta: 'Play Video',
-                            desc: false
-                        }
-                    ];
                     this.currentId = 0;
+                    this.enabled = true;
+                    var data = appdata.get();
+                    this.enabled = data.videoplayer.enabled;
+                    this.title = data.videoplayer.title;
+                    this.videos = data.videoplayer.videos;
                 }
                 VideoPlayer.prototype.select = function (id) {
                     this.currentId = id;
@@ -68,7 +50,7 @@ System.register(['angular2/core', './landing.video-player.selector', './landing.
                         templateUrl: 'app/views/landing.video-player.view.html',
                         directives: [landing_video_player_player_1.VideoPlayerPlayer, landing_video_player_selector_1.VideoPlayerSelector]
                     }), 
-                    __metadata('design:paramtypes', [logger_service_1.Logger])
+                    __metadata('design:paramtypes', [appdata_service_1.AppData, logger_service_1.Logger])
                 ], VideoPlayer);
                 return VideoPlayer;
             }());

@@ -1,33 +1,35 @@
 import {Component} from 'angular2/core'
 import {FeatureButton} from './landing.feature.button'
 import {FeatureModel} from './models/features.model'
+import {AppData} from './services/appdata.service'
 
 @Component({
     selector: 'features',
     templateUrl: 'app/views/landing.feature.view.html',
 	directives: [FeatureButton],
-    
 })
+
 export class Features {
-    
-    public featureButtons:[FeatureModel] = [
-        // new FeatureModel("./public/images/refer-landing-shopping-cart.png",
-        // 				"Buying Guide",
-        // 				"What to look for when you are buying",
-        // 				"Click Here",
-        // 				"http://kitchenaid.ca",
-        // 				"cart"),
-        new FeatureModel("./public/images/refer-landing-star.png",
-        				"Ratings & Reviews",
-        				"See what others are saying",
-        				"Click Here",
-        				"http://www.kitchenaid.ca/en_CA/2_2_89/global_best-products.content.html",
-        				"star"),
-        new FeatureModel("./public/images/refer-landing-mag-glass.png",
-        				"Find Your Kitchenaid",
-        				"Need help finding your refrigerator?",
-        				"Click Here",
-        				"http://findmy.kitchenaid.ca/#/question/Appliance",
-        				"magnifier")
-    ];
+    public featureButtons:[FeatureModel] = [];
+    private enabled: boolean
+
+    constructor(private appdata: AppData) {
+        this.enabled = true
+        var data = appdata.get()
+        this.enabled = data.features.enabled
+        
+        for (var i in data.features.features) {
+            var feature = data.features.features[i]
+            this.featureButtons.push(
+                new FeatureModel(
+                    feature.image,
+                    feature.title,
+                    feature.desc,
+                    feature.cta,
+                    feature.link,
+                    feature.type
+                )
+            )
+        }
+    }
 }

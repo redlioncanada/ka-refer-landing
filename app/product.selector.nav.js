@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './services/appdata.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,19 +10,26 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, appdata_service_1;
     var ProductSelectorNav;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (appdata_service_1_1) {
+                appdata_service_1 = appdata_service_1_1;
             }],
         execute: function() {
             ProductSelectorNav = (function () {
-                function ProductSelectorNav() {
+                function ProductSelectorNav(appdata) {
+                    this.appdata = appdata;
                     this.productSelected = new core_1.EventEmitter();
-                    this.ctaText = 'See All';
-                    this.ctaLink = 'http://www.kitchenaid.ca/en_CA/shop/major-appliances-1/refrigerators-3/102310048/';
+                    this.enabled = true;
+                    var data = appdata.get();
+                    this.enabled = data.productselector.enabled;
+                    this.ctaText = data.productselector.nav.text;
+                    this.ctaLink = data.productselector.nav.link;
                 }
                 ProductSelectorNav.prototype.select = function (product) {
                     this.productSelected.emit(product);
@@ -44,7 +51,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         selector: 'product-selector-nav',
                         templateUrl: 'app/views/product.selector.nav.view.html'
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [appdata_service_1.AppData])
                 ], ProductSelectorNav);
                 return ProductSelectorNav;
             }());

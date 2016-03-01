@@ -1,4 +1,4 @@
-System.register(['angular2/core', './landing.morefeatures.feature'], function(exports_1, context_1) {
+System.register(['angular2/core', './landing.morefeatures.feature', './services/appdata.service', './services/logger.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './landing.morefeatures.feature'], function(ex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, landing_morefeatures_feature_1;
+    var core_1, landing_morefeatures_feature_1, appdata_service_1, logger_service_1;
     var MoreFeatures;
     return {
         setters:[
@@ -19,34 +19,23 @@ System.register(['angular2/core', './landing.morefeatures.feature'], function(ex
             },
             function (landing_morefeatures_feature_1_1) {
                 landing_morefeatures_feature_1 = landing_morefeatures_feature_1_1;
+            },
+            function (appdata_service_1_1) {
+                appdata_service_1 = appdata_service_1_1;
+            },
+            function (logger_service_1_1) {
+                logger_service_1 = logger_service_1_1;
             }],
         execute: function() {
             MoreFeatures = (function () {
-                function MoreFeatures() {
-                    this.title = "More Fresh Features";
-                    this.moreFeatures = [
-                        {
-                            "title": "Measured Water Fill",
-                            "image": "./public/images/more-features-1.jpg",
-                            "link": "http://kitchenaid.ca",
-                            "text": "Displays and automatically dispenses water in ounces, cups, or liters.",
-                            "cta": ""
-                        },
-                        {
-                            "title": "Platinum Interior",
-                            "image": "./public/images/more-features-2.jpg",
-                            "link": "http://kitchenaid.ca",
-                            "text": "Provides a premium look with silver glossy walls that complement the metallic accents found inside the refrigerator.",
-                            "cta": ""
-                        },
-                        {
-                            "title": "Three-Tier Freezer Drawer",
-                            "image": "./public/images/more-features-3.jpg",
-                            "link": "http://kitchenaid.ca",
-                            "text": "Gives you easy access to frozen items with a three-level drawer, plus a divider in the lower basket to help you keep smaller items readily at hand.",
-                            "cta": ""
-                        }
-                    ];
+                function MoreFeatures(appdata, logger) {
+                    this.appdata = appdata;
+                    this.logger = logger;
+                    this.enabled = true;
+                    var data = appdata.get();
+                    this.enabled = data.morefeatures.enabled;
+                    this.title = data.morefeatures.title;
+                    this.moreFeatures = data.morefeatures.features;
                 }
                 MoreFeatures = __decorate([
                     core_1.Component({
@@ -54,7 +43,7 @@ System.register(['angular2/core', './landing.morefeatures.feature'], function(ex
                         templateUrl: 'app/views/landing.morefeatures.view.html',
                         directives: [landing_morefeatures_feature_1.MoreFeaturesFeature],
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [appdata_service_1.AppData, logger_service_1.Logger])
                 ], MoreFeatures);
                 return MoreFeatures;
             }());

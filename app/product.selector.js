@@ -1,4 +1,4 @@
-System.register(['angular2/core', './product.selector.slides', './product.selector.nav', './models/products.model'], function(exports_1, context_1) {
+System.register(['angular2/core', './product.selector.slides', './product.selector.nav', './services/appdata.service', './models/products.model'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './product.selector.slides', './product.select
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, product_selector_slides_1, product_selector_nav_1, products_model_1;
+    var core_1, product_selector_slides_1, product_selector_nav_1, appdata_service_1, products_model_1;
     var ProductSelector;
     return {
         setters:[
@@ -23,20 +23,24 @@ System.register(['angular2/core', './product.selector.slides', './product.select
             function (product_selector_nav_1_1) {
                 product_selector_nav_1 = product_selector_nav_1_1;
             },
+            function (appdata_service_1_1) {
+                appdata_service_1 = appdata_service_1_1;
+            },
             function (products_model_1_1) {
                 products_model_1 = products_model_1_1;
             }],
         execute: function() {
             ProductSelector = (function () {
-                function ProductSelector() {
-                    this.products = [
-                        new products_model_1.ProductModel("./public/images/products/5-door.png", "5-door", "The revolutionary, first-ever 5-Door freestanding refrigerator is designed for optimal organization and food freshness. Learn more about our versatile soft-close drawers, designed to help keep your favourite foods visible and easy to reach.", "http://www.kitchenaid.ca/en_CA/shop/major-appliances-1/refrigerators-3/102310048+105000817/", "five-door"),
-                        new products_model_1.ProductModel("./public/images/products/built-in.png", "Built-in", "When you picture your dream kitchen, you can bet our Built-in Refrigerator goes with it. Designed to fit your kitchen seamlessly, our panel ready options sold separately provide a sleek, premium look to complement your cabinets.", "http://www.kitchenaid.ca/en_CA/shop/major-appliances-1/refrigerators-3/102310048+105000258/", "built-in"),
-                        new products_model_1.ProductModel("./public/images/products/french-door.png", "French Door", "Need to get organized? Our French Door Refrigerators provide excellent space and organizing options for your culinary needs. With features like the humidity-controlled crispers, pantry drawer, and tiered drawer freezers, French Door Refrigerators are a contemporary fit for any kitchen.", "http://www.kitchenaid.ca/en_CA/shop/major-appliances-1/refrigerators-3/102310048+105000377/", "french-door"),
-                        new products_model_1.ProductModel("./public/images/products/side-by-side.png", "Side-By-Side", "The clean, timeless design of our Side-by-Side Refrigerators gives you eye-level access to both refrigerator and freezer, while keeping the ingredients you use most often fresh and at your fingertips.", "http://www.kitchenaid.ca/en_CA/shop/major-appliances-1/refrigerators-3/102310048+105000379/", "side-by-side"),
-                        new products_model_1.ProductModel("./public/images/products/bottom-freezer.png", "Bottom Freezer", "Beautifully designed, inside and out. Our Bottom Freezer Refrigerators are made to give you easy access to your favourite foods. They also feature humidity-controlled crispers that create the perfect environment for keeping ingredients fresh.", "http://www.kitchenaid.ca/en_CA/shop/major-appliances-1/refrigerators-3/102310048+105000376/", "bottom-freezer"),
-                        new products_model_1.ProductModel("./public/images/products/under-counter.png", "Under Counter", "Looking for a great addition to your kitchen? Our wide selection of Undercounter Refrigerators, Wine Cellars, and Ice Makers are a must have for entertaining, or providing another way to keep your beverages at the perfect temperature at all times.", "http://www.kitchenaid.ca/en_CA/shop/major-appliances-1/refrigerators-2/undercounter-refrigerators-3/102310356/", "under-counter")
-                    ];
+                function ProductSelector(appdata) {
+                    this.appdata = appdata;
+                    this.enabled = true;
+                    var data = appdata.get();
+                    this.enabled = data.productselector.enabled;
+                    this.products = [];
+                    for (var i in data.productselector.products) {
+                        var product = data.productselector.products[i];
+                        this.products.push(new products_model_1.ProductModel(product.image, product.title, product.desc, product.link, product.id));
+                    }
                     this.selectedProduct = this.products[0];
                     this.animating = false;
                 }
@@ -62,7 +66,7 @@ System.register(['angular2/core', './product.selector.slides', './product.select
                         templateUrl: 'app/views/product.selector.view.html',
                         directives: [product_selector_slides_1.ProductSlides, product_selector_nav_1.ProductSelectorNav],
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [appdata_service_1.AppData])
                 ], ProductSelector);
                 return ProductSelector;
             }());

@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './services/appdata.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,23 +10,32 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, appdata_service_1;
     var AppMasthead;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (appdata_service_1_1) {
+                appdata_service_1 = appdata_service_1_1;
             }],
         execute: function() {
             AppMasthead = (function () {
-                function AppMasthead() {
+                function AppMasthead(appdata) {
+                    this.appdata = appdata;
+                    this.enabled = true;
+                    var data = appdata.get();
+                    this.enabled = data.masthead.enabled;
+                    this.image = data.masthead.image;
+                    this.title = data.masthead.title;
                 }
                 AppMasthead = __decorate([
                     core_1.Component({
                         selector: 'masthead',
                         templateUrl: 'app/views/masthead.view.html'
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [appdata_service_1.AppData])
                 ], AppMasthead);
                 return AppMasthead;
             }());

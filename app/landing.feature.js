@@ -1,4 +1,4 @@
-System.register(['angular2/core', './landing.feature.button', './models/features.model'], function(exports_1, context_1) {
+System.register(['angular2/core', './landing.feature.button', './models/features.model', './services/appdata.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './landing.feature.button', './models/features
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, landing_feature_button_1, features_model_1;
+    var core_1, landing_feature_button_1, features_model_1, appdata_service_1;
     var Features;
     return {
         setters:[
@@ -22,20 +22,22 @@ System.register(['angular2/core', './landing.feature.button', './models/features
             },
             function (features_model_1_1) {
                 features_model_1 = features_model_1_1;
+            },
+            function (appdata_service_1_1) {
+                appdata_service_1 = appdata_service_1_1;
             }],
         execute: function() {
             Features = (function () {
-                function Features() {
-                    this.featureButtons = [
-                        // new FeatureModel("./public/images/refer-landing-shopping-cart.png",
-                        // 				"Buying Guide",
-                        // 				"What to look for when you are buying",
-                        // 				"Click Here",
-                        // 				"http://kitchenaid.ca",
-                        // 				"cart"),
-                        new features_model_1.FeatureModel("./public/images/refer-landing-star.png", "Ratings & Reviews", "See what others are saying", "Click Here", "http://www.kitchenaid.ca/en_CA/2_2_89/global_best-products.content.html", "star"),
-                        new features_model_1.FeatureModel("./public/images/refer-landing-mag-glass.png", "Find Your Kitchenaid", "Need help finding your refrigerator?", "Click Here", "http://findmy.kitchenaid.ca/#/question/Appliance", "magnifier")
-                    ];
+                function Features(appdata) {
+                    this.appdata = appdata;
+                    this.featureButtons = [];
+                    this.enabled = true;
+                    var data = appdata.get();
+                    this.enabled = data.features.enabled;
+                    for (var i in data.features.features) {
+                        var feature = data.features.features[i];
+                        this.featureButtons.push(new features_model_1.FeatureModel(feature.image, feature.title, feature.desc, feature.cta, feature.link, feature.type));
+                    }
                 }
                 Features = __decorate([
                     core_1.Component({
@@ -43,7 +45,7 @@ System.register(['angular2/core', './landing.feature.button', './models/features
                         templateUrl: 'app/views/landing.feature.view.html',
                         directives: [landing_feature_button_1.FeatureButton],
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [appdata_service_1.AppData])
                 ], Features);
                 return Features;
             }());
