@@ -74,9 +74,9 @@ export class ProductSlides extends TimelineController {
           this.animating = true;
 
           TweenMax.to(image, .3, { delay: 0, opacity: 0, ease: Power3.easeOut });
-          TweenMax.to(title, .3, { delay: 0.1, opacity: 0, ease: Power3.easeOut });
-          TweenMax.to(desc, .3, { delay: 0.2, opacity: 0, ease: Power3.easeOut });
-          TweenMax.to(learn, .3, { delay: 0.3, opacity: 0, ease: Power3.easeOut, onComplete: function() {
+          TweenMax.to(title, .3, { delay: 0, opacity: 0, ease: Power3.easeOut });
+          TweenMax.to(desc, .3, { delay: 0, opacity: 0, ease: Power3.easeOut });
+          TweenMax.to(learn, .3, { delay: 0, opacity: 0, ease: Power3.easeOut, onComplete: function() {
               TweenMax.to(target, 0, { delay: 0, opacity: 0 });
               cb()
           }});
