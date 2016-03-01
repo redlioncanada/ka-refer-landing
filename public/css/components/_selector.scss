@@ -87,6 +87,7 @@ product-selector {
         color: #000000!important;
         text-transform: uppercase;
         opacity: 0;
+        line-height: 30px;
 
         @media screen and (max-width: $mobileBreakpoint) {
             display: none;
@@ -268,5 +269,42 @@ product-selector-nav {
             color: $selectorHighlightedTextColor;
             background-color: $selectorBackgroundColor;
          }
+    }
+}
+
+product-selector.fr {
+    .rl-ka-lndng-fridge-title {
+        width: 450px;
+    }
+
+    .rl-ka-lndng-fridge-title.mobile {
+        @media screen and (max-width: $mobileBreakpoint) {
+            width: 100%;
+        }
+    }
+
+    .rl-ka-lndng-fridge-desc {
+        width: 450px;
+
+        @media screen and (max-width: $mobileBreakpoint) {
+            width: 100%;
+        }
+    }
+
+    product-selector-nav {
+        @media screen and (max-width: $mobileBreakpoint) {
+            div .ka-refer-landing-button p {
+                font-size: 0.6em;
+            }
+        }
+    }
+
+    product-slides {
+        product-slide {
+            .rl-ka-lndng-fridge-title.mobile {
+                font-size: 18px;
+                line-height: 20px;
+            }
+        }
     }
 }

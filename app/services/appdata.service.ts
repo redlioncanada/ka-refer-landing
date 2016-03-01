@@ -9,8 +9,7 @@ export class AppData {
 	private init: boolean
 
 	constructor(private logger: Logger) {
-		this.language = 'fr'
-
+		this.language = this.getLanguage()
 		this.contents = {}
 		this.contents.en = {
 			masthead: {
@@ -318,4 +317,10 @@ export class AppData {
 		}
 
 		return this.contents[this.language];
-	}}
+	}
+
+	getLanguage() {
+		var url = window.location.href
+		if (url.indexOf('/fr_CA') > -1) return 'fr'
+		return 'en'
+	}
