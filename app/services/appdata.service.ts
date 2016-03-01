@@ -110,6 +110,7 @@ export class AppData {
 			},
 			productselector: {
 				enabled: true,
+				title: 'Choose your style',
 				nav: {
 					text: 'See All',
 					link: 'http://www.kitchenaid.ca/en_CA/shop/major-appliances-1/refrigerators-3/102310048/'
@@ -173,12 +174,13 @@ export class AppData {
 				image: './public/images/banner_fr.jpg'
 			},
 			features: {
+				enabled: true,
 				features: [
 					// {
 			  //       	image: "./public/images/refer-landing-shopping-cart.png",
 			  //           title: "Buying Guide",
-			  //           desc: "What to look for when you are buying",
-			  //           cta: "Click Here",
+			  //           desc: "Éléments à considérer lorsque vous magasinez",
+			  //           cta: "Cliquez ici",
 			  //           link: "http://kitchenaid.ca",
 			  //           type: "cart"
 					// },
@@ -186,7 +188,7 @@ export class AppData {
 						image: "./public/images/refer-landing-star.png",
 						title: "Évaluation et Commentaires",
 						desc: "Découvrez ce que nos clients en disent",
-						cta: "Click Here",
+						cta: "Cliquez ici",
 						link: "http://www.kitchenaid.ca/fr_CA/2_2_89/global_best-products.content.html",
 						type: "star"
 					},
@@ -194,7 +196,7 @@ export class AppData {
 						image: "./public/images/refer-landing-mag-glass.png",
 						title: "Trouver mon KitchenAid",
 						desc: "Besoin d’aide pour trouver votre réfrigérateur?",
-						cta: "Click Here",
+						cta: "Cliquez ici",
 						link: "http://trouvermon.kitchenaid.ca/#/question/Appliance",
 						type: "magnifier"
 					}
@@ -202,7 +204,7 @@ export class AppData {
 			},
 			morefeatures: {
 				enabled: true,
-				title: "More Fresh Features",
+				title: "Plus de fonctions fraîcheur",
 				features: [
 					{
 						title: "Remplissage d'eau mesuré",
@@ -236,7 +238,7 @@ export class AppData {
 						thumb: './public/images/video-select-1.jpg',
 						title: 'Un emblème révolutionnaire pour une nouvelle gamme révolutionnaire',
 						ctaTitle: 'Conception',
-						cta: 'Play Video',
+						cta: 'Lire la vidéo',
 						desc: false
 					},
 					{
@@ -244,7 +246,7 @@ export class AppData {
 						thumb: './public/images/video-select-2.jpg',
 						title: 'Réfrigérateur à 5 portes KitchenAid<sup>&reg;</sup> avec le système de conservation des aliments Préserva<sup>&reg;</sup>',
 						ctaTitle: 'Conservation des aliments',
-						cta: 'Play Video',
+						cta: 'Lire la vidéo',
 						desc: false
 					},
 					{
@@ -252,13 +254,14 @@ export class AppData {
 						thumb: './public/images/video-select-3.jpg',
 						title: 'Réfrigérateur à 5 portes KitchenAid<sup>&reg;</sup> avec tiroirs à fermeture amortie',
 						ctaTitle: '5 portes',
-						cta: 'Play Video',
+						cta: 'Lire la vidéo',
 						desc: false
 					}
 				]
 			},
 			productselector: {
 				enabled: true,
+				title: 'Choisissez votre style',
 				nav: {
 					text: 'Voir Tout',
 					link: 'http://www.kitchenaid.ca/fr_CA/shop/major-appliances-1/refrigerators-3/102310048/'

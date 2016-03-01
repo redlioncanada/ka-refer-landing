@@ -13,6 +13,7 @@ export class ProductSelector {
     public products: [ProductModel];
     public selectedProduct: ProductModel;
     public animating: Boolean;
+    private title: string;
     private enabled: boolean
 
     constructor(private appdata:AppData) {
@@ -20,6 +21,7 @@ export class ProductSelector {
         var data = appdata.get()
 
         this.enabled = data.productselector.enabled
+        this.title = data.productselector.title
 		this.products = []
         for (var i in data.productselector.products) {
             var product = data.productselector.products[i]
