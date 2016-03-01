@@ -22,7 +22,11 @@ import {Footer} from './landing.footer'
     directives: [VideoPlayer, AppMasthead, Features, ProductSelector, Banner, MoreFeatures, Header, Footer]
 })
 class AppComponent {
-    
+	public language: string;
+
+    constructor(private appdata: AppData) {
+    	this.language = appdata.language
+    }
  }
 
 bootstrap(AppComponent, [HTTP_PROVIDERS, Logger, GoogleApi, AppData])

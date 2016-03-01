@@ -5,7 +5,7 @@ import {Logger} from './logger.service'
 @Injectable()
 export class AppData {
 	private contents;
-	private language;
+	public language: string;
 	private init: boolean
 
 	constructor(private logger: Logger) {
@@ -261,7 +261,7 @@ export class AppData {
 			productselector: {
 				enabled: true,
 				nav: {
-					text: 'See All',
+					text: 'Voir Tout',
 					link: 'http://www.kitchenaid.ca/fr_CA/shop/major-appliances-1/refrigerators-3/102310048/'
 				},
 				products: [

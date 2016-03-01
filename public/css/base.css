@@ -524,6 +524,11 @@ rl-ka-refer-landing {
             display: none; } }
     rl-ka-refer-landing videoplayer-selector .ka-refer-landing-videoplayer-text h2, rl-ka-refer-landing videoplayer-selector .ka-refer-landing-videoplayer-text div {
       position: absolute; }
+    rl-ka-refer-landing videoplayer-selector videoplayer-selector:hover .ka-refer-landing-videoplayer-button {
+      transform: scale(1.2);
+      -webkit-transform: scale(1.2); }
+    rl-ka-refer-landing videoplayer-selector videoplayer-video {
+      width: 100%; }
     rl-ka-refer-landing videoplayer-selector > div {
       position: relative;
       cursor: pointer; }
@@ -543,11 +548,9 @@ rl-ka-refer-landing {
         opacity: 0; }
       rl-ka-refer-landing videoplayer-selector .selected img {
         opacity: 1; }
-  rl-ka-refer-landing videoplayer-selector:hover .ka-refer-landing-videoplayer-button {
-    transform: scale(1.2);
-    -webkit-transform: scale(1.2); }
-  rl-ka-refer-landing videoplayer-video {
-    width: 100%; }
+  rl-ka-refer-landing videoplayer.fr ul li:nth-child(2) videoplayer-selector .ka-refer-landing-videoplayer-title {
+    line-height: 35px;
+    margin-top: -50px; }
   rl-ka-refer-landing masthead {
     width: 80%;
     position: relative;

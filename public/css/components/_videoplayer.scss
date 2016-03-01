@@ -129,6 +129,16 @@ videoplayer-selector {
 		position: absolute;
 	}
 
+	videoplayer-selector:hover {
+		.ka-refer-landing-videoplayer-button {
+			@include grow(1.2);
+		}
+	}
+
+	videoplayer-video {
+		width: 100%;
+	}
+
 	> div {
 		position: relative;
 		cursor: pointer;
@@ -158,12 +168,13 @@ videoplayer-selector {
 	}
 }
 
-videoplayer-selector:hover {
-	.ka-refer-landing-videoplayer-button {
-		@include grow(1.2);
+videoplayer.fr {
+	ul li:nth-child(2) {
+		videoplayer-selector {
+			.ka-refer-landing-videoplayer-title {
+				line-height: 35px;
+				margin-top: -50px;
+			}
+		}
 	}
-}
-
-videoplayer-video {
-	width: 100%;
 }
