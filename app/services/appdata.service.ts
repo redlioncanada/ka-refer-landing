@@ -223,7 +223,7 @@ export class AppData {
 					},
 					{
 						title: "Intérieur platine",
-						text: "Offre un aspect haut de gamme et les parois d'un brillant argenté complètent les accents métalliques que l'on retrouve à l'intérieur du réfrigérateur.",
+						text: "Offre un aspect haut de gamme, et les parois d'un brillant argenté complètent les accents métalliques que l'on retrouve à l'intérieur du réfrigérateur.",
 						image: "./public/images/more-features-2.jpg",
 						link: "http://kitchenaid.ca",
 						cta: ""
@@ -246,7 +246,7 @@ export class AppData {
 						thumb: './public/images/video-select-1.jpg',
 						title: 'Conception: Un emblème révolutionnaire pour une nouvelle gamme révolutionnaire',
 						ctaTitle: 'Conception',
-						cta: 'Lire la vidéo',
+						cta: 'Voir la video',
 						desc: false
 					},
 					{
@@ -262,7 +262,7 @@ export class AppData {
 						thumb: './public/images/video-select-3.jpg',
 						title: '5 portes: Réfrigérateur à 5 portes KitchenAid<sup>&reg;</sup> avec tiroirs à fermeture amortie',
 						ctaTitle: '5 portes',
-						cta: 'Lire la vidéo',
+						cta: 'Voir la video',
 						desc: false
 					}
 				]
