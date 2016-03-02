@@ -31,7 +31,8 @@ export class ProductSelector {
                     product.title,
                     product.desc,
                     product.link,
-                    product.id
+                    product.id,
+                    product.ctaText
                 )
             )
         }

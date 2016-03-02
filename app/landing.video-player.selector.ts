@@ -22,13 +22,15 @@ export class VideoPlayerSelector {
 	ngOnInit() {
 		let self = this
 
-		this.api.video(this.data.id, function(data, err) {
-			if (data && !err) {
-				self.initialize(data)
-			} else {
-				self.logger.error(err)
-			}
-		})
+		if (this.id && this.id.length) {
+			this.api.video(this.data.id, function(data, err) {
+				if (data && !err) {
+					self.initialize(data)
+				} else {
+					self.logger.error(err)
+				}
+			})
+		}
 	}
 
 	initialize(data) {

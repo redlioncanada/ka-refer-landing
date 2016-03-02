@@ -55,6 +55,15 @@ videoplayer-player {
 		width: 100%;
 	}
 
+	videoplayer-video {
+		width: 100%;
+
+		img {
+			width: 100%;
+		}
+	}
+
+
 	.ka-refer-landing-videoplayer-text {
 		width: 100%;
 		padding: 28px 40px;
@@ -133,10 +142,6 @@ videoplayer-selector {
 		.ka-refer-landing-videoplayer-button {
 			@include grow(1.2);
 		}
-	}
-
-	videoplayer-video {
-		width: 100%;
 	}
 
 	> div {

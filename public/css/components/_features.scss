@@ -2,8 +2,11 @@ features {
     .row{
         width: 100%;
         height: 300px;
+        float: none;
     }
     @media screen and (max-width: 1366px) {
+        height: 180px !important;
+        
         .row {
             height: 180px;
             width: 75%;

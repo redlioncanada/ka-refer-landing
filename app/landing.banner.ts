@@ -9,6 +9,7 @@ import {Logger} from './services/logger.service'
     directives: [LearnMoreButton],
 })
 export class Banner {
+	private ctaText: string
 	private link: string
 	private image: string
 	private enabled: boolean
@@ -19,5 +20,6 @@ export class Banner {
 		this.enabled = data.banner.enabled
 		this.link = data.banner.link
 		this.image = data.banner.image
+		this.ctaText = data.banner.ctaText
 	}
 }
