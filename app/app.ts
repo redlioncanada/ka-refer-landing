@@ -3,6 +3,7 @@ import {bootstrap}    from 'angular2/platform/browser'
 import {HTTP_PROVIDERS} from 'angular2/http'
 import {Logger} from './services/logger.service'
 import {GoogleApi} from './services/googleapi.service'
+import {AppData} from './services/appdata.service'
 import {Component} from 'angular2/core';
 
 import {VideoPlayer} from './landing.video-player';
@@ -21,7 +22,11 @@ import {Footer} from './landing.footer'
     directives: [VideoPlayer, AppMasthead, Features, ProductSelector, Banner, MoreFeatures, Header, Footer]
 })
 class AppComponent {
-    
+	public language: string;
+
+    constructor(private appdata: AppData) {
+    	this.language = appdata.language
+    }
  }
 
-bootstrap(AppComponent, [HTTP_PROVIDERS, Logger, GoogleApi])
+bootstrap(AppComponent, [HTTP_PROVIDERS, Logger, GoogleApi, AppData])

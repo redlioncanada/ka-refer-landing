@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var config = require('./package.json');
 var replace =require('gulp-replace');
+var mergeStream = require('merge-stream');
  
 gulp.task('sass', function () {
   return gulp.src('./public/css/**/*.scss')
@@ -18,41 +19,44 @@ gulp.task('sass:watch', function () {
 gulp.task('cuat', function() {
 	var base = config.name;
 	var nodeModulesUrl = 'http://wpc-stage.com/production/kitchenaid/refer-landing'
+	var tasks  = []
 
-	gulp.src('./app/**/*.+(js|html)')
+	tasks.push(gulp.src('./app/**/*.+(js|html)')
 		.pipe(replace('app/', '/javascript/'+base+'/'))
 		.pipe(replace('./public/images', '/images/'+base))
-		.pipe(replace('<header></header>', ''))
-		.pipe(replace('<footer></footer>', ''))
+		.pipe(replace(/<header.*><\/header>/g, ''))
+		.pipe(replace(/<footer.*><\/footer>/g, ''))
 		.pipe(replace(/'\.\/([^']*)'/g, '\'./$1.js\''))
-		.pipe(gulp.dest('./cuat/javascript/'+base+'/'))
+		.pipe(gulp.dest('./cuat/javascript/'+base+'/')))
 
-	gulp.src('./public/css/**/*.css')
+	tasks.push(gulp.src('./public/css/**/*.css')
 		.pipe(replace('../fonts/', ''))
 		.pipe(replace('../images/', '/images/'+base+'/'))
 		.pipe(replace('../../public/images/', '/images/'+base+'/'))
-		.pipe(gulp.dest('./cuat/css/'+base+'/'))
+		.pipe(gulp.dest('./cuat/css/'+base+'/')))
 
-	gulp.src('./public/fonts/**/*')
-		.pipe(gulp.dest('./cuat/css/'+base+'/'))
+	tasks.push(gulp.src('./public/fonts/**/*')
+		.pipe(gulp.dest('./cuat/css/'+base+'/')))
 
-	gulp.src('./public/js/**/*.js')
-		.pipe(gulp.dest('./cuat/javascript/'+base+'/'))
+	tasks.push(gulp.src('./public/js/**/*.js')
+		.pipe(gulp.dest('./cuat/javascript/'+base+'/')))
 
-	gulp.src('./public/images/**/*')
-		.pipe(gulp.dest('./cuat/images/'+base+'/'))
+	tasks.push(gulp.src('./public/images/**/*')
+		.pipe(gulp.dest('./cuat/images/'+base+'/')))
 
-	gulp.src('index.html')
+	tasks.push(gulp.src('index.html')
 		.pipe(replace('app/','/javascript/'+base+'/'))
 		.pipe(replace('node_modules', nodeModulesUrl+'/node_modules'))
 		.pipe(replace('./public/js', '/javascript/'+base))
 		.pipe(replace('./public/css', '/css/'+base))
 		.pipe(replace('./public/images', '/images/'+base))
-		.pipe(replace('<html>','')).pipe(replace('</html>',''))
-		.pipe(replace('<body>','')).pipe(replace('</body>',''))
-		.pipe(replace('<head>','')).pipe(replace('</head>',''))
+		.pipe(replace(/<html.*>/g,'')).pipe(replace('</html>',''))
+		.pipe(replace(/<body.*>/g,'')).pipe(replace('</body>',''))
+		.pipe(replace(/<head.*>/g,'')).pipe(replace('</head>',''))
 		.pipe(replace(/<title>.*<\/title>/g, ''))
-		.pipe(gulp.dest('./cuat'))
+		.pipe(gulp.dest('./cuat')))
+
+	return mergeStream(tasks)
 });
 
 gulp.task('default', ['sass', 'sass:watch']);

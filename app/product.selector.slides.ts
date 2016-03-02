@@ -45,7 +45,6 @@ export class ProductSlides extends TimelineController {
     }
 
      private ngAfterViewInit() {
-          window.onresize = this.resize
           this.rootElement = $(this.elementRef.nativeElement)
           var target = this.selectedProduct.prodId
           this.playIn(this,true,target)
@@ -54,10 +53,16 @@ export class ProductSlides extends TimelineController {
       private ngOnChanges(changes) {
           var self = this
           if ("selectedProduct" in changes && !this.animating) {
-              console.log('product.selector.slides current:',changes.selectedProduct.currentValue)
-              console.log('product.selector.slides previous:',changes.selectedProduct.previousValue)
               this.playOut(changes.selectedProduct.previousValue.prodId, function() {
-                  self.playIn(self, false, changes.selectedProduct.currentValue.prodId)
+
+                 //just get it done
+                if (changes.selectedProduct.currentValue.prodId == 'under-counter' && $('product-selector').hasClass('fr') && $(window).innerWidth() > 820) {
+                  self.descTop = 265;
+                } else {
+                  self.descTop = 215;
+                }
+
+                self.playIn(self, false, changes.selectedProduct.currentValue.prodId)
               })
           }
       }
@@ -150,9 +155,5 @@ export class ProductSlides extends TimelineController {
             });
           }
         }
-      }
-
-      private resize(e) {
-        console.log(e)
       }
 }

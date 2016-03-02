@@ -2,3 +2,10 @@ credentials.json
 .sublime-project
 .sublime-project.sublime-workspace
 cuat
+node_modules
+app/*.js
+app/*.js.map
+app/models/*.js
+app/models/*.js.map
+app/services/*.js
+app/services/*.js.map

@@ -7,7 +7,7 @@ videoplayer {
 		@include header-text;
         margin-top: 50px;
         margin-bottom: 50px;
-         @media screen and (max-width: 685px) {
+         @media screen and (max-width: $mobileBreakpoint) {
          
                 font-size: 2em;
          
@@ -15,7 +15,7 @@ videoplayer {
 	}
     
     h2.ka-refer-landing-videoplayer-title{
-         @media screen and (max-width: 685px) {
+         @media screen and (max-width: $mobileBreakpoint) {
                 font-size: 1em;
          }
     }
@@ -55,6 +55,15 @@ videoplayer-player {
 		width: 100%;
 	}
 
+	videoplayer-video {
+		width: 100%;
+
+		img {
+			width: 100%;
+		}
+	}
+
+
 	.ka-refer-landing-videoplayer-text {
 		width: 100%;
 		padding: 28px 40px;
@@ -72,7 +81,7 @@ videoplayer-player {
 		}
         
         .ka-refer-landing-videoplayer-description{
-            @media screen and (max-width: 685px) {
+            @media screen and (max-width: $mobileBreakpoint) {
                 font-size: 66%;
          }
         }
@@ -87,7 +96,7 @@ videoplayer-selector {
 		width: 100%;
 		position: absolute;
 		z-index: 2;
-        @media screen and (max-width: 685px) {
+        @media screen and (max-width: $mobileBreakpoint) {
             top: -5px;
         }
 
@@ -105,7 +114,7 @@ videoplayer-selector {
 			margin-top: -20px;
 			width: 100%;
 
-			@media screen and (max-width: 685px) {
+			@media screen and (max-width: $mobileBreakpoint) {
 	        	font-size: 1.2em;
 	        }
 		}
@@ -127,6 +136,12 @@ videoplayer-selector {
 
 	.ka-refer-landing-videoplayer-text h2, .ka-refer-landing-videoplayer-text div {
 		position: absolute;
+	}
+
+	videoplayer-selector:hover {
+		.ka-refer-landing-videoplayer-button {
+			@include grow(1.2);
+		}
 	}
 
 	> div {
@@ -158,12 +173,28 @@ videoplayer-selector {
 	}
 }
 
-videoplayer-selector:hover {
-	.ka-refer-landing-videoplayer-button {
-		@include grow(1.2);
-	}
-}
+videoplayer.fr {
+	ul li:nth-child(2) {
+		videoplayer-selector {
+			.ka-refer-landing-videoplayer-title {
+				line-height: 35px;
+				margin-top: -50px;
 
-videoplayer-video {
-	width: 100%;
+				@media screen and (max-width: $mobileBreakpoint) {
+		        	font-size: 0.8em;
+		        	line-height: 15px;
+		        	margin-top: -10px;
+		        }
+			}
+		}
+	}
+
+	videoplayer-selector {
+		@media screen and (max-width: $mobileBreakpoint) {
+			.ka-refer-landing-videoplayer-title {
+				font-size: 1em;
+				margin-top: -8px;
+			}
+		}
+	}
 }
