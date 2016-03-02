@@ -1,4 +1,7 @@
 product-selector {
+    @media screen and (max-width: 1366px) {
+        margin-top: -30px !important;
+    }
 
 	width: 80%;
 	position: relative;
