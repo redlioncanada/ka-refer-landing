@@ -21,8 +21,7 @@ export class VideoPlayerSelector {
 
 	ngOnInit() {
 		let self = this
-
-		if (this.id && this.id.length) {
+		if (this.data.id && this.data.id.length) {
 			this.api.video(this.data.id, function(data, err) {
 				if (data && !err) {
 					self.initialize(data)
