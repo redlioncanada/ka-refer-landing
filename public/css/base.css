@@ -507,7 +507,8 @@ rl-ka-refer-landing {
         font-size: 2em;
         font-weight: 800;
         margin-top: -20px;
-        width: 100%; }
+        width: 100%;
+        color: #FFFFFF !important; }
         @media screen and (max-width: 820px) {
           rl-ka-refer-landing videoplayer-selector .ka-refer-landing-videoplayer-text .ka-refer-landing-videoplayer-title {
             font-size: 1.2em; } }

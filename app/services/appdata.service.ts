@@ -250,15 +250,15 @@ export class AppData {
 						desc: false
 					},
 					{
-						id: 'ySD0Toxf8r0',
+						image: './public/images/video-thumb-3.jpg',
 						thumb: './public/images/video-select-2.jpg',
 						title: 'Réfrigérateur à 5 portes KitchenAid<sup>&reg;</sup> avec le système de conservation des aliments Préserva<sup>&reg;</sup>',
 						ctaTitle: 'Conservation des aliments',
-						cta: 'Lire la vidéo',
+						cta: 'Voir',
 						desc: false
 					},
 					{
-						image: './public/images/video-thumb-3.jpg',
+						id: 'ySD0Toxf8r0',
 						thumb: './public/images/video-select-3.jpg',
 						title: 'Réfrigérateur à 5 portes KitchenAid<sup>&reg;</sup> avec tiroirs à fermeture amortie',
 						ctaTitle: '5 portes',
