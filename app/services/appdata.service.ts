@@ -244,7 +244,7 @@ export class AppData {
 					{
 						id: 'lQXv1imsjfA',
 						thumb: './public/images/video-select-1.jpg',
-						title: 'Un emblème révolutionnaire pour une nouvelle gamme révolutionnaire',
+						title: 'Conception: Un emblème révolutionnaire pour une nouvelle gamme révolutionnaire',
 						ctaTitle: 'Conception',
 						cta: 'Lire la vidéo',
 						desc: false
@@ -252,15 +252,15 @@ export class AppData {
 					{
 						image: './public/images/video-thumb-3.jpg',
 						thumb: './public/images/video-select-2.jpg',
-						title: 'Réfrigérateur à 5 portes KitchenAid<sup>&reg;</sup> avec le système de conservation des aliments Préserva<sup>&reg;</sup>',
+						title: 'Conservation des aliments: Réfrigérateur à 5 portes KitchenAid<sup>&reg;</sup> avec le système de conservation des aliments Préserva<sup>&reg;</sup>',
 						ctaTitle: 'Conservation des aliments',
 						cta: 'Voir',
-						desc: false
+						desc: 'Deux systèmes de refroidissement indépendants offrent un espace réfrigéré pour prolonger la fraîcheur des aliments; et un système de congélation séparé, entièrement consacré aux aliments surgelés. Le filtre à air FreshFlow™ contribue à minimiser les odeurs et les 2 conservateurs de fruits et légumes FreshFlow™ permettent de retarder la surmaturation des fruits et légumes.'
 					},
 					{
 						id: 'ySD0Toxf8r0',
 						thumb: './public/images/video-select-3.jpg',
-						title: 'Réfrigérateur à 5 portes KitchenAid<sup>&reg;</sup> avec tiroirs à fermeture amortie',
+						title: '5 portes: Réfrigérateur à 5 portes KitchenAid<sup>&reg;</sup> avec tiroirs à fermeture amortie',
 						ctaTitle: '5 portes',
 						cta: 'Lire la vidéo',
 						desc: false
@@ -278,7 +278,7 @@ export class AppData {
 					{
                         title: "5 portes",
                         desc: "Ce premier réfrigérateur révolutionnaire à 5 portes non encastré est conçu pour une organisation et une préservation des aliments optimales. Découvrez nos tiroirs à fermeture amortie polyvalents, conçus pour maintenir vos aliments favoris au niveau des yeux et à portée de main.",
-                        link: "http://www.kitchenaid.ca/fr_CA/shop/major-appliances-1/refrigerators-3/102310048+105000817/",
+                        link: "http://www.kitchenaid.ca/fr_CA/magasiner/-[KRMF706EBS]-5568100/KRMF706EBS/",
                         image: "./public/images/products/5-door.png",
                         id: "five-door",
                         ctaText: "En savoir plus"
@@ -286,7 +286,7 @@ export class AppData {
 					{
                         title: "Encastré",
                         desc: "Lorsque vous imaginez la cuisine de vos rêves, vous pouvez être assuré que notre réfrigérateur encastré s'y agencera parfaitement. Conçu pour s'assortir naturellement à votre cuisine, nos options pouvant accueillir un panneau de recouvrement (vendus séparément) offrent un style épuré et sophistiqué pour s’harmoniser à vos armoires.",
-                        link: "http://www.kitchenaid.ca/fr_CA/shop/major-appliances-1/refrigerators-3/102310048+105000258/",
+                        link: "http://www.kitchenaid.ca/fr_CA/shop/major-appliances-1/refrigerators-3/102310048/",
                     	image: "./public/images/products/built-in.png",
 						id: "built-in",
 						ctaText: "En savoir plus"
@@ -294,7 +294,7 @@ export class AppData {
 					{
                         title: "Portes françaises",
                         desc: "Vous avez besoin de mieux vous organiser? Nos réfrigérateurs à portes françaises offrent un espace et des options de rangement idéals pour tous vos besoins culinaires. Les réfrigérateurs à portes françaises s'agencent idéalement à toute cuisine contemporaine, grâce à leurs bacs à légumes à humidité contrôlée, leurs tiroirs garde-manger et leurs tiroirs-congélateurs à trois niveaux.",
-                        link: "http://www.kitchenaid.ca/fr_CA/shop/major-appliances-1/refrigerators-3/102310048+105000377/",
+                        link: "http://www.kitchenaid.ca/fr_CA/shop/major-appliances-1/refrigerators-3/102310048/",
                         image: "./public/images/products/french-door.png",
                         id: "french-door",
                         ctaText: "En savoir plus"
@@ -302,7 +302,7 @@ export class AppData {
             		{
                         title: "Côte à côte",
                         desc: "La conception pure et intemporelle de nos modèles côte à côte vous permet de garder les ingrédients du réfrigérateur aussi bien que du congélateur au niveau des yeux tout en conservant les articles que vous utilisez le plus fréquemment au frais et à portée de main.",
-                        link: "http://www.kitchenaid.ca/fr_CA/shop/major-appliances-1/refrigerators-3/102310048+105000379/",
+                        link: "http://www.kitchenaid.ca/fr_CA/shop/major-appliances-1/refrigerators-3/102310048+105001144/",
                         image: "./public/images/products/side-by-side.png",
                         id: "side-by-side",
                         ctaText: "En savoir plus"
@@ -310,7 +310,7 @@ export class AppData {
                     {
                         title: "Congélateur inférieur",
                         desc: "D’une conception élégante à l'intérieur comme à l'extérieur, nos réfrigérateurs à congélateur inférieur sont conçus pour vous fournir un accès facile à tous vos articles favoris. Ils sont également dotés de bacs à légumes à humidité contrôlée, qui procurent un environnement idéal pour préserver la fraîcheur des produits.",
-                        link: "http://www.kitchenaid.ca/fr_CA/shop/major-appliances-1/refrigerators-3/102310048+105000376/",
+                        link: "http://www.kitchenaid.ca/fr_CA/shop/major-appliances-1/refrigerators-3/102310048/",
                         image: "./public/images/products/bottom-freezer.png",
                         id: "bottom-freezer",
                         ctaText: "En savoir plus"

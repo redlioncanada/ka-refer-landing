@@ -7,8 +7,7 @@
     <div class="ka-refer-landing-videoplayer-text">
     	<h2 class="ka-refer-landing-videoplayer-title" [innerHTML]="data[currentId].title">
     	</h2>
-    	<div class="ka-refer-landing-videoplayer-description">
-    		{{!!data[currentId].desc ? data[currentId].desc : ''}}
-    	</div>
+    	<div class="ka-refer-landing-videoplayer-description" [innerHTML]="!!data[currentId].desc ? data[currentId].desc : ''">
+        </div>
     </div>
 </div>
