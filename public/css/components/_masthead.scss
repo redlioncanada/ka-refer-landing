@@ -23,6 +23,7 @@ masthead {
                 left: 0px;
                 right: 0px;
         }
+        @include transition(0.5s);
     }
 
     .ka-landing-title{

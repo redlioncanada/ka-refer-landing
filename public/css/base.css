@@ -576,7 +576,11 @@ rl-ka-refer-landing {
         rl-ka-refer-landing masthead #ka-landing-masthead {
           height: 250px; } }
     rl-ka-refer-landing masthead img {
-      width: 100%; }
+      width: 100%;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
       @media screen and (min-width: 768px) and (max-width: 1275px) {
         rl-ka-refer-landing masthead img {
           width: 75%;
@@ -700,7 +704,11 @@ rl-ka-refer-landing {
     border-color: #aaaaaa;
     border-width: 4px;
     position: relative;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
     @media screen and (max-width: 770px) {
       rl-ka-refer-landing features .ka-landing-feature-button {
         margin: 3px;
