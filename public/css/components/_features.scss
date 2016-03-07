@@ -4,7 +4,7 @@ features {
         height: 300px;
         float: none;
     }
-    @media screen and (max-width: 1366px) {
+    @media screen and (max-width: 1275px) {
         height: 180px !important;
         
         .row {
@@ -44,7 +44,7 @@ features {
             right: 0;
         }
 
-        @media screen and (max-width: 1366px) {
+        @media screen and (max-width: 1275px) {
             width: 60px;
             height: 60px;
             top: 20px;
@@ -63,7 +63,7 @@ features {
         text-align: center;
         color: #CC0000;
 
-        @media screen and (max-width: 1366px) {
+        @media screen and (max-width: 1275px) {
             top: 95px;
         }
         @media screen and (max-width: 479px) {
@@ -139,7 +139,7 @@ features {
             //added for removal of buying guide
             width: 49.3%
         }
-        @media screen and (max-width: 1366px) {
+        @media screen and (max-width: 1275px) {
             height: 150px;
             // width: 32%;
             width: 49%;
@@ -165,7 +165,7 @@ features {
             margin-right: auto;
             margin-top: 10px;
 
-            @media screen and (max-width: 1366px) {
+            @media screen and (max-width: 1275px) {
                 top: 120px;
                 width: 60px;
             }
