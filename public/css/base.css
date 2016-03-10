@@ -696,7 +696,7 @@ rl-ka-refer-landing {
     background-color: #cc0000;
     position: absolute; }
   rl-ka-refer-landing features .ka-landing-feature-button {
-    width: 49.7%;
+    width: 33%;
     margin: 2px;
     float: left;
     height: 266px;
@@ -709,14 +709,16 @@ rl-ka-refer-landing {
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease; }
+    @media screen and (min-width: 922px) {
+      rl-ka-refer-landing features .ka-landing-feature-button {
+        width: 33%; } }
     @media screen and (max-width: 770px) {
       rl-ka-refer-landing features .ka-landing-feature-button {
-        margin: 3px;
-        width: 49.3%; } }
+        margin: 3px; } }
     @media screen and (max-width: 1275px) {
       rl-ka-refer-landing features .ka-landing-feature-button {
         height: 150px;
-        width: 49%; } }
+        width: 32%; } }
     rl-ka-refer-landing features .ka-landing-feature-button .ka-landing-feature-button-up {
       position: relative;
       z-index: 1; }

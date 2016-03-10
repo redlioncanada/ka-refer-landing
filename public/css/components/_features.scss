@@ -119,8 +119,8 @@ features {
     }
 
     .ka-landing-feature-button {
-        // width: 33%;
-        width: 49.7%;
+        width: 33%;
+        // width: 49.7%;
         margin: 2px;
         float: left;
         height: 266px;
@@ -132,18 +132,18 @@ features {
         @include transition(0.5s);
 
         @media screen and (min-width: 922px) {
-            //width: 33%;
+            width: 33%;
         }
         @media screen and (max-width: 770px) {
             margin: 3px;
 
             //added for removal of buying guide
-            width: 49.3%
+            // width: 49.3%
         }
         @media screen and (max-width: 1275px) {
             height: 150px;
-            // width: 32%;
-            width: 49%;
+            width: 32%;
+            // width: 49%;
         }
 
         .ka-landing-feature-button-up {

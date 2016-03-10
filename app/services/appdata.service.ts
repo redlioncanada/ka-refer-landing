@@ -27,14 +27,14 @@ export class AppData {
 			features: {
 				enabled: true,
 				features: [
-			  //       {
-			  //       	image: "./public/images/refer-landing-shopping-cart.png",
-			  //           title: "Buying Guide",
-			  //           desc: "What to look for when you are buying",
-			  //           cta: "Click Here",
-			  //           link: "http://kitchenaid.ca",
-			  //           type: "cart"
-					// },
+			        {
+			        	image: "./public/images/refer-landing-shopping-cart.png",
+			            title: "Buying Guide",
+			            desc: "What to look for when you are buying",
+			            cta: "Click Here",
+			            link: "http://kitchenaid.ca",
+			            type: "cart"
+					},
 			        {
 			        	image: "./public/images/refer-landing-star.png",
 			            title: "Ratings & Reviews",
@@ -200,14 +200,14 @@ export class AppData {
 			features: {
 				enabled: true,
 				features: [
-					// {
-			  //       	image: "./public/images/refer-landing-shopping-cart.png",
-			  //           title: "Buying Guide",
-			  //           desc: "Éléments à considérer lorsque vous magasinez",
-			  //           cta: "Cliquez ici",
-			  //           link: "http://kitchenaid.ca",
-			  //           type: "cart"
-					// },
+					{
+			        	image: "./public/images/refer-landing-shopping-cart.png",
+			            title: "Buying Guide",
+			            desc: "Éléments à considérer lorsque vous magasinez",
+			            cta: "Cliquez ici",
+			            link: "http://kitchenaid.ca",
+			            type: "cart"
+					},
 					{
 						image: "./public/images/refer-landing-star.png",
 						title: "Évaluation et Commentaires",
