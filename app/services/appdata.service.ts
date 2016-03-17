@@ -32,7 +32,7 @@ export class AppData {
 			            title: "Buying Guide",
 			            desc: "What to look for when you are buying",
 			            cta: "Click Here",
-			            link: "http://kitchenaid.ca",
+						link: "http://blog.kitchenaid.ca/kitchenaid-refrigerator-buying-guide/",
 			            type: "cart"
 					},
 			        {
@@ -202,10 +202,10 @@ export class AppData {
 				features: [
 					{
 			        	image: "./public/images/refer-landing-shopping-cart.png",
-			            title: "Buying Guide",
+						title: "Guide d’Achat",
 			            desc: "Éléments à considérer lorsque vous magasinez",
 			            cta: "Cliquez ici",
-			            link: "http://kitchenaid.ca",
+						link: "/pdf/Refer_Buying_Guide_2016_FR.pdf",
 			            type: "cart"
 					},
 					{
