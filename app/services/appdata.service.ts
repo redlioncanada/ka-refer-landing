@@ -27,32 +27,32 @@ export class AppData {
 			features: {
 				enabled: true,
 				features: [
-			        {
-			        	image: "./public/images/refer-landing-shopping-cart.png",
-			            title: "Buying Guide",
-			            desc: "What to look for when you are buying",
-			            cta: "Click Here",
+					{
+						image: "./public/images/refer-landing-shopping-cart.png",
+						title: "Buying Guide",
+						desc: "What to look for when you are buying",
+						cta: "Click Here",
 						link: "http://blog.kitchenaid.ca/kitchenaid-refrigerator-buying-guide/",
-			            type: "cart"
-					},
-			        {
-			        	image: "./public/images/refer-landing-star.png",
-			            title: "Ratings & Reviews",
-						alt: "Ratings and reviews",
-			            desc: "See what others are saying",
-			            cta: "Click Here",
-			            link: "http://www.kitchenaid.ca/en_CA/2_2_89/global_best-products.content.html",
-			            type: "star"
+						type: "cart"
 					},
 					{
-			        	image: "./public/images/refer-landing-mag-glass.png",
-			        	title: "Find Your KitchenAid",
+						image: "./public/images/refer-landing-star.png",
+						title: "Ratings & Reviews",
+						alt: "Ratings and reviews",
+						desc: "See what others are saying",
+						cta: "Click Here",
+						link: "http://www.kitchenaid.ca/en_CA/2_2_89/global_best-products.content.html",
+						type: "star"
+					},
+					{
+						image: "./public/images/refer-landing-mag-glass.png",
+						title: "Find Your KitchenAid",
 						alt: "Find your KitchenAid",
-			        	desc: "Need help finding your refrigerator?",
-			        	cta: "Click Here",
-			        	link: "http://findmy.kitchenaid.ca/#/question/Appliance",
-			        	type: "magnifier"
-			    	}
+						desc: "Need help finding your refrigerator?",
+						cta: "Click Here",
+						link: "http://findmy.kitchenaid.ca/#/question/Appliance",
+						type: "magnifier"
+					}
 				]
 			},
 			morefeatures: {
@@ -90,7 +90,7 @@ export class AppData {
 				title: "Designed To Inspire",
 				videos: [
 					{
-						id: '9IFIdkLo29Y',
+						id: '1AZPb80TNdc',
 						thumb: './public/images/video-select-1.jpg',
 						title: 'Design: A revolutionary Mark On A Revolutionary New Line',
 						ctaTitle: 'Design',
@@ -127,7 +127,7 @@ export class AppData {
 				},
 				products: [
 					{
-            			image: "./public/images/products/5-door.png",
+						image: "./public/images/products/5-door.png",
                         title: "5-door",
                         alt: "5-Door Refrigerator",
                         desc: "The revolutionary, first-ever 5-Door freestanding refrigerator is designed for optimal organization and food freshness. Learn more about our versatile soft-close drawers, designed to help keep your favourite foods visible and easy to reach.",
@@ -135,8 +135,8 @@ export class AppData {
                         id: "five-door",
                         ctaText: "Learn More"
                     },
-            		{
-            			image: "./public/images/products/built-in.png",
+					{
+						image: "./public/images/products/built-in.png",
                         title: "Built-in",
                         alt: "Built-In, French-Door Refrigerator with bottom freezer",
                         desc: "When you picture your dream kitchen, you can bet our Built-in Refrigerator goes with it. Designed to fit your kitchen seamlessly, our panel ready options sold separately provide a sleek, premium look to complement your cabinets.",
@@ -144,8 +144,8 @@ export class AppData {
                         id: "built-in",
                         ctaText: "Learn More"
                     },
-            		{
-            			image: "./public/images/products/french-door.png",
+					{
+						image: "./public/images/products/french-door.png",
                         title: "French Door",
                         alt: "French-door refrigerator with bottom freezer and exterior ice dispensor",
                         desc: "Need to get organized? Our French Door Refrigerators provide excellent space and organizing options for your culinary needs. With features like the humidity-controlled crispers, pantry drawer, and tiered drawer freezers, French Door Refrigerators are a contemporary fit for any kitchen.",
@@ -153,8 +153,8 @@ export class AppData {
                         id: "french-door",
                         ctaText: "Learn More"
                     },
-            		{
-            			image: "./public/images/products/side-by-side.png",
+					{
+						image: "./public/images/products/side-by-side.png",
                         title: "Side-By-Side",
                         alt: "French-door refrigerator",
                         desc: "The clean, timeless design of our Side-by-Side Refrigerators gives you eye-level access to both refrigerator and freezer, while keeping the ingredients you use most often fresh and at your fingertips.",
@@ -163,7 +163,7 @@ export class AppData {
                         ctaText: "Learn More"
                     },
                     {
-            			image: "./public/images/products/bottom-freezer.png",
+						image: "./public/images/products/bottom-freezer.png",
                         title: "Bottom Freezer",
                         alt: "Single door refrigerator with bottom freezer",
                         desc: "Beautifully designed, inside and out. Our Bottom Freezer Refrigerators are made to give you easy access to your favourite foods. They also feature humidity-controlled crispers that create the perfect environment for keeping ingredients fresh.",
@@ -171,8 +171,8 @@ export class AppData {
                         id: "bottom-freezer",
                         ctaText: "Learn More"
                     },
-            		{
-            			image: "./public/images/products/under-counter.png",
+					{
+						image: "./public/images/products/under-counter.png",
                         title: "Under Counter",
                         alt: "Undercounter refrigerator",
                         desc: "Looking for a great addition to your kitchen? Our wide selection of Undercounter Refrigerators, Wine Cellars, and Ice Makers are a must have for entertaining, or providing another way to keep your beverages at the perfect temperature at all times.",
@@ -201,12 +201,12 @@ export class AppData {
 				enabled: true,
 				features: [
 					{
-			        	image: "./public/images/refer-landing-shopping-cart.png",
+						image: "./public/images/refer-landing-shopping-cart.png",
 						title: "Guide d’Achat",
-			            desc: "Éléments à considérer lorsque vous magasinez",
-			            cta: "Cliquez ici",
+						desc: "Éléments à considérer lorsque vous magasinez",
+						cta: "Cliquez ici",
 						link: "/pdf/Refer_Buying_Guide_2016_FR.pdf",
-			            type: "cart"
+						type: "cart"
 					},
 					{
 						image: "./public/images/refer-landing-star.png",
@@ -313,7 +313,7 @@ export class AppData {
                         alt: "Réfrigérateur encastré à portes françaises avec congélateur inférieur",
                         desc: "Lorsque vous imaginez la cuisine de vos rêves, vous pouvez être assuré que notre réfrigérateur encastré s'y agencera parfaitement. Conçu pour s'assortir naturellement à votre cuisine, nos options pouvant accueillir des panneaux de recouvrement (vendus séparément) offrent un style épuré et sophistiqué pour s’harmoniser à vos armoires.",
                         link: "http://www.kitchenaid.ca/fr_CA/shop/major-appliances-1/refrigerators-3/102310048/",
-                    	image: "./public/images/products/built-in.png",
+						image: "./public/images/products/built-in.png",
 						id: "built-in",
 						ctaText: "En savoir plus"
                     },
@@ -326,7 +326,7 @@ export class AppData {
                         id: "french-door",
                         ctaText: "En savoir plus"
                     },
-            		{
+					{
                         title: "Côte à côte",
                         alt: "Réfrigérateur à portes françaises",
                         desc: "La conception pure et intemporelle de nos modèles côte à côte vous permet de garder les ingrédients du réfrigérateur aussi bien que du congélateur au niveau des yeux tout en conservant les articles que vous utilisez le plus fréquemment au frais et à portée de main.",
@@ -344,12 +344,12 @@ export class AppData {
                         id: "bottom-freezer",
                         ctaText: "En savoir plus"
                     },
-            		{
+					{
                         title: "Réfrigérateurs sous le comptoir et machines à glaçons",
                         alt: "Réfrigérateur sous le comptoir",
                         desc: "Vous souhaitez rehausser le style de votre cuisine? Notre vaste choix de réfrigérateurs sous le comptoir, celliers et machines à glaçons sont très pratiques pour organiser des réceptions ou bien procurer une autre façon de conserver vos boissons à la température idéale, en tout temps.",
                         link: "http://www.kitchenaid.ca/fr_CA/shop/major-appliances-1/refrigerators-2/undercounter-refrigerators-3/102310356/",
-                    	image: "./public/images/products/under-counter.png",
+						image: "./public/images/products/under-counter.png",
 						id: "under-counter",
 						ctaText: "En savoir plus"
                     }
@@ -371,3 +371,4 @@ export class AppData {
 		if (url.indexOf('/fr_CA') > -1) return 'fr'
 		return 'en'
 	}
+}
