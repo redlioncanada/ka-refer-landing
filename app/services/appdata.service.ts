@@ -26,11 +26,12 @@ export class AppData {
 			},
 			features: {
 				enabled: true,
+				title: 'Get started here',
 				features: [
 					{
 						image: "./public/images/refer-landing-shopping-cart.png",
 						title: "Buying Guide",
-						desc: "What to look for when you are buying",
+						desc: "Let's find your fridge",
 						cta: "Click Here",
 						link: "http://blog.kitchenaid.ca/kitchenaid-refrigerator-buying-guide/",
 						type: "cart"
@@ -46,8 +47,8 @@ export class AppData {
 					},
 					{
 						image: "./public/images/refer-landing-mag-glass.png",
-						title: "Find Your KitchenAid",
-						alt: "Find your KitchenAid",
+						title: "Find Your Fridge",
+						alt: "Find your Fridge",
 						desc: "Need help finding your refrigerator?",
 						cta: "Click Here",
 						link: "http://findmy.kitchenaid.ca/#/question/Appliance",
@@ -199,6 +200,7 @@ export class AppData {
 			},
 			features: {
 				enabled: true,
+				title: 'Get started here',
 				features: [
 					{
 						image: "./public/images/refer-landing-shopping-cart.png",

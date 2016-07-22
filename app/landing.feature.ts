@@ -11,12 +11,14 @@ import {AppData} from './services/appdata.service'
 
 export class Features {
     public featureButtons:[FeatureModel] = [];
+    public title
     private enabled: boolean
 
     constructor(private appdata: AppData) {
         this.enabled = true
         var data = appdata.get()
         this.enabled = data.features.enabled
+        this.title = data.features.title
         
         for (var i in data.features.features) {
             var feature = data.features.features[i]

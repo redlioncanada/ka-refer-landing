@@ -91,8 +91,8 @@ export class ProductSlides extends TimelineController {
         if (!self) self = this
         target = $(self.rootElement).find('#' + target)
 
-        $(self.rootElement).find('product-slide').css('zIndex', 1)
-        $(target).parent().css('zIndex', 2)
+        // $(self.rootElement).find('product-slide').css('zIndex', 1)
+        // $(target).parent().css('zIndex', 2)
 
         var image = ($(target).find('.rl-ka-lndng-fridge'))
         var title = ($(target).find('.rl-ka-lndng-fridge-title'))
